@@ -10,7 +10,7 @@ export default function Hero() {
         {/* Video de fondo */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
-          src="/video-test.mp4" // Cambia el nombre si tu video tiene otro nombre
+          src="/video-test.mp4"
           autoPlay
           loop
           muted
@@ -36,37 +36,6 @@ export default function Hero() {
               Un centro de bienestar holístico dedicado a promover el equilibrio
               físico, mental y emocional a través de prácticas integrativas.
             </p>
-          </div>
-
-          {/* Disciplinas */}
-          <div
-            id="disciplinas"
-            className="animate-fade-in mt-6 w-full max-w-2xl scroll-mt-24"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <h2 className="text-2xl font-semibold text-white mb-4">
-              Disciplinas
-            </h2>
-            <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-lg text-white/90">
-              <li className="bg-purple-600/70 rounded-xl py-2 px-4 shadow hover:scale-105 transition">
-                Yoga
-              </li>
-              <li className="bg-pink-600/70 rounded-xl py-2 px-4 shadow hover:scale-105 transition">
-                Meditación
-              </li>
-              <li className="bg-yellow-500/70 rounded-xl py-2 px-4 shadow hover:scale-105 transition">
-                Flexibilidad
-              </li>
-              <li className="bg-pink-400/70 rounded-xl py-2 px-4 shadow hover:scale-105 transition">
-                Heels Dance
-              </li>
-              <li className="bg-indigo-500/70 rounded-xl py-2 px-4 shadow hover:scale-105 transition">
-                Danzas Polinesias
-              </li>
-              <li className="bg-purple-400/70 rounded-xl py-2 px-4 shadow hover:scale-105 transition">
-                Box
-              </li>
-            </ul>
           </div>
 
           {/* Botones principales */}

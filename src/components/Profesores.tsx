@@ -7,49 +7,48 @@ const profesores = [
     especialidad: "Yoga & Meditación",
     descripcion:
       "Especialista en yoga integral y mindfulness con más de 10 años de experiencia ayudando a personas a encontrar su equilibrio.",
-    imagen: "/profesora1.jpg",
+    imagen: "/professors/profesor1.jpg",
   },
   {
     nombre: "Carlos Pérez",
     especialidad: "Box & Flexibilidad",
     descripcion:
       "Entrenador certificado en box y movilidad, apasionado por el bienestar físico y la superación personal.",
-    imagen: "/profesor2.jpg",
+    imagen: "/professors/profesor2.jpg",
   },
   {
     nombre: "Ana Torres",
     especialidad: "Heels Dance",
     descripcion:
       "Bailarina profesional y coreógrafa, experta en empoderar a través del movimiento y la danza moderna.",
-    imagen: "/profesora3.jpg",
+    imagen: "/professors/profesor3.jpg",
   },
   {
     nombre: "Luis Gómez",
     especialidad: "Danzas Polinesias",
     descripcion:
       "Instructor de danzas polinesias, transmitiendo cultura y alegría a través del ritmo y la expresión corporal.",
-    imagen: "/profesor4.jpg",
+    imagen: "/professors/profesor4.jpg",
   },
   {
     nombre: "Sofía Ramírez",
     especialidad: "Meditación & Mindfulness",
     descripcion:
       "Guía de meditación con enfoque en reducción de estrés y bienestar emocional.",
-    imagen: "/profesora5.jpg",
+    imagen: "/professors/profesor1.jpg",
   },
   {
     nombre: "Pedro Sánchez",
     especialidad: "Flexibilidad",
     descripcion:
       "Especialista en movilidad y flexibilidad, ayudando a mejorar el rango de movimiento de sus alumnos.",
-    imagen: "/profesor6.jpg",
+    imagen: "/professors/profesor2.jpg",
   },
 ];
 
 type Profesor = (typeof profesores)[number];
 
 function getIndices(current: number, length: number): number[] {
-  // Devuelve los índices de los 3 profesores a mostrar, centrados en current
   return [
     (current - 1 + length) % length,
     current % length,
@@ -69,7 +68,6 @@ export default function Profesores() {
   const length = profesores.length;
   const indices = getIndices(current, length);
 
-  // Auto-slide de 3 en 3 cada 5 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 3) % length);
@@ -87,7 +85,6 @@ export default function Profesores() {
           Conoce a nuestros profesores
         </h2>
         <div className="relative flex items-center justify-center">
-          {/* Flecha izquierda */}
           <button
             aria-label="Anterior"
             onClick={() => setCurrent(getPrevIndex(current, length))}

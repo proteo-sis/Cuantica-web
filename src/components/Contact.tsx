@@ -106,13 +106,18 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Dirección</h4>
-                    <p className="opacity-90">
-                      Calle de la Paz 123
+                    <a
+                      href="https://www.google.com/maps/place/Cuántica+Studio/data=!4m2!3m1!1s0x0:0xe8b367ba7bef8c99?sa=X&ved=1t:2428&ictx=111"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="opacity-90 hover:text-pink-400 transition underline"
+                    >
+                      Calle Horacio Zúñiga, P.º Colón 155-interior 7,
                       <br />
-                      Centro Histórico
+                      Residencial Colón y Col Ciprés,
                       <br />
-                      Ciudad de México, CDMX
-                    </p>
+                      50120 Toluca de Lerdo, Méx.{" "}
+                    </a>
                   </div>
                 </div>
 
@@ -178,6 +183,29 @@ export default function Contact() {
                   <span className="font-semibold">8:00 AM - 6:00 PM</span>
                 </div>
               </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="text-2xl font-semibold mb-6">
+                Ubicación en el mapa
+              </h3>
+              <a
+                href="https://www.google.com/maps/place/Cuántica+Studio/data=!4m2!3m1!1s0x0:0xe8b367ba7bef8c99?sa=X&ved=1t:2428&ictx=111"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-lg overflow-hidden shadow-lg hover:ring-4 hover:ring-pink-400 transition"
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.0284467837373!2d-99.6625421!3d19.2811291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cd89b50a2384bd%3A0xe8b367ba7bef8c99!2sCu%C3%A1ntica%20Studio!5e0!3m2!1sen!2smx!4v1752680477291!5m2!1sen!2smx"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Cuántica Studio"
+                ></iframe>
+              </a>
             </div>
           </div>
         </div>
