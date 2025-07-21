@@ -1,12 +1,13 @@
 "use client";
 
 import Header from "./Header";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Hero() {
   return (
     <>
       <Header />
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black pt-28">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black pt-0">
         {/* Video de fondo */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
@@ -15,66 +16,100 @@ export default function Hero() {
           loop
           muted
           playsInline
+          style={{ filter: "brightness(0.85) blur(0.5px)" }}
         />
 
-        {/* Capa de superposición para mejorar legibilidad */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-purple-900/40 to-pink-900/30 z-0" />
+        {/* Gradiente sutil para legibilidad */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/30 to-transparent z-0" />
+
+        {/* Menú minimalista */}
+        <nav className="absolute top-0 right-0 z-20 flex gap-8 p-8 text-white text-lg font-light">
+          <a href="#" className="hover:underline">
+            Inicio
+          </a>
+          <a href="#about" className="hover:underline">
+            Sobre
+          </a>
+          <a href="#contact" className="hover:underline">
+            Contacto
+          </a>
+        </nav>
 
         {/* Contenido principal */}
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto flex flex-col items-center">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
-              <span className="block">Cuántica</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                Studio
-              </span>
-            </h1>
+        <div className="relative z-10 flex flex-col items-center justify-center w-full h-screen text-center px-4 pt-32">
+          <div
+            className="mb-6 text-base tracking-widest text-white/80 font-light animate-fade-in"
+            style={{ letterSpacing: "0.18em" }}
+          >
+            CENTRO DE BIENESTAR HOLÍSTICO
           </div>
-
-          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <p className="text-xl sm:text-2xl text-gray-100 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow">
+          <h1
+            className="animate-fade-in text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-2 drop-shadow-lg tracking-tight"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            CUÁNTICA
+          </h1>
+          <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <span
+              className="block text-3xl sm:text-5xl font-cormorant italic text-white mb-8"
+              style={{
+                fontFamily: "'Cormorant', serif",
+                fontWeight: 500,
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Studio
+            </span>
+          </div>
+          <div
+            className="animate-fade-in max-w-2xl mx-auto mb-12"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <p className="text-lg sm:text-2xl text-white/90 leading-relaxed font-light">
               Un centro de bienestar holístico dedicado a promover el equilibrio
               físico, mental y emocional a través de prácticas integrativas.
             </p>
           </div>
-
-          {/* Botones principales */}
-          <div
-            id="reserva"
-            className="animate-fade-in mt-8 scroll-mt-24"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg btn-hover focus:outline-none focus:ring-2 focus:ring-pink-400">
-                Reserva tu clase
+          <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <a href="#contact" className="inline-block">
+              <button className="flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:bg-gray-100 transition-all duration-300 focus:outline-none">
+                Reserva tu clase <FaArrowRight className="ml-1" />
               </button>
-              <button className="border-2 border-purple-400 text-purple-200 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-600 hover:text-white transition-all duration-300 btn-hover focus:outline-none focus:ring-2 focus:ring-purple-400">
-                Conoce más
-              </button>
-            </div>
+            </a>
           </div>
+        </div>
 
-          {/* Flecha animada */}
-          <div
-            className="animate-fade-in mt-16 flex justify-center"
-            style={{ animationDelay: "0.8s" }}
+        {/* Flecha animada centrada abajo */}
+        <div
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-fade-in"
+          style={{ animationDelay: "0.8s" }}
+        >
+          <button
+            onClick={() => {
+              const el = document.getElementById("discipline-carousel");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
+            aria-label="Ir a disciplinas"
+            className="bg-white/80 rounded-full p-3 shadow-lg hover:bg-white transition-all duration-300 focus:outline-none"
+            style={{
+              backdropFilter: "blur(2.2px)",
+              WebkitBackdropFilter: "blur(2.2px)",
+            }}
           >
-            <div className="animate-bounce">
-              <svg
-                className="w-6 h-6 text-purple-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </div>
-          </div>
+            <svg
+              className="w-7 h-7 text-black opacity-80"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </button>
         </div>
       </section>
     </>

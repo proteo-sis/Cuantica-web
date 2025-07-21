@@ -14,7 +14,7 @@ export default function DisciplineCarousel() {
   const data: Discipline[] = disciplines as Discipline[];
 
   return (
-    <section className="w-screen min-h-[80vh] bg-black overflow-hidden relative flex flex-col items-center justify-center px-0 py-20">
+    <section className="w-full min-h-[80vh] bg-black overflow-hidden relative flex flex-col items-center justify-center px-0 py-20">
       <div
         className="absolute inset-0 z-0"
         style={{
