@@ -2,16 +2,22 @@
 
 export default function Contact() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-purple-900 to-pink-900 text-white">
+    <section className="py-20 bg-[var(--color-lavender-light)] text-[var(--color-black-soft)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Conecta con{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+            <span className="text-[var(--color-black-soft)]">Conecta con </span>
+            <span
+              style={{
+                color: "var(--color-pink-vibrant)",
+                textShadow: "0 2px 8px rgba(238,33,127,0.18)",
+                WebkitTextStroke: ".5px #ee217f",
+              }}
+            >
               nosotros
             </span>
           </h2>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--color-black-soft)]/80 max-w-3xl mx-auto">
             Estamos aquí para acompañarte en tu viaje hacia el bienestar.
             Contáctanos para más información o para reservar tu primera clase.
           </p>
@@ -19,7 +25,7 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl">
               <h3 className="text-2xl font-semibold mb-6">
                 Envíanos un mensaje
               </h3>
@@ -31,7 +37,7 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-white/60"
+                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
                       placeholder="Tu nombre"
                     />
                   </div>
@@ -41,34 +47,75 @@ export default function Contact() {
                     </label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-white/60"
+                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
                       placeholder="tu@email.com"
                     />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Asunto
+                    Disciplinas de interés
+                  </label>
+                  <div className="flex flex-wrap gap-3">
+                    {[
+                      "Yoga",
+                      "Meditación Guiada",
+                      "Sanación con Sonido",
+                      "Danza/Artes de Movimiento",
+                    ].map((disciplina) => (
+                      <label key={disciplina} className="cursor-pointer">
+                        <input
+                          type="checkbox"
+                          name="disciplinas"
+                          value={disciplina}
+                          className="peer hidden"
+                        />
+                        <span className="px-4 py-2 rounded-full border border-[var(--color-lavender)] bg-white/80 text-[var(--color-black-soft)] text-sm font-medium transition-all duration-200 peer-checked:bg-[var(--color-pink-vibrant)] peer-checked:text-white peer-checked:border-[var(--color-pink-vibrant)] shadow-sm hover:bg-[var(--color-pink-pastel)] hover:text-[var(--color-black-soft)] select-none">
+                          {disciplina}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    ¿Sobre qué es tu duda?
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-white/60"
-                    placeholder="¿En qué podemos ayudarte?"
+                    className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
+                    placeholder="Ejemplo: Horarios, precios, reservas, etc."
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Mensaje
+                    Comentario
                   </label>
                   <textarea
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 text-white placeholder-white/60 resize-none"
+                    className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400 resize-none"
                     placeholder="Cuéntanos más sobre lo que buscas..."
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 btn-hover"
+                  className="w-full px-8 py-4 rounded-lg text-lg font-semibold shadow-lg btn-hover"
+                  style={{
+                    background: "var(--color-pink-vibrant)",
+                    color: "#fff",
+                    border: "none",
+                    transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.background =
+                      "var(--color-pink-pastel)";
+                    e.currentTarget.style.color = "#fff";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.background =
+                      "var(--color-pink-vibrant)";
+                    e.currentTarget.style.color = "#fff";
+                  }}
                 >
                   Enviar mensaje
                 </button>
@@ -77,13 +124,13 @@ export default function Contact() {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl">
               <h3 className="text-2xl font-semibold mb-6">
                 Información de contacto
               </h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[var(--color-lavender)] to-[var(--color-pink-vibrant)] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                     <svg
                       className="w-6 h-6 text-white"
                       fill="none"
@@ -167,7 +214,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl">
               <h3 className="text-2xl font-semibold mb-6">Horarios</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
@@ -185,7 +232,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl">
               <h3 className="text-2xl font-semibold mb-6">
                 Ubicación en el mapa
               </h3>

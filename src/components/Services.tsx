@@ -89,16 +89,22 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
+    <section className="py-20 bg-[var(--color-lavender-light)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Nuestras{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <span className="text-[var(--color-black-soft)]">Nuestras </span>
+            <span
+              style={{
+                color: "var(--color-pink-vibrant)",
+                textShadow: "0 2px 8px rgba(238,33,127,0.18)",
+                WebkitTextStroke: ".5px #ee217f",
+              }}
+            >
               Prácticas
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--color-black-soft)]/80 max-w-3xl mx-auto">
             Descubre las diferentes disciplinas que ofrecemos para tu
             transformación personal y bienestar integral.
           </p>
@@ -107,16 +113,27 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div key={service.title} className="group">
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+              <div
+                className="rounded-2xl p-8 shadow-2xl border h-full bg-white/60 backdrop-blur-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-pink-200 border-[var(--color-lavender)]"
+                style={{
+                  boxShadow:
+                    "0 8px 32px 0 rgba(179,157,219,0.18), 0 0 0 4px rgba(238,33,127,0.10)",
+                }}
+              >
                 <div
-                  className={`w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, var(--color-lavender) 60%, var(--color-pink-vibrant) 100%)",
+                    color: "#fff",
+                  }}
                 >
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h3 className="text-xl font-semibold text-[var(--color-black-soft)] mb-4">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-[var(--color-black-soft)]/80 leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -125,7 +142,23 @@ export default function Services() {
         </div>
 
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg btn-hover">
+          <button
+            className="px-8 py-4 rounded-full text-lg font-semibold shadow-lg btn-hover"
+            style={{
+              background: "var(--color-pink-vibrant)",
+              color: "#fff",
+              border: "none",
+              transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.background = "var(--color-pink-pastel)";
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.background = "var(--color-pink-vibrant)";
+              e.currentTarget.style.color = "#fff";
+            }}
+          >
             Ver horarios de clases
           </button>
         </div>

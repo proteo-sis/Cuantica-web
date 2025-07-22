@@ -36,13 +36,21 @@ export default function Testimonials() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Lo que dicen nuestros{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <span className="text-[var(--color-black-soft)]">
+              Lo que dicen nuestros{" "}
+            </span>
+            <span
+              style={{
+                color: "var(--color-pink-vibrant)",
+                textShadow: "0 2px 8px rgba(238,33,127,0.18)",
+                WebkitTextStroke: ".5px #ee217f",
+              }}
+            >
               estudiantes
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--color-black-soft)]/80 max-w-3xl mx-auto">
             Descubre las experiencias transformadoras de quienes han encontrado
             su camino hacia el bienestar en Cuántica Studio.
           </p>
@@ -51,8 +59,15 @@ export default function Testimonials() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={testimonial.name} className="group">
-              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 h-full relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-t-2xl"></div>
+              <div
+                className="rounded-2xl p-8 h-full relative border bg-white/60 backdrop-blur-md"
+                style={{
+                  borderColor: "var(--color-lavender)",
+                  boxShadow:
+                    "0 8px 32px 0 rgba(179,157,219,0.18), 0 0 0 4px rgba(238,33,127,0.10)",
+                }}
+              >
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-lavender)] to-[var(--color-pink-vibrant)] rounded-t-2xl"></div>
 
                 <div className="mb-6">
                   <div className="flex items-center mb-4">
@@ -68,20 +83,22 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed italic">
+                  <p className="text-[var(--color-black-soft)]/90 leading-relaxed italic">
                     "{testimonial.content}"
                   </p>
                 </div>
 
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[var(--color-lavender)] to-[var(--color-pink-vibrant)] rounded-full flex items-center justify-center text-white font-semibold mr-4">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">
+                    <h4 className="font-semibold text-[var(--color-black-soft)]">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    <p className="text-sm text-[var(--color-black-soft)]/70">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -90,15 +107,40 @@ export default function Testimonials() {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+          <div
+            className="rounded-2xl p-8 text-white border mx-auto max-w-8xl backdrop-blur-md"
+            style={{
+              background:
+                "linear-gradient(0deg, var(--color-pink-pastel) 1%, var(--color-pink-vibrant) 100%)",
+              borderColor: "var(--color-lavender)",
+              boxShadow:
+                "0 8px 32px 0 rgba(179,157,219,0.18), 0 0 0 4px rgba(238,33,127,0.10)",
+            }}
+          >
+            <h3 className="text-2xl font-bold mb-4 text-white drop-shadow">
               ¿Listo para tu transformación?
             </h3>
-            <p className="text-lg mb-6 opacity-90">
+            <p className="text-lg mb-6 opacity-90 text-white drop-shadow">
               Únete a nuestra comunidad y comienza tu viaje hacia el bienestar
               integral.
             </p>
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 btn-hover">
+            <button
+              className="px-8 py-4 rounded-full text-lg font-semibold shadow-lg btn-hover"
+              style={{
+                background: "var(--color-pink-vibrant)",
+                color: "#fff",
+                border: "none",
+                transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "var(--color-pink-pastel)";
+                e.currentTarget.style.color = "#fff";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "var(--color-pink-vibrant)";
+                e.currentTarget.style.color = "#fff";
+              }}
+            >
               Reserva tu primera clase
             </button>
           </div>

@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <>
       <Header />
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[var(--color-lavender-light)] pt-0">
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[var(--color-white-pure)] pt-0">
         {/* Video de fondo */}
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
@@ -24,7 +24,7 @@ export default function Hero() {
           style={{
             background:
               "linear-gradient(120deg, var(--color-lavender) 40%, transparent 100%)",
-            opacity: 0.45,
+            opacity: 0.15,
           }}
         />
         {/* Menú minimalista */}
