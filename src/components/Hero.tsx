@@ -43,23 +43,27 @@ export default function Hero() {
           >
             CENTRO DE BIENESTAR HOLÍSTICO
           </div>
-          <h1
-            className="animate-fade-in text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-2 drop-shadow-lg tracking-tight"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-          >
-            CUÁNTICA
-          </h1>
-          <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <span
-              className="block text-3xl sm:text-5xl font-cormorant italic text-white mb-8"
-              style={{
-                fontFamily: "'Cormorant', serif",
-                fontWeight: 500,
-                letterSpacing: "-0.03em",
-              }}
-            >
-              Studio
-            </span>
+          <div className="relative flex flex-col items-center w-full">
+            <div className="flex flex-col w-fit mx-auto">
+              <h1
+                className="animate-fade-in text-5xl sm:text-7xl lg:text-8xl font-bold text-white mb-0 drop-shadow-lg tracking-tight"
+                style={{ fontFamily: "'Inter', sans-serif", lineHeight: 1 }}
+              >
+                CUÁNTICA
+              </h1>
+              <span
+                className="block text-3xl sm:text-5xl font-cormorant italic text-white"
+                style={{
+                  fontFamily: "'Cormorant', serif",
+                  fontWeight: 500,
+                  letterSpacing: "-0.03em",
+                  textAlign: "right",
+                  marginTop: "-0.2em",
+                }}
+              >
+                Studio
+              </span>
+            </div>
           </div>
           <div
             className="animate-fade-in max-w-2xl mx-auto mb-12"

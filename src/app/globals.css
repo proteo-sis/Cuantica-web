@@ -8,6 +8,7 @@
   --color-pink-vibrant: #ee217f;
   --color-pink-pastel: #ffc0d0;
   --color-beige-rose: #edded4;
+  --color-beige-pure: #f9f6ef;  
 }
 
 .font-league { font-family: var(--font-league); }
