@@ -9,6 +9,9 @@
   --color-pink-pastel: #ffc0d0;
   --color-beige-rose: #edded4;
   --color-beige-pure: #f9f6ef;  
+  --color-lavender: #b39ddb;
+  --color-lavender-light: #d1c4e9;
+  --color-lavender-dark: #6c3483;
 }
 
 .font-league { font-family: var(--font-league); }

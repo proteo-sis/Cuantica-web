@@ -14,7 +14,7 @@ export default function DisciplineCarousel() {
   const data: Discipline[] = disciplines as Discipline[];
 
   return (
-    <section className="w-full min-h-[80vh] bg-black overflow-hidden relative flex flex-col items-center justify-center px-0 py-20">
+    <section className="w-full min-h-[9 0vh] bg-black overflow-hidden relative flex flex-col items-center justify-center px-0 py-20">
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -24,11 +24,20 @@ export default function DisciplineCarousel() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-[rgba(0,0,0,0.7)] backdrop-blur-md" />
+        {/* Overlay lavanda con blur para mantener la paleta */}
+        <div
+          className="absolute inset-0 backdrop-blur-md"
+          style={{
+            background:
+              "linear-gradient(120deg, var(--color-lavender) 60%, var(--color-lavender-light) 100%)",
+            opacity: 0.55,
+            mixBlendMode: "multiply",
+          }}
+        />
       </div>
       <div className="relative z-10 w-full flex flex-col items-center">
         <h2 className="text-3xl font-bold text-white mb-8 text-center drop-shadow-lg">
-          Discover Our Disciplines
+          NUESTRAS DISCIPLINAS
         </h2>
         <div className="flex w-full max-w-7x h-[60vh] gap-2 items-center justify-center">
           {data.map((discipline, index) => (
