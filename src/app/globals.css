@@ -14,6 +14,25 @@
   --color-lavender-dark: #6c3483;
 }
 
+/* Scrollbar personalizado */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-lavender-dark) var(--color-lavender-light);
+}
+
+/* Para navegadores Webkit */
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--color-lavender-light);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, var(--color-lavender-dark), var(--color-pink-vibrant));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pink-vibrant);
+}
+
 .font-league { font-family: var(--font-league); }
 .font-bree   { font-family: var(--font-bree); }
 .font-cormorant { font-family: var(--font-cormorant); }

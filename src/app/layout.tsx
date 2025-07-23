@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import WelcomeScreen from "../components/WelcomeScreen";
-import { League_Spartan } from 'next/font/google';
+import { League_Spartan } from "next/font/google";
 
 const leagueSpartan = League_Spartan({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // elige los pesos que usarás
-  variable: '--font-league-spartan', // si quieres usarla como CSS variable
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-league-spartan",
 });
-
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -28,10 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="bg-black">
-        <WelcomeScreen />
-        {children}
-      </body>
+      <body className="bg-black">{children}</body>
     </html>
   );
 }

@@ -1,25 +1,23 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-[var(--color-lavender-dark)] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                Cuántica Studio
-              </span>
+            <h3 className="text-2xl font-bold mb-4 text-white">
+              Cuántica Studio
             </h3>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="text-[var(--color-lavender-light)] mb-6 max-w-md">
               Un centro de bienestar holístico dedicado a promover el equilibrio
               físico, mental y emocional a través de prácticas integrativas.
             </p>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"
+                className="w-10 h-10 bg-[var(--color-lavender-dark)] rounded-full flex items-center justify-center hover:bg-[var(--color-pink-vibrant)] transition-colors"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-5 h-5 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -28,10 +26,10 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"
+                className="w-10 h-10 bg-[var(--color-lavender-dark)] rounded-full flex items-center justify-center hover:bg-[var(--color-pink-vibrant)] transition-colors"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-5 h-5 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -40,10 +38,10 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"
+                className="w-10 h-10 bg-[var(--color-lavender-dark)] rounded-full flex items-center justify-center hover:bg-[var(--color-pink-vibrant)] transition-colors"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-5 h-5 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -52,10 +50,10 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors"
+                className="w-10 h-10 bg-[var(--color-lavender-dark)] rounded-full flex items-center justify-center hover:bg-[var(--color-pink-vibrant)] transition-colors"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="w-5 h-5 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -66,8 +64,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Servicios</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-lg font-semibold mb-4 text-white">Servicios</h4>
+            <ul className="space-y-2 text-[var(--color-lavender-light)]">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
                   Yoga
@@ -97,8 +95,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Enlaces</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-lg font-semibold mb-4 text-white">Enlaces</h4>
+            <ul className="space-y-2 text-[var(--color-lavender-light)]">
               <li>
                 <a href="#" className="hover:text-white transition-colors">
                   Sobre nosotros
@@ -128,7 +126,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <div className="border-t border-[var(--color-lavender-light)] mt-12 pt-8 text-center text-[var(--color-lavender-light)]">
           <p>&copy; 2024 Cuántica Studio. Todos los derechos reservados.</p>
         </div>
       </div>

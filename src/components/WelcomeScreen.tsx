@@ -3,7 +3,15 @@ import { useState, useEffect } from "react";
 
 const title = "Cuántica Studio";
 
-export default function WelcomeScreen() {
+interface WelcomeScreenProps {
+  onHide?: () => void;
+  forceHide?: boolean;
+}
+
+export default function WelcomeScreen({
+  onHide,
+  forceHide,
+}: WelcomeScreenProps) {
   const [hide, setHide] = useState(false);
   const [show, setShow] = useState(false);
 
@@ -13,6 +21,14 @@ export default function WelcomeScreen() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (forceHide) setHide(true);
+  }, [forceHide]);
+
+  useEffect(() => {
+    if (hide && onHide) onHide();
+  }, [hide, onHide]);
 
   const handleClick = () => setHide(true);
 
