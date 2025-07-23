@@ -1,0 +1,123 @@
+{
+  "id": "box",
+  "name": "Box",
+  "slug": "box",
+  "heroSection": {
+    "title": "Box",
+    "subtitle": "Descubre tu fuerza interior",
+    "description": "Aumenta tu fuerza y confianza con sesiones dinámicas de box. ¡Ven y desafíate a ti mismo!",
+    "mainImage": "/disciplines/box.webp",
+    "ctaText": "¡Comienza tu entrenamiento!",
+    "ctaLink": "/contacto"
+  },
+  "benefits": {
+    "title": "Beneficios del Box",
+    "items": [
+      {
+        "title": "Bienestar Físico",
+        "description": "Mejora tu condición física, fuerza y resistencia. Desarrolla músculos tonificados y una mejor coordinación.",
+        "icon": "body"
+      },
+      {
+        "title": "Fortaleza Mental",
+        "description": "Desarrolla disciplina, determinación y confianza en ti mismo. Supera tus límites y alcanza nuevas metas.",
+        "icon": "mind"
+      },
+      {
+        "title": "Desarrollo Personal",
+        "description": "Aprende valores como el respeto, la perseverancia y el autocontrol. Crece como deportista y como persona.",
+        "icon": "growth"
+      },
+      {
+        "title": "Defensa Personal",
+        "description": "Adquiere habilidades de defensa personal mientras mejoras tu condición física y mental.",
+        "icon": "shield"
+      },
+      {
+        "title": "Comunidad",
+        "description": "Forma parte de una comunidad apasionada que te apoyará en tu camino hacia tus objetivos.",
+        "icon": "community"
+      },
+      {
+        "title": "Equilibrio",
+        "description": "Encuentra el equilibrio perfecto entre intensidad y técnica, fuerza y agilidad.",
+        "icon": "balance"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Explora Nuestro Entrenamiento",
+    "images": [
+      {
+        "url": "/gallery/box/training1.jpg",
+        "alt": "Entrenamiento de box",
+        "caption": "Sesiones de entrenamiento para todos los niveles"
+      },
+      {
+        "url": "/gallery/box/training2.jpg",
+        "alt": "Técnicas de box",
+        "caption": "Aprende técnicas profesionales con instructores certificados"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Horarios de Entrenamiento",
+    "description": "Encuentra el horario que mejor se adapte a tu rutina",
+    "days": [
+      {
+        "name": "Lunes",
+        "times": ["07:00", "18:00", "20:00"]
+      },
+      {
+        "name": "Martes",
+        "times": ["08:00", "17:00", "19:00"]
+      },
+      {
+        "name": "Jueves",
+        "times": ["07:00", "18:00", "20:00"]
+      },
+      {
+        "name": "Sábado",
+        "times": ["09:00", "11:00"]
+      }
+    ]
+  },
+  "instructors": [
+    {
+      "id": "carlos-perez",
+      "name": "Carlos Pérez",
+      "title": "Entrenador Principal de Box",
+      "specialties": ["Box Profesional", "Acondicionamiento Físico", "Técnica de Combate"],
+      "description": "Entrenador certificado con más de 15 años de experiencia en box profesional y preparación física.",
+      "image": "/instructors/carlos-perez.jpg",
+      "certifications": ["Entrenador Profesional AIBA", "Preparador Físico Certificado"],
+      "socialMedia": {
+        "instagram": "@carlos.box",
+        "facebook": "carlos.perez.box"
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Necesito experiencia previa en box?",
+      "answer": "No, nuestras clases están diseñadas para todos los niveles. Comenzarás con los fundamentos básicos y progresarás a tu propio ritmo."
+    },
+    {
+      "question": "¿Qué equipo necesito?",
+      "answer": "Para empezar solo necesitas ropa deportiva cómoda y zapatillas. Nosotros proporcionamos todo el equipo necesario para las clases."
+    },
+    {
+      "question": "¿Es seguro practicar box?",
+      "answer": "Sí, la seguridad es nuestra prioridad. Todas las clases son supervisadas por instructores certificados y utilizamos equipo de protección adecuado."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "Juan Martínez",
+      "image": "/testimonials/juan-martinez.jpg",
+      "text": "El box me ha ayudado no solo a estar en mejor forma, sino también a ganar confianza en mí mismo. Los entrenadores son excelentes.",
+      "rating": 5
+    }
+  ]
+} 

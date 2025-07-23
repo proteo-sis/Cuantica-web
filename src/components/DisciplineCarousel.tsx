@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 // @ts-ignore
 import disciplines from "./disciplines.json";
 
@@ -9,9 +10,25 @@ interface Discipline {
   description: string;
 }
 
+// Función para convertir el nombre a un slug URL-friendly
+function nameToSlug(name: string) {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 export default function DisciplineCarousel() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const router = useRouter();
   const data: Discipline[] = disciplines as Discipline[];
+
+  const handleDisciplineClick = (discipline: Discipline) => {
+    const slug = nameToSlug(discipline.name);
+    router.push(`/disciplinas/${slug}`);
+  };
 
   return (
     <section className="w-full min-h-[90vh] bg-black overflow-hidden relative flex flex-col items-center justify-center px-4 py-20">
@@ -67,6 +84,7 @@ export default function DisciplineCarousel() {
             <div
               key={index}
               onMouseEnter={() => setExpandedIndex(index)}
+              onClick={() => handleDisciplineClick(discipline)}
               className={`
                 relative h-full cursor-pointer
                 transition-[flex-grow,transform] duration-1000 ease-in-out
@@ -122,7 +140,7 @@ export default function DisciplineCarousel() {
                     </p>
                     <div className="text-center">
                       <span className="inline-block text-[var(--color-pink-vibrant)] font-semibold bg-black/60 rounded-full px-4 py-2 border border-[var(--color-pink-vibrant)]/30 backdrop-blur-sm hover:bg-[var(--color-pink-vibrant)]/20 transition-all duration-300">
-                        ¡Únete ahora!
+                        Descubre más
                       </span>
                     </div>
                   </div>

@@ -37,7 +37,9 @@ export default function Home() {
               transition: { duration: 1.2, ease: "easeOut" },
             }}
           >
-            <DisciplineCarousel />
+            <div id="disciplinas">
+              <DisciplineCarousel />
+            </div>
           </AnimatedSection>
           <AnimatedSection
             initial={{ opacity: 0 }}
@@ -46,7 +48,9 @@ export default function Home() {
               transition: { duration: 1.2, ease: "easeOut" },
             }}
           >
-            <About />
+            <div id="profesores">
+              <About />
+            </div>
           </AnimatedSection>
           <AnimatedSection
             initial={{ opacity: 0 }}
@@ -55,7 +59,9 @@ export default function Home() {
               transition: { duration: 1.2, ease: "easeOut" },
             }}
           >
-            <Services />
+            <div id="reserva">
+              <Services />
+            </div>
           </AnimatedSection>
           <AnimatedSection
             initial={{ opacity: 0 }}
@@ -73,7 +79,9 @@ export default function Home() {
               transition: { duration: 1.2, ease: "easeOut" },
             }}
           >
-            <Contact />
+            <div id="contacto">
+              <Contact />
+            </div>
           </AnimatedSection>
           <AnimatedSection
             initial={{ opacity: 0 }}

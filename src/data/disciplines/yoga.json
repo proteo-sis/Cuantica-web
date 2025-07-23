@@ -1,0 +1,128 @@
+{
+  "id": "yoga",
+  "name": "Yoga",
+  "slug": "yoga",
+  "heroSection": {
+    "title": "Yoga",
+    "subtitle": "Encuentra tu equilibrio interior",
+    "description": "Encuentra tu equilibrio y paz interior con nuestras clases de yoga. ¡Únete para relajarte y reconectar contigo mismo!",
+    "mainImage": "/disciplines/yoga_meditacion.jpg",
+    "ctaText": "¡Comienza tu viaje hoy!",
+    "ctaLink": "/contacto"
+  },
+  "benefits": {
+    "title": "Beneficios de la Práctica del Yoga",
+    "items": [
+      {
+        "title": "Bienestar Físico",
+        "description": "Mejora tu fuerza, flexibilidad y postura corporal. Desarrolla un cuerpo más saludable y energético con nuestra práctica guiada.",
+        "icon": "body"
+      },
+      {
+        "title": "Equilibrio Mental",
+        "description": "Reduce el estrés y la ansiedad mientras aumentas tu concentración y claridad mental a través de la respiración consciente.",
+        "icon": "mind"
+      },
+      {
+        "title": "Desarrollo Personal",
+        "description": "Crece personal y espiritualmente en un ambiente acogedor. Descubre tu verdadero potencial y fortaleza interior.",
+        "icon": "growth"
+      },
+      {
+        "title": "Meditación Guiada",
+        "description": "Aprende técnicas de meditación que te ayudarán a encontrar paz y tranquilidad en tu vida diaria.",
+        "icon": "meditation"
+      },
+      {
+        "title": "Comunidad Consciente",
+        "description": "Únete a una comunidad de personas que comparten tu interés por el bienestar integral y el crecimiento personal.",
+        "icon": "community"
+      },
+      {
+        "title": "Equilibrio Vital",
+        "description": "Integra cuerpo, mente y espíritu para lograr una vida más equilibrada y plena.",
+        "icon": "balance"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Explora Nuestra Práctica",
+    "images": [
+      {
+        "url": "/disciplines/yoga_meditacion.jpg",
+        "alt": "Práctica de yoga en grupo",
+        "caption": "Clases grupales para todos los niveles"
+      },
+      {
+        "url": "/disciplines/yoga_meditacion.jpg",
+        "alt": "Meditación guiada",
+        "caption": "Sesiones de meditación para encontrar la paz interior"
+      },
+      {
+        "url": "/disciplines/yoga_meditacion.jpg",
+        "alt": "Meditación guiada",
+        "caption": "Sesiones de meditación para encontrar la paz interior"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Horarios de Clase",
+    "description": "Encuentra el horario perfecto para tu práctica",
+    "days": [
+      {
+        "name": "Lunes",
+        "times": ["09:00", "17:00", "19:00"]
+      },
+      {
+        "name": "Miércoles",
+        "times": ["10:00", "16:00", "18:00"]
+      },
+      {
+        "name": "Viernes",
+        "times": ["08:00", "15:00", "20:00"]
+      },
+      {
+        "name": "Sábado",
+        "times": ["10:00", "12:00"]
+      }
+    ]
+  },
+  "instructors": [
+    {
+      "id": "maria-lopez",
+      "name": "María López",
+      "title": "Instructora Senior de Yoga",
+      "specialties": ["Hatha Yoga", "Vinyasa Flow", "Meditación"],
+      "description": "Especialista en yoga integral y mindfulness con más de 10 años de experiencia ayudando a personas a encontrar su equilibrio.",
+      "image": "/professors/profesor1.jpg",
+      "certifications": ["RYT 500", "Mindfulness Certified Teacher"],
+      "socialMedia": {
+        "instagram": "@maria.yoga",
+        "facebook": "maria.lopez.yoga"
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "question": "¿Necesito experiencia previa para comenzar yoga?",
+      "answer": "No, nuestras clases están diseñadas para todos los niveles. Los instructores guiarán tu práctica según tu experiencia."
+    },
+    {
+      "question": "¿Qué debo llevar a clase?",
+      "answer": "Te recomendamos traer ropa cómoda, una esterilla de yoga (aunque tenemos disponibles), agua y una toalla pequeña."
+    },
+    {
+      "question": "¿Con qué frecuencia debo practicar?",
+      "answer": "Recomendamos comenzar con 2-3 clases por semana para ver beneficios consistentes, pero puedes ajustar según tu disponibilidad."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "Ana García",
+      "image": "/testimonials/ana-garcia.jpg",
+      "text": "El yoga ha transformado mi vida. Las clases son increíbles y los instructores son muy profesionales.",
+      "rating": 5
+    }
+  ]
+} 
