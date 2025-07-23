@@ -20,32 +20,68 @@ export default function Home() {
         forceHide={welcomeHidden}
       />
       {welcomeHidden && (
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-[var(--color-white-pure)]">
           <AnimatedSection
             initial={{ opacity: 0 }}
             animateProps={{
               opacity: 1,
-              transition: { duration: 0.8, ease: "easeOut" },
+              transition: { duration: 1.2, ease: "easeOut" },
             }}
           >
             <Hero />
           </AnimatedSection>
-          <AnimatedSection>
+          <AnimatedSection
+            initial={{ opacity: 0 }}
+            animateProps={{
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeOut" },
+            }}
+          >
             <DisciplineCarousel />
           </AnimatedSection>
-          <AnimatedSection>
+          <AnimatedSection
+            initial={{ opacity: 0 }}
+            animateProps={{
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeOut" },
+            }}
+          >
             <About />
           </AnimatedSection>
-          <AnimatedSection>
+          <AnimatedSection
+            initial={{ opacity: 0 }}
+            animateProps={{
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeOut" },
+            }}
+          >
             <Services />
           </AnimatedSection>
-          <AnimatedSection>
+          <AnimatedSection
+            initial={{ opacity: 0 }}
+            animateProps={{
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeOut" },
+            }}
+          >
             <Testimonials />
           </AnimatedSection>
-          <AnimatedSection>
+          <AnimatedSection
+            initial={{ opacity: 0 }}
+            animateProps={{
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeOut" },
+            }}
+          >
             <Contact />
           </AnimatedSection>
-          <AnimatedSection>
+          <AnimatedSection
+            initial={{ opacity: 0 }}
+            animateProps={{
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeOut" },
+            }}
+          >
             <Footer />
           </AnimatedSection>
         </main>

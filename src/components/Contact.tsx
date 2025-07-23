@@ -190,7 +190,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Teléfono</h4>
-                      <p className="opacity-90">+52 (55) 1234-5678</p>
+                      <p className="opacity-90">722 670 9287</p>
                     </div>
                   </div>
 
@@ -212,7 +212,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="opacity-90">hola@cuanticastudio.com</p>
+                      <p className="opacity-90">ventas1@cuantica-studio.mx</p>
+                      <p className="opacity-90">administracion@cuantica-studio.mx</p>
+
                     </div>
                   </div>
                 </div>

@@ -2,11 +2,18 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { League_Spartan } from "next/font/google";
+import { Alex_Brush } from "next/font/google";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-league-spartan",
+});
+
+const alexBrush = Alex_Brush({
+  weight: "400", // solo tiene 400
+  subsets: ["latin"],
+  variable: "--font-alex-brush",
 });
 
 const geistMono = Geist_Mono({
