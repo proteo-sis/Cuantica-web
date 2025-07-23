@@ -12,6 +12,10 @@ import FAQSection from "@/components/discipline/FAQSection";
 import TestimonialsSection from "@/components/discipline/TestimonialsSection";
 import CTASection from "@/components/discipline/CTASection";
 
+// Marcar la página como renderizada en el servidor
+export const dynamic = "force-static";
+export const revalidate = 3600; // Revalidar cada hora
+
 interface Discipline {
   id: string;
   name: string;
@@ -103,7 +107,36 @@ export default async function DisciplinePage({
     <>
       <Header />
       <main className="min-h-screen bg-gradient-to-b from-[var(--color-lavender)] via-[var(--color-white-pure)] to-[var(--color-lavender-light)]">
-        <HeroSection {...discipline.heroSection} />
+        {/* Hero Section con contenido estático */}
+        <section className="relative h-[90vh] w-full">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${discipline.heroSection.mainImage})`,
+              filter: "brightness(0.7)",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute inset-0 flex items-center justify-center text-center">
+            <div className="max-w-4xl px-4">
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
+                {discipline.heroSection.title}
+              </h1>
+              <h2 className="text-2xl md:text-3xl text-white/90 mb-6 font-light">
+                {discipline.heroSection.subtitle}
+              </h2>
+              <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto mb-8">
+                {discipline.heroSection.description}
+              </p>
+              <a
+                href={discipline.heroSection.ctaLink}
+                className="inline-block px-8 py-4 bg-[var(--color-pink-vibrant)] text-white rounded-full text-lg font-semibold hover:bg-[var(--color-pink-vibrant)]/90 transition-all duration-300 transform hover:scale-105"
+              >
+                {discipline.heroSection.ctaText}
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* Beneficios */}
         <section className="py-20 px-4 bg-gradient-to-br from-[var(--color-lavender)] via-[var(--color-pink-vibrant)]/10 to-[var(--color-white-pure)]">
@@ -111,17 +144,21 @@ export default async function DisciplinePage({
         </section>
 
         {/* Galería */}
-        <section className="bg-gradient-to-br from-[var(--color-pink-vibrant)] via-[var(--color-beige-rose)] to-[var(--color-lavender)]">
+        <section className="bg-gradient-to-br from-[var(--color-white-pure)] via-[var(--color-beige-rose)] to-[var(--color-lavender)]">
           <GallerySection {...discipline.gallery} />
         </section>
 
         {/* Instructores */}
         <InstructorsSection instructors={discipline.instructors} />
 
-        {/* Testimonios */}
-        <TestimonialsSection testimonials={discipline.testimonials} />
+        {/* Horarios */}
+        <ScheduleSection {...discipline.schedule} />
+
         {/* FAQs */}
         <FAQSection faqs={discipline.faqs} />
+
+        {/* Testimonios */}
+        <TestimonialsSection testimonials={discipline.testimonials} />
 
         {/* CTA */}
         <CTASection disciplineName={discipline.name} />

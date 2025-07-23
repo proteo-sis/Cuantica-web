@@ -60,14 +60,14 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div key={testimonial.name} className="group">
               <div
-                className="rounded-2xl p-8 h-full relative border bg-white/60 backdrop-blur-md"
+                className="rounded-2xl p-8 h-full relative overflow-hidden border bg-white/60 backdrop-blur-md"
                 style={{
                   borderColor: "var(--color-lavender)",
                   boxShadow:
                     "0 8px 32px 0 rgba(179,157,219,0.18), 0 0 0 4px rgba(238,33,127,0.10)",
                 }}
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-lavender)] to-[var(--color-pink-vibrant)] rounded-t-2xl"></div>
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[var(--color-lavender)] to-[var(--color-pink-vibrant)]"></div>
 
                 <div className="mb-6">
                   <div className="flex items-center mb-4">
@@ -123,6 +123,9 @@ export default function Testimonials() {
             <p className="text-lg mb-6 opacity-90 text-white drop-shadow">
               Únete a nuestra comunidad y comienza tu viaje hacia el bienestar
               integral.
+            </p>
+            <p className="text-lg mb-6 opacity-90 font-bold text-white drop-shadow">
+              Tu primera clase es totalmente gratis.
             </p>
             <button
               className="px-8 py-4 rounded-full text-lg font-semibold shadow-lg btn-hover"
