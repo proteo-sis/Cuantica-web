@@ -12,6 +12,7 @@ import WelcomeScreen from "../components/WelcomeScreen";
 import EventsCarousel from "../components/EventsCarousel";
 import DisciplineCarouselAlternative from "@/components/DisciplineCarouselAlternative";
 import DisciplineCarouselMinimal from "@/components/DisciplineCarouselMinimal";
+import FooterAlternative from "@/components/FooterAlternative";
 
 export default function Home() {
   const [welcomeHidden, setWelcomeHidden] = useState(false);
@@ -107,6 +108,7 @@ export default function Home() {
             }}
           >
             <Footer />
+            <FooterAlternative />
           </AnimatedSection>
         </main>
       )}

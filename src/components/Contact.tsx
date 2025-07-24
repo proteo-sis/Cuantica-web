@@ -43,132 +43,138 @@ export default function Contact() {
                   );
                 }}
               >
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Nombre
-                    </label>
-                    <input
-                      type="text"
-                      name="nombre"
-                      required
-                      minLength={2}
-                      maxLength={50}
-                      pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
-                      title="Por favor ingresa un nombre válido (solo letras y espacios)"
-                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
-                      placeholder="Tu nombre"
-                    />
+                <div className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Nombre
+                      </label>
+                      <input
+                        type="text"
+                        name="nombre"
+                        required
+                        minLength={2}
+                        maxLength={50}
+                        pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+                        title="Por favor ingresa un nombre válido (solo letras y espacios)"
+                        className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
+                        placeholder="Tu nombre"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        maxLength={100}
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        title="Por favor ingresa un email válido"
+                        className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
+                        placeholder="tu@email.com"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      maxLength={100}
-                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                      title="Por favor ingresa un email válido"
-                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
-                      placeholder="tu@email.com"
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Teléfono{" "}
-                      <span className="text-gray-400 text-xs">(opcional)</span>
-                    </label>
-                    <input
-                      type="tel"
-                      name="telefono"
-                      pattern="[0-9\s-+()]{10,15}"
-                      title="Por favor ingresa un número de teléfono válido (10-15 dígitos)"
-                      maxLength={15}
-                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
-                      placeholder="Tu número de teléfono"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      ¿Sobre qué es tu duda?
-                    </label>
-                    <input
-                      type="text"
-                      name="asunto"
-                      required
-                      maxLength={100}
-                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
-                      placeholder="Ejemplo: Horarios, precios, reservas, etc."
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Disciplinas de interés
-                  </label>
-                  <div className="flex flex-wrap gap-3">
-                    {[
-                      "Yoga",
-                      "Meditación Guiada",
-                      "Sanación con Sonido",
-                      "Danza/Artes de Movimiento",
-                    ].map((disciplina) => (
-                      <label key={disciplina} className="cursor-pointer">
-                        <input
-                          type="checkbox"
-                          name="disciplinas"
-                          value={disciplina}
-                          className="peer hidden"
-                        />
-                        <span className="px-4 py-2 rounded-full border border-[var(--color-lavender)] bg-white/80 text-[var(--color-black-soft)] text-sm font-medium transition-all duration-200 peer-checked:bg-[var(--color-pink-vibrant)] peer-checked:text-white peer-checked:border-[var(--color-pink-vibrant)] shadow-sm hover:bg-[var(--color-pink-pastel)] hover:text-[var(--color-black-soft)] select-none">
-                          {disciplina}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        Teléfono{" "}
+                        <span className="text-gray-400 text-xs">
+                          (opcional)
                         </span>
                       </label>
-                    ))}
+                      <input
+                        type="tel"
+                        name="telefono"
+                        pattern="[0-9\s-+()]{10,15}"
+                        title="Por favor ingresa un número de teléfono válido (10-15 dígitos)"
+                        maxLength={15}
+                        className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
+                        placeholder="Tu número de teléfono"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">
+                        ¿Sobre qué es tu duda?
+                      </label>
+                      <input
+                        type="text"
+                        name="asunto"
+                        required
+                        maxLength={100}
+                        className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
+                        placeholder="Ejemplo: Horarios, precios, reservas, etc."
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Disciplinas de interés
+                    </label>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        "Yoga",
+                        "Meditación Guiada",
+                        "Sanación con Sonido",
+                        "Danza/Artes de Movimiento",
+                      ].map((disciplina) => (
+                        <label key={disciplina} className="cursor-pointer">
+                          <input
+                            type="checkbox"
+                            name="disciplinas"
+                            value={disciplina}
+                            className="peer hidden"
+                          />
+                          <span className="px-4 py-2 rounded-full border border-[var(--color-lavender)] bg-white/80 text-[var(--color-black-soft)] text-sm font-medium transition-all duration-200 peer-checked:bg-[var(--color-pink-vibrant)] peer-checked:text-white peer-checked:border-[var(--color-pink-vibrant)] shadow-sm hover:bg-[var(--color-pink-pastel)] hover:text-[var(--color-black-soft)] select-none">
+                            {disciplina}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Comentario
+                    </label>
+                    <textarea
+                      name="comentario"
+                      required
+                      maxLength={500}
+                      rows={4}
+                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400 resize-none"
+                      placeholder="Cuéntanos más sobre lo que buscas..."
+                    ></textarea>
+                    <span className="text-xs text-gray-500 mt-1 block">
+                      Máximo 500 caracteres
+                    </span>
                   </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Comentario
-                  </label>
-                  <textarea
-                    name="comentario"
-                    required
-                    maxLength={500}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400 resize-none"
-                    placeholder="Cuéntanos más sobre lo que buscas..."
-                  ></textarea>
-                  <span className="text-xs text-gray-500 mt-1 block">
-                    Máximo 500 caracteres
-                  </span>
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    className="w-full px-8 py-4 rounded-lg text-lg font-semibold shadow-lg btn-hover"
+                    style={{
+                      background: "var(--color-pink-vibrant)",
+                      color: "#fff",
+                      border: "none",
+                      transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.background =
+                        "var(--color-pink-pastel)";
+                      e.currentTarget.style.color = "#fff";
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.background =
+                        "var(--color-pink-vibrant)";
+                      e.currentTarget.style.color = "#fff";
+                    }}
+                  >
+                    Enviar mensaje
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 rounded-lg text-lg font-semibold shadow-lg btn-hover"
-                  style={{
-                    background: "var(--color-pink-vibrant)",
-                    color: "#fff",
-                    border: "none",
-                    transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background =
-                      "var(--color-pink-pastel)";
-                    e.currentTarget.style.color = "#fff";
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background =
-                      "var(--color-pink-vibrant)";
-                    e.currentTarget.style.color = "#fff";
-                  }}
-                >
-                  Enviar mensaje
-                </button>
               </form>
             </div>
           </div>
@@ -182,7 +188,7 @@ export default function Contact() {
                 </h3>
                 <div className="space-y-6 flex-1">
                   <div className="flex items-start">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[var(--color-lavender)] to-[var(--color-pink-vibrant)] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       <svg
                         className="w-6 h-6 text-white"
                         fill="none"
@@ -260,10 +266,19 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
-                      <p className="opacity-90">ventas1@cuantica-studio.mx</p>
-                      <p className="opacity-90">
+                      <a
+                        href="mailto:ventas1@cuantica-studio.mx"
+                        className="opacity-90 underline hover:text-pink-400 transition"
+                      >
+                        ventas1@cuantica-studio.mx
+                      </a>
+                      <br />
+                      <a
+                        href="mailto:administracion@cuantica-studio.mx"
+                        className="opacity-90 underline hover:text-pink-400 transition"
+                      >
                         administracion@cuantica-studio.mx
-                      </p>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -271,17 +286,112 @@ export default function Contact() {
               <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl flex-1 flex flex-col justify-between">
                 <h3 className="text-2xl font-semibold mb-8">Horarios</h3>
                 <div className="space-y-6 flex-1">
-                  <div className="flex justify-between items-center py-2">
-                    <span className="opacity-90">Lunes - Viernes</span>
-                    <span className="font-semibold">6:00 AM - 10:00 PM</span>
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-1 text-[var(--color-black-soft)]">
+                        Lunes - Viernes
+                      </h4>
+                      <p className="opacity-90 text-[var(--color-black-soft)]">
+                        6:00 AM - 10:00 PM
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="opacity-90">Sábados</span>
-                    <span className="font-semibold">7:00 AM - 8:00 PM</span>
+
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-1 text-[var(--color-black-soft)]">
+                        Sábados
+                      </h4>
+                      <p className="opacity-90 text-[var(--color-black-soft)]">
+                        7:00 AM - 8:00 PM
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="opacity-90">Domingos</span>
-                    <span className="font-semibold">8:00 AM - 6:00 PM</span>
+
+                  <div className="flex items-start">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-semibold mb-1 text-[var(--color-black-soft)]">
+                        Domingos
+                      </h4>
+                      <p className="opacity-90 text-[var(--color-black-soft)]">
+                        8:00 AM - 6:00 PM
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Información adicional */}
+                  <div className="mt-6 pt-6 border-t border-[var(--color-lavender)]/30">
+                    <div className="flex items-start">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                        <svg
+                          className="w-6 h-6 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold mb-1 text-[var(--color-black-soft)]">
+                          Información Importante
+                        </h4>
+                        <p className="opacity-90 text-[var(--color-black-soft)] text-sm">
+                          Horarios sujetos a cambios. Te recomendamos reservar
+                          tu clase con anticipación.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

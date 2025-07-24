@@ -3,14 +3,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Footer() {
+export default function FooterAlternative() {
   return (
-    <footer className="relative bg-gradient-to-br from-[var(--color-lavender-dark)] via-[var(--color-black-soft)] to-[var(--color-lavender-dark)] text-white py-16 overflow-hidden">
-      {/* Efectos de fondo animados */}
+    <footer className="relative bg-[var(--color-lavender-dark)] text-white py-16 overflow-hidden">
+      {/* Efectos de fondo simples */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-[var(--color-pink-vibrant)]/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--color-lavender)]/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[var(--color-pink-vibrant)]/3 rounded-full blur-2xl animate-bounce"></div>
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-[var(--color-pink-vibrant)]/3 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[var(--color-lavender)]/3 rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -53,7 +52,7 @@ export default function Footer() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-14 h-14 bg-gradient-to-r from-[#1877F2] to-[#1877F2]/80 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+              <div className="w-14 h-14 bg-[#1877F2] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
                 <svg
                   className="w-7 h-7 text-white"
                   fill="currentColor"
@@ -71,7 +70,7 @@ export default function Footer() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-14 h-14 bg-gradient-to-r from-[#000000] to-[#333333] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+              <div className="w-14 h-14 bg-[#000000] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
                 <svg
                   className="w-7 h-7 text-white"
                   fill="currentColor"
@@ -89,7 +88,7 @@ export default function Footer() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-14 h-14 bg-gradient-to-r from-[#000000] to-[#25F4EE] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+              <div className="w-14 h-14 bg-[#000000] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
                 <svg
                   className="w-7 h-7 text-white"
                   fill="currentColor"
@@ -107,7 +106,7 @@ export default function Footer() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-14 h-14 bg-gradient-to-r from-[#E4405F] via-[#F77737] to-[#FCAF45] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+              <div className="w-14 h-14 bg-[#E4405F] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
                 <svg
                   className="w-7 h-7 text-white"
                   fill="currentColor"
@@ -137,7 +136,7 @@ export default function Footer() {
             className="text-center md:text-left"
           >
             <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center md:justify-start">
-              <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
+              <div className="w-8 h-1 bg-[var(--color-pink-vibrant)] rounded-full mr-3"></div>
               Servicios
             </h4>
             <ul className="space-y-3 text-[var(--color-lavender-light)]">
@@ -207,7 +206,7 @@ export default function Footer() {
             className="text-center"
           >
             <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center">
-              <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
+              <div className="w-8 h-1 bg-[var(--color-pink-vibrant)] rounded-full mr-3"></div>
               Enlaces Rápidos
             </h4>
             <ul className="space-y-3 text-[var(--color-lavender-light)]">
@@ -277,7 +276,7 @@ export default function Footer() {
             className="text-center md:text-right"
           >
             <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center md:justify-end">
-              <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
+              <div className="w-8 h-1 bg-[var(--color-pink-vibrant)] rounded-full mr-3"></div>
               Contacto
             </h4>
             <div className="space-y-3 text-[var(--color-lavender-light)]">
@@ -344,7 +343,7 @@ export default function Footer() {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="h-px bg-gradient-to-r from-transparent via-[var(--color-pink-vibrant)] to-transparent mb-8"
+          className="h-px bg-[var(--color-pink-vibrant)] mb-8"
         />
 
         {/* Copyright */}
