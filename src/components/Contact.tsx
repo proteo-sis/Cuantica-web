@@ -26,12 +26,23 @@ export default function Contact() {
         {/* Grid principal: dos columnas para los bloques, luego el mapa abajo */}
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           {/* Columna 1: Envíanos un mensaje */}
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full lg:flex-[1.2]">
             <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl h-full flex flex-col justify-between">
               <h3 className="text-2xl font-semibold mb-6">
                 Envíanos un mensaje
               </h3>
-              <form className="space-y-6 flex-1 flex flex-col justify-between">
+              <form
+                className="space-y-8 flex-1 flex flex-col justify-between"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  // Aquí iría la lógica de envío del formulario
+                  const formData = new FormData(e.currentTarget);
+                  console.log(
+                    "Enviando formulario:",
+                    Object.fromEntries(formData)
+                  );
+                }}
+              >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium mb-2">
@@ -39,6 +50,12 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      name="nombre"
+                      required
+                      minLength={2}
+                      maxLength={50}
+                      pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+"
+                      title="Por favor ingresa un nombre válido (solo letras y espacios)"
                       className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
                       placeholder="Tu nombre"
                     />
@@ -49,8 +66,43 @@ export default function Contact() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      required
+                      maxLength={100}
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                      title="Por favor ingresa un email válido"
                       className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
                       placeholder="tu@email.com"
+                    />
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      Teléfono{" "}
+                      <span className="text-gray-400 text-xs">(opcional)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      name="telefono"
+                      pattern="[0-9\s-+()]{10,15}"
+                      title="Por favor ingresa un número de teléfono válido (10-15 dígitos)"
+                      maxLength={15}
+                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
+                      placeholder="Tu número de teléfono"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">
+                      ¿Sobre qué es tu duda?
+                    </label>
+                    <input
+                      type="text"
+                      name="asunto"
+                      required
+                      maxLength={100}
+                      className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
+                      placeholder="Ejemplo: Horarios, precios, reservas, etc."
                     />
                   </div>
                 </div>
@@ -81,23 +133,19 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    ¿Sobre qué es tu duda?
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400"
-                    placeholder="Ejemplo: Horarios, precios, reservas, etc."
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">
                     Comentario
                   </label>
                   <textarea
+                    name="comentario"
+                    required
+                    maxLength={500}
                     rows={4}
                     className="w-full px-4 py-3 bg-white/80 border border-[var(--color-lavender)] rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 text-[var(--color-black-soft)] placeholder-gray-400 resize-none"
                     placeholder="Cuéntanos más sobre lo que buscas..."
                   ></textarea>
+                  <span className="text-xs text-gray-500 mt-1 block">
+                    Máximo 500 caracteres
+                  </span>
                 </div>
                 <button
                   type="submit"
@@ -126,10 +174,10 @@ export default function Contact() {
           </div>
 
           {/* Columna 2: Información de contacto y Horarios */}
-          <div className="flex flex-col h-full gap-8">
+          <div className="flex flex-col h-full gap-8 lg:flex-1">
             <div className="flex flex-col h-full gap-8 flex-1">
               <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl flex-1 flex flex-col justify-between">
-                <h3 className="text-2xl font-semibold mb-6">
+                <h3 className="text-2xl font-semibold mb-8">
                   Información de contacto
                 </h3>
                 <div className="space-y-6 flex-1">
@@ -213,24 +261,25 @@ export default function Contact() {
                     <div>
                       <h4 className="font-semibold mb-1">Email</h4>
                       <p className="opacity-90">ventas1@cuantica-studio.mx</p>
-                      <p className="opacity-90">administracion@cuantica-studio.mx</p>
-
+                      <p className="opacity-90">
+                        administracion@cuantica-studio.mx
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-[var(--color-lavender)] shadow-2xl flex-1 flex flex-col justify-between">
-                <h3 className="text-2xl font-semibold mb-6">Horarios</h3>
-                <div className="space-y-3 flex-1">
-                  <div className="flex justify-between">
+                <h3 className="text-2xl font-semibold mb-8">Horarios</h3>
+                <div className="space-y-6 flex-1">
+                  <div className="flex justify-between items-center py-2">
                     <span className="opacity-90">Lunes - Viernes</span>
                     <span className="font-semibold">6:00 AM - 10:00 PM</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center py-2">
                     <span className="opacity-90">Sábados</span>
                     <span className="font-semibold">7:00 AM - 8:00 PM</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between items-center py-2">
                     <span className="opacity-90">Domingos</span>
                     <span className="font-semibold">8:00 AM - 6:00 PM</span>
                   </div>

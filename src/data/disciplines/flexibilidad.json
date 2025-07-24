@@ -1,0 +1,61 @@
+{
+    "id": "flexibilidad",
+    "name": "Flexibilidad",
+    "slug": "flexibilidad",
+    "heroSection": {
+      "title": "Flexibilidad",
+      "subtitle": "Ábrete al movimiento libre",
+      "description": "Mejora tu rango de movimiento y movilidad. ¡Únete a nuestras clases de flexibilidad y siente la diferencia!",
+      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "ctaText": "Empieza hoy",
+      "ctaLink": "/contacto"
+    },
+    "benefits": {
+      "title": "Beneficios de la Flexibilidad",
+      "items": [
+        {
+          "title": "Mayor Rango de Movimiento",
+          "description": "Alcanza una movilidad óptima con técnicas específicas para cada nivel.",
+          "icon": "mobility"
+        },
+        {
+          "title": "Prevención de Lesiones",
+          "description": "Fortalece músculos y articulaciones para evitar lesiones.",
+          "icon": "injury-prevention"
+        },
+        {
+          "title": "Relajación Muscular",
+          "description": "Alivia tensiones y mejora tu recuperación física.",
+          "icon": "relax"
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Descubre tu Potencial",
+      "images": [
+        {
+          "url": "/disciplines/yoga_meditacion.jpg",
+          "alt": "Clase de flexibilidad",
+          "caption": "Movimiento consciente y controlado"
+        }
+      ]
+    },
+    "schedule": {
+      "title": "Horarios de Clase",
+      "description": "Adáptate con libertad",
+      "days": [
+        {
+          "name": "Martes",
+          "times": ["09:00"]
+        },
+        {
+          "name": "Viernes",
+          "times": ["18:00"]
+        }
+      ]
+    },
+    "instructors": [],
+    "faqs": [],
+    "testimonials": []
+  }
+  

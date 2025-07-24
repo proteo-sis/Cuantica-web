@@ -1,0 +1,61 @@
+{
+    "id": "danzas-polinesias",
+    "name": "Danzas Polinesias",
+    "slug": "danzas-polinesias",
+    "heroSection": {
+      "title": "Danzas Polinesias",
+      "subtitle": "Conecta con la alegría del movimiento",
+      "description": "Vive la cultura y la alegría a través del ritmo y la danza polinesia. ¡Deja que tu cuerpo exprese felicidad!",
+      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "ctaText": "¡Descúbrelo ahora!",
+      "ctaLink": "/contacto"
+    },
+    "benefits": {
+      "title": "Beneficios de las Danzas Polinesias",
+      "items": [
+        {
+          "title": "Cultura y Tradición",
+          "description": "Sumérgete en una experiencia cultural auténtica a través del baile.",
+          "icon": "culture"
+        },
+        {
+          "title": "Alegría y Vitalidad",
+          "description": "Activa tu energía y contagia alegría con cada paso.",
+          "icon": "joy"
+        },
+        {
+          "title": "Coordinación y Ritmo",
+          "description": "Desarrolla habilidades motoras mientras disfrutas del ritmo.",
+          "icon": "rhythm"
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Vibra con el Ritmo",
+      "images": [
+        {
+          "url": "/disciplines/yoga_meditacion.jpg",
+          "alt": "Danza Polinesia en grupo",
+          "caption": "Tradición y energía en cada movimiento"
+        }
+      ]
+    },
+    "schedule": {
+      "title": "Horarios de Clase",
+      "description": "Únete al ritmo en el momento ideal",
+      "days": [
+        {
+          "name": "Miércoles",
+          "times": ["17:00"]
+        },
+        {
+          "name": "Sábado",
+          "times": ["11:00"]
+        }
+      ]
+    },
+    "instructors": [],
+    "faqs": [],
+    "testimonials": []
+  }
+  

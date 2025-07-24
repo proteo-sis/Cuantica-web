@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { League_Spartan } from "next/font/google";
 import { Alex_Brush } from "next/font/google";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -33,7 +34,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="bg-black">{children}</body>
+      <body className="bg-black">
+        {children}
+        <WhatsAppButton
+          phoneNumber="+52 722 670 9287"
+          message="¡Hola! Me gustaría obtener más información sobre sus servicios."
+        />
+      </body>
     </html>
   );
 }

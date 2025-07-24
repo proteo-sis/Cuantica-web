@@ -1,0 +1,61 @@
+{
+    "id": "heels-dance",
+    "name": "Heels Dance",
+    "slug": "heels-dance",
+    "heroSection": {
+      "title": "Heels Dance",
+      "subtitle": "Empodérate a través del movimiento",
+      "description": "Empodérate a través del movimiento y la danza moderna. ¡Pisa con confianza y únete a nuestra clase de baile con tacones!",
+      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "ctaText": "¡Baila con nosotras!",
+      "ctaLink": "/contacto"
+    },
+    "benefits": {
+      "title": "Beneficios del Heels Dance",
+      "items": [
+        {
+          "title": "Confianza y Expresión",
+          "description": "Descubre tu poder interior y tu autenticidad a través del baile.",
+          "icon": "confidence"
+        },
+        {
+          "title": "Fuerza y Postura",
+          "description": "Mejora tu postura corporal y fortalece tus músculos con coreografías desafiantes.",
+          "icon": "posture"
+        },
+        {
+          "title": "Diversión y Comunidad",
+          "description": "Conecta con otras personas que aman moverse y disfrutar juntas.",
+          "icon": "community"
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Explora el Ritmo",
+      "images": [
+        {
+          "url": "/disciplines/yoga_meditacion.jpg",
+          "alt": "Clases de Heels Dance",
+          "caption": "Empoderamiento en movimiento"
+        }
+      ]
+    },
+    "schedule": {
+      "title": "Horarios de Clase",
+      "description": "Encuentra tu espacio para brillar",
+      "days": [
+        {
+          "name": "Martes",
+          "times": ["17:00"]
+        },
+        {
+          "name": "Jueves",
+          "times": ["18:00"]
+        }
+      ]
+    },
+    "instructors": [],
+    "faqs": [],
+    "testimonials": []
+  }
+  

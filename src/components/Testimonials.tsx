@@ -128,6 +128,24 @@ export default function Testimonials() {
               Tu primera clase es totalmente gratis.
             </p>
             <button
+              onClick={() => {
+                const element = document.getElementById("contacto");
+                if (element) {
+                  const isMobile = window.innerWidth < 1024;
+                  const headerHeight = isMobile ? 80 : 100;
+                  const additionalOffset = 32;
+                  const headerOffset = headerHeight + additionalOffset;
+
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition =
+                    elementPosition + window.pageYOffset - headerOffset;
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
               className="px-8 py-4 rounded-full text-lg font-semibold shadow-lg btn-hover"
               style={{
                 background: "var(--color-pink-vibrant)",

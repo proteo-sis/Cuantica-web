@@ -9,6 +9,9 @@ import Footer from "../components/Footer";
 import DisciplineCarousel from "../components/DisciplineCarousel";
 import AnimatedSection from "../components/ClientOnly";
 import WelcomeScreen from "../components/WelcomeScreen";
+import EventsCarousel from "../components/EventsCarousel";
+import DisciplineCarouselAlternative from "@/components/DisciplineCarouselAlternative";
+import DisciplineCarouselMinimal from "@/components/DisciplineCarouselMinimal";
 
 export default function Home() {
   const [welcomeHidden, setWelcomeHidden] = useState(false);
@@ -39,6 +42,19 @@ export default function Home() {
           >
             <div id="disciplinas">
               <DisciplineCarousel />
+              <DisciplineCarouselAlternative />
+              <DisciplineCarouselMinimal />
+            </div>
+          </AnimatedSection>
+          <AnimatedSection
+            initial={{ opacity: 0 }}
+            animateProps={{
+              opacity: 1,
+              transition: { duration: 1.2, ease: "easeOut" },
+            }}
+          >
+            <div id="eventos">
+              <EventsCarousel />
             </div>
           </AnimatedSection>
           <AnimatedSection

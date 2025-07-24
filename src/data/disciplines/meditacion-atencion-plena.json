@@ -1,0 +1,61 @@
+{
+    "id": "meditacion",
+    "name": "Meditación y Atención Plena",
+    "slug": "meditacion-atencion-plena",
+    "heroSection": {
+      "title": "Meditación y Atención Plena",
+      "subtitle": "Conecta con el presente",
+      "description": "Reduce el estrés y mejora tu bienestar emocional con meditaciones guiadas. ¡Descubre la atención plena con nosotros!",
+      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "ctaText": "Comienza tu viaje interior",
+      "ctaLink": "/contacto"
+    },
+    "benefits": {
+      "title": "Beneficios de la Meditación",
+      "items": [
+        {
+          "title": "Reducción del Estrés",
+          "description": "Disminuye los niveles de ansiedad y mejora tu bienestar emocional.",
+          "icon": "stress"
+        },
+        {
+          "title": "Mejora de la Concentración",
+          "description": "Entrena tu mente para enfocarte en el presente.",
+          "icon": "focus"
+        },
+        {
+          "title": "Bienestar Integral",
+          "description": "Equilibra cuerpo, mente y emociones con prácticas guiadas.",
+          "icon": "balance"
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Espacios de Paz",
+      "images": [
+        {
+          "url": "/disciplines/yoga_meditacion.jpg",
+          "alt": "Meditación en grupo",
+          "caption": "Momentos de conexión interior"
+        }
+      ]
+    },
+    "schedule": {
+      "title": "Horarios de Meditación",
+      "description": "Encuentra tu momento de calma",
+      "days": [
+        {
+          "name": "Lunes",
+          "times": ["19:00"]
+        },
+        {
+          "name": "Miércoles",
+          "times": ["19:00"]
+        }
+      ]
+    },
+    "instructors": [],
+    "faqs": [],
+    "testimonials": []
+  }
+  

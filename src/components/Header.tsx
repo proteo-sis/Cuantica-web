@@ -49,11 +49,11 @@ export default function Header() {
 
   const menuItems = [
     ["disciplinas", "Disciplinas"],
+    ["eventos", "Eventos"],
     ["profesores", "Nosotros"],
     ["reserva", "Reserva"],
     ["contacto", "Contacto"],
     ["blog", "Blog"],
-    ["eventos", "Eventos"],
   ];
 
   return (

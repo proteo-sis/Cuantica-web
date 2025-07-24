@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "title": "Taller de Meditación Mindfulness",
+    "date": "2024-03-15",
+    "time": "18:00",
+    "instructor": "Ana García",
+    "description": "Aprende técnicas de meditación mindfulness para reducir el estrés y mejorar tu bienestar emocional.",
+    "image": "/disciplines/meditacion.jpg",
+    "category": "Meditación",
+    "spots": 15
+  },
+  {
+    "id": "2",
+    "title": "Master Class de Yoga Flow",
+    "date": "2024-03-20",
+    "time": "09:00",
+    "instructor": "Carlos Rodríguez",
+    "description": "Una clase especial de yoga dinámico que combina respiración y movimiento fluido.",
+    "image": "/disciplines/yoga_meditacion.jpg",
+    "category": "Yoga",
+    "spots": 12
+  },
+  {
+    "id": "3",
+    "title": "Workshop de Danza Polinesia",
+    "date": "2024-03-25",
+    "time": "17:30",
+    "instructor": "María Sánchez",
+    "description": "Sumérgete en la cultura polinesia a través de sus danzas tradicionales. Una experiencia única que combina ejercicio, expresión corporal y conexión espiritual.",
+    "image": "/disciplines/danza-polinesia.webp",
+    "category": "Danza",
+    "spots": 10
+  }
+] 

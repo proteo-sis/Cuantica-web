@@ -89,28 +89,43 @@ export default function Hero() {
             </p>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <a href="#contact" className="inline-block">
-              <button
-                className="flex items-center gap-3 px-8 py-4 rounded-full text-lg font-semibold shadow-xl focus:outline-none"
-                style={{
-                  background: "var(--color-lavender)",
-                  color: "#fff",
-                  border: "none",
-                  transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.background =
-                    "var(--color-lavender-dark)";
-                  e.currentTarget.style.color = "#fff";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.background = "var(--color-lavender)";
-                  e.currentTarget.style.color = "#fff";
-                }}
-              >
-                Reserva tu clase <FaArrowRight className="ml-1" />
-              </button>
-            </a>
+            <button
+              onClick={() => {
+                const element = document.getElementById("contacto");
+                if (element) {
+                  const isMobile = window.innerWidth < 1024;
+                  const headerHeight = isMobile ? 80 : 100;
+                  const additionalOffset = 32;
+                  const headerOffset = headerHeight + additionalOffset;
+
+                  const elementPosition = element.getBoundingClientRect().top;
+                  const offsetPosition =
+                    elementPosition + window.pageYOffset - headerOffset;
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+              className="flex items-center gap-3 px-8 py-4 rounded-full text-lg font-semibold shadow-xl focus:outline-none"
+              style={{
+                background: "var(--color-lavender)",
+                color: "#fff",
+                border: "none",
+                transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "var(--color-lavender-dark)";
+                e.currentTarget.style.color = "#fff";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "var(--color-lavender)";
+                e.currentTarget.style.color = "#fff";
+              }}
+            >
+              Reserva tu clase <FaArrowRight className="ml-1" />
+            </button>
           </div>
         </div>
         {/* Flecha animada centrada abajo */}
