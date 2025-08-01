@@ -33,13 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <body className="bg-black">
-        {children}
-        <WhatsAppButton
-          phoneNumber="+52 722 670 9287"
-          message="¡Hola! Me gustaría obtener más información sobre sus servicios."
+    <html lang="es" suppressHydrationWarning={true}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
         />
+      </head>
+      <body>
+        <main>{children}</main>
       </body>
     </html>
   );
