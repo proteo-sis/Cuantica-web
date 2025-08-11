@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
-// @ts-ignore
-import events from "../data/events.json";
+import rawEvents from "../data/events.json";
 
 interface Event {
   id: string;
@@ -19,19 +18,13 @@ interface Event {
   spots: number;
 }
 
+const events = rawEvents as Event[];
+
 export default function EventsCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  // No side-effects required here
 
   const slideVariants = {
     enter: (direction: number) => ({

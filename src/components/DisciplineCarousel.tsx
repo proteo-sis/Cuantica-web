@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { getDisciplineSlug } from "@/utils/disciplineUtils";
 import localDisciplinesJson from "./disciplines22.json";
 
 interface LocalDiscipline {
@@ -16,7 +14,6 @@ export default function DisciplineCarousel() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [disciplines, setDisciplines] = useState<LocalDiscipline[]>([]);
-  const router = useRouter();
 
   const getImageUrl = (url: string) => url;
 
@@ -56,10 +53,7 @@ export default function DisciplineCarousel() {
     loadLocalDisciplines();
   }, []);
 
-  const handleDisciplineClick = (discipline: LocalDiscipline) => {
-    const slug = getDisciplineSlug(discipline.name);
-    router.push(`/disciplinas/${slug}`);
-  };
+  // Redirección desactivada temporalmente
 
   if (!isLoaded) {
     return (
@@ -114,9 +108,8 @@ export default function DisciplineCarousel() {
               <div
                 key={discipline.id}
                 onMouseEnter={() => setExpandedIndex(index)}
-                onClick={() => handleDisciplineClick(discipline)}
                 className={`
-                  relative h-full cursor-pointer
+                  relative h-full
                   transition-[width] duration-700 ease-out
                   ${
                     expandedIndex !== null

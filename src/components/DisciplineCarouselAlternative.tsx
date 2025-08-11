@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { getDisciplineSlug } from "@/utils/disciplineUtils";
-// @ts-ignore
 import disciplines from "./disciplines22.json";
 
 interface Discipline {
@@ -35,7 +34,7 @@ export default function DisciplineCarouselAlternative() {
     Promise.all(imagePromises).then(() => {
       setIsLoaded(true);
     });
-  }, []);
+  }, [data]);
 
   const handleDisciplineClick = (index: number, discipline: Discipline) => {
     if (!isDragging) {

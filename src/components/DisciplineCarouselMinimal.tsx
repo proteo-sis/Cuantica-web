@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { getDisciplineSlug } from "@/utils/disciplineUtils";
-// @ts-ignore
 import disciplines from "./disciplines22.json";
 
 interface Discipline {
@@ -32,7 +31,7 @@ export default function DisciplineCarouselMinimal() {
     Promise.all(imagePromises).then(() => {
       setIsLoaded(true);
     });
-  }, []);
+  }, [data]);
 
   const handleClick = (index: number) => {
     if (activeIndex === index && isExpanded) {

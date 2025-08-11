@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
       messageId: info?.messageId,
       envelope: info?.envelope,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error enviando correo:", error);
     return NextResponse.json(
       { message: "No se pudo enviar el correo" },
@@ -157,20 +157,22 @@ export async function GET(request: NextRequest) {
       }
 
       return NextResponse.json({ ok: true, verified, sentTest: sendTest || undefined, ...baseInfo });
-    } catch (err: any) {
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
       return NextResponse.json(
         {
           ok: false,
           verified: false,
-          error: err?.message || "SMTP verify failed",
+          error: message || "SMTP verify failed",
           ...baseInfo,
         },
         { status: 500 }
       );
     }
-  } catch (error: any) {
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
     return NextResponse.json(
-      { ok: false, message: error?.message || "Debug error" },
+      { ok: false, message: message || "Debug error" },
       { status: 500 }
     );
   }

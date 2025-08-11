@@ -11,7 +11,6 @@ import AnimatedSection from "../components/ClientOnly";
 import WelcomeScreen from "../components/WelcomeScreen";
 import EventsCarousel from "../components/EventsCarousel";
 import DisciplineCarouselMinimal from "@/components/DisciplineCarouselMinimal";
-import FooterAlternative from "@/components/FooterAlternative";
 import { disciplinasApi } from "@/services/api";
 
 export default function Home() {

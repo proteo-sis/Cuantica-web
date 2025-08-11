@@ -3,7 +3,6 @@ import { promises as fs } from "fs";
 import path from "path";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/discipline/HeroSection";
 import BenefitsSection from "@/components/discipline/BenefitsSection";
 import GallerySection from "@/components/discipline/GallerySection";
 import InstructorsSection from "@/components/discipline/InstructorsSection";
@@ -87,17 +86,16 @@ async function getDisciplineData(slug: string): Promise<Discipline | null> {
     );
     const fileContents = await fs.readFile(filePath, "utf8");
     return JSON.parse(fileContents) as Discipline;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
 
-export default async function DisciplinePage({
-  params,
-}: {
-  params: { slug: string };
+export default async function DisciplinePage(props: {
+  params: Promise<{ slug: string }>;
 }) {
-  const discipline = await getDisciplineData(params.slug);
+  const { slug } = await props.params;
+  const discipline = await getDisciplineData(slug);
 
   if (!discipline) {
     notFound();
@@ -166,4 +164,12 @@ export default async function DisciplinePage({
       <Footer />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const dirPath = path.join(process.cwd(), "src/data/disciplines");
+  const files = await fs.readdir(dirPath);
+  return files
+    .filter((fileName) => fileName.endsWith(".json"))
+    .map((fileName) => ({ slug: fileName.replace(/\.json$/, "") }));
 }

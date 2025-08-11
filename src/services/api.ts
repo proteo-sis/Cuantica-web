@@ -15,9 +15,11 @@ const apiClient = axios.create({
 // Log para debug
 console.log('API URL configurada:', API_URL);
 
+type Primitive = string | number | boolean;
+
 interface QueryParams {
   populate?: string | string[];
-  filters?: Record<string, any>;
+  filters?: Record<string, Primitive | Primitive[]>;
   sort?: string | string[];
   pagination?: {
     page?: number;
@@ -40,7 +42,10 @@ class ApiService {
 
       if (params.filters) {
         Object.entries(params.filters).forEach(([key, value]) => {
-          queryParams.push(`filters[${key}]=${value}`);
+          const filterValue = Array.isArray(value)
+            ? value.map((v) => encodeURIComponent(String(v))).join(',')
+            : encodeURIComponent(String(value));
+          queryParams.push(`filters[${key}]=${filterValue}`);
         });
       }
 
@@ -77,7 +82,7 @@ class ApiService {
     }
   }
 
-  async post<T>(endpoint: string, data: any, config?: AxiosRequestConfig): Promise<T> {
+  async post<T, B = unknown>(endpoint: string, data: B, config?: AxiosRequestConfig): Promise<T> {
     try {
       const response = await apiClient.post<T>(endpoint, data, config);
       console.log(`POST ${endpoint} response:`, response.data);
@@ -88,7 +93,7 @@ class ApiService {
     }
   }
 
-  async put<T>(endpoint: string, data: any, config?: AxiosRequestConfig): Promise<T> {
+  async put<T, B = unknown>(endpoint: string, data: B, config?: AxiosRequestConfig): Promise<T> {
     try {
       const response = await apiClient.put<T>(endpoint, data, config);
       console.log(`PUT ${endpoint} response:`, response.data);
@@ -121,10 +126,10 @@ export const disciplinasApi = {
   getById: (id: number, params?: QueryParams) => 
     apiService.get(`/api/disciplinas/${id}`, params),
   
-  create: (data: any) => 
+  create: (data: unknown) => 
     apiService.post('/api/disciplinas', data),
   
-  update: (id: number, data: any) => 
+  update: (id: number, data: unknown) => 
     apiService.put(`/api/disciplinas/${id}`, data),
   
   delete: (id: number) => 
@@ -139,10 +144,10 @@ export const eventosApi = {
   getById: (id: number, params?: QueryParams) => 
     apiService.get(`/api/eventos/${id}`, params),
   
-  create: (data: any) => 
+  create: (data: unknown) => 
     apiService.post('/api/eventos', data),
   
-  update: (id: number, data: any) => 
+  update: (id: number, data: unknown) => 
     apiService.put(`/api/eventos/${id}`, data),
   
   delete: (id: number) => 
