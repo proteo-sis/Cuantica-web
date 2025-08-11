@@ -1,6 +1,11 @@
 "use client";
 
+import { useState } from "react";
+
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [result, setResult] = useState<null | { type: "ok" | "error"; message: string }>(null);
+
   return (
     <section className="py-20 bg-[var(--color-lavender-light)] text-[var(--color-black-soft)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,14 +38,52 @@ export default function Contact() {
               </h3>
               <form
                 className="space-y-8 flex-1 flex flex-col justify-between"
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  // Aquí iría la lógica de envío del formulario
-                  const formData = new FormData(e.currentTarget);
-                  console.log(
-                    "Enviando formulario:",
-                    Object.fromEntries(formData)
-                  );
+                  setResult(null);
+                  setIsSubmitting(true);
+
+                  const form = e.currentTarget as HTMLFormElement;
+                  const formData = new FormData(form);
+                  const payload = {
+                    nombre: String(formData.get("nombre") || ""),
+                    email: String(formData.get("email") || ""),
+                    telefono: String(formData.get("telefono") || ""),
+                    asunto: String(formData.get("asunto") || ""),
+                    comentario: String(formData.get("comentario") || ""),
+                    disciplinas: formData.getAll("disciplinas").map(String),
+                  };
+
+                  try {
+                    const res = await fetch("/api/contact", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify(payload),
+                    });
+
+                    if (res.ok) {
+                      setResult({ type: "ok", message: "¡Mensaje enviado! Te responderemos pronto." });
+                      form.reset();
+                    } else {
+                      const text = await res.text();
+                      console.error("/api/contact error status:", res.status, text);
+                      let message = "Ocurrió un error al enviar.";
+                      try {
+                        const data = JSON.parse(text);
+                        if (data?.message) message = data.message;
+                      } catch {
+                        // texto no JSON
+                        message = text || message;
+                      }
+                      setResult({ type: "error", message });
+                    }
+                  } catch (err) {
+                    console.error("fetch /api/contact failed:", err);
+                    const message = err instanceof Error ? err.message : "No se pudo enviar. Verifica tu conexión.";
+                    setResult({ type: "error", message });
+                  } finally {
+                    setIsSubmitting(false);
+                  }
                 }}
               >
                 <div className="space-y-6">
@@ -113,12 +156,14 @@ export default function Contact() {
                     <label className="block text-sm font-medium mb-2">
                       Disciplinas de interés
                     </label>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {[
-                        "Yoga",
-                        "Meditación Guiada",
-                        "Sanación con Sonido",
-                        "Danza/Artes de Movimiento",
+                        "Meditación",
+                        "Yoga y cuencos",
+                        "Heels Dance",
+                        "Danzas Polinesias",
+                        "Box",
+                        "Flexibilidad",
                       ].map((disciplina) => (
                         <label key={disciplina} className="cursor-pointer">
                           <input
@@ -127,7 +172,7 @@ export default function Contact() {
                             value={disciplina}
                             className="peer hidden"
                           />
-                          <span className="px-4 py-2 rounded-full border border-[var(--color-lavender)] bg-white/80 text-[var(--color-black-soft)] text-sm font-medium transition-all duration-200 peer-checked:bg-[var(--color-pink-vibrant)] peer-checked:text-white peer-checked:border-[var(--color-pink-vibrant)] shadow-sm hover:bg-[var(--color-pink-pastel)] hover:text-[var(--color-black-soft)] select-none">
+                          <span className="block w-full text-left px-4 py-2 rounded-full border border-[var(--color-lavender)] bg-white/80 text-[var(--color-black-soft)] text-sm font-medium transition-all duration-200 peer-checked:bg-[var(--color-pink-vibrant)] peer-checked:text-white peer-checked:border-[var(--color-pink-vibrant)] shadow-sm hover:bg-[var(--color-pink-pastel)] hover:text-[var(--color-black-soft)] select-none">
                             {disciplina}
                           </span>
                         </label>
@@ -151,10 +196,24 @@ export default function Contact() {
                     </span>
                   </div>
                 </div>
+                {result && (
+                  <div
+                    className={`text-sm rounded-lg px-4 py-3 ${
+                      result.type === "ok"
+                        ? "bg-green-50 text-green-700 border border-green-200"
+                        : "bg-red-50 text-red-700 border border-red-200"
+                    }`}
+                  >
+                    {result.message}
+                  </div>
+                )}
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="w-full px-8 py-4 rounded-lg text-lg font-semibold shadow-lg btn-hover"
+                    disabled={isSubmitting}
+                    className={`w-full px-8 py-4 rounded-lg text-lg font-semibold shadow-lg btn-hover transition-opacity ${
+                      isSubmitting ? "opacity-60 cursor-not-allowed" : ""
+                    }`}
                     style={{
                       background: "var(--color-pink-vibrant)",
                       color: "#fff",
@@ -162,6 +221,7 @@ export default function Contact() {
                       transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
                     }}
                     onMouseOver={(e) => {
+                      if (isSubmitting) return;
                       e.currentTarget.style.background =
                         "var(--color-pink-pastel)";
                       e.currentTarget.style.color = "#fff";
@@ -172,7 +232,7 @@ export default function Contact() {
                       e.currentTarget.style.color = "#fff";
                     }}
                   >
-                    Enviar mensaje
+                    {isSubmitting ? "Enviando..." : "Enviar mensaje"}
                   </button>
                 </div>
               </form>
@@ -244,7 +304,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Teléfono</h4>
-                      <p className="opacity-90">722 670 9287</p>
+                      <p className="opacity-90">+52 722 670 9287</p>
                     </div>
                   </div>
 
@@ -273,12 +333,6 @@ export default function Contact() {
                         ventas1@cuantica-studio.mx
                       </a>
                       <br />
-                      <a
-                        href="mailto:administracion@cuantica-studio.mx"
-                        className="opacity-90 underline hover:text-pink-400 transition"
-                      >
-                        administracion@cuantica-studio.mx
-                      </a>
                     </div>
                   </div>
                 </div>

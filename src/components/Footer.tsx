@@ -64,23 +64,7 @@ export default function Footer() {
               </div>
             </motion.a>
 
-            {/* X (Twitter) */}
-            <motion.a
-              href="#"
-              className="group relative"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="w-14 h-14 bg-gradient-to-r from-[#000000] to-[#333333] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
-                <svg
-                  className="w-7 h-7 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </div>
-            </motion.a>
+            
 
             {/* TikTok */}
             <motion.a
@@ -138,7 +122,7 @@ export default function Footer() {
           >
             <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center md:justify-start">
               <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
-              Servicios
+              Disciplinas
             </h4>
             <ul className="space-y-3 text-[var(--color-lavender-light)]">
               <li>

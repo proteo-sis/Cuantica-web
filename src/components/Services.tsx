@@ -89,7 +89,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-[var(--color-lavender-light)]">
+    <section className="py-20 bg-[var(--color-sand-dark)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
@@ -114,7 +114,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div key={service.title} className="group">
               <div
-                className="rounded-2xl p-8 shadow-2xl border h-full bg-white/60 backdrop-blur-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-pink-200 border-[var(--color-lavender)]"
+                className="rounded-2xl p-8 shadow-2xl border h-full bg-white/80 backdrop-blur-md transition-all duration-300 transform hover:-translate-y-2 hover:shadow-white border-[var(--color-lavender-light)]"
                 style={{
                   boxShadow:
                     "0 8px 32px 0 rgba(179,157,219,0.18), 0 0 0 4px rgba(238,33,127,0.10)",
@@ -124,7 +124,7 @@ export default function Services() {
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
                   style={{
                     background:
-                      "linear-gradient(135deg, var(--color-lavender) 60%, var(--color-pink-vibrant) 100%)",
+                      "linear-gradient(135deg, var(--color-pink-vibrant) 60%, var(--color-pink-vibrant) 100%)",
                     color: "#fff",
                   }}
                 >

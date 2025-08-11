@@ -10,7 +10,6 @@ import DisciplineCarousel from "../components/DisciplineCarousel";
 import AnimatedSection from "../components/ClientOnly";
 import WelcomeScreen from "../components/WelcomeScreen";
 import EventsCarousel from "../components/EventsCarousel";
-import DisciplineCarouselAlternative from "@/components/DisciplineCarouselAlternative";
 import DisciplineCarouselMinimal from "@/components/DisciplineCarouselMinimal";
 import FooterAlternative from "@/components/FooterAlternative";
 import { disciplinasApi } from "@/services/api";
@@ -59,9 +58,14 @@ export default function Home() {
             }}
           >
             <div id="disciplinas">
-              <DisciplineCarousel />
-              <DisciplineCarouselAlternative />
-              <DisciplineCarouselMinimal />
+              {/* Carrusel solo para desktop */}
+              <div className="hidden lg:block">
+                <DisciplineCarousel />
+              </div>
+              {/* Carrusel solo para móvil */}
+              <div className="block lg:hidden">
+                <DisciplineCarouselMinimal />
+              </div>
             </div>
           </AnimatedSection>
           <AnimatedSection
@@ -125,7 +129,6 @@ export default function Home() {
             }}
           >
             <Footer />
-            <FooterAlternative />
           </AnimatedSection>
         </main>
       )}

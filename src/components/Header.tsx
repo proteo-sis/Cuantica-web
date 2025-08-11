@@ -51,9 +51,8 @@ export default function Header() {
     ["disciplinas", "Disciplinas"],
     ["eventos", "Eventos"],
     ["profesores", "Nosotros"],
-    ["reserva", "Reserva"],
     ["contacto", "Contacto"],
-    ["blog", "Blog"],
+    //["blog", "Blog"],
   ];
 
   return (
@@ -63,7 +62,6 @@ export default function Header() {
       ${scrolled ? "shadow-lg" : ""}`}
     >
       <nav className="relative w-full flex items-center justify-between px-4 md:px-8 py-4 lg:py-6 max-w-7xl mx-auto">
-        {/* Logo Centrado en móvil, a la izquierda en desktop */}
         <div
           className={`
           transition-all duration-300 z-20
@@ -72,7 +70,7 @@ export default function Header() {
               ? "relative left-0 transform-none"
               : "absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"
           }
-          lg:relative lg:left-0 lg:top-auto lg:translate-x-0 lg:translate-y-0 
+          lg:relative lg:left-auto lg:right-0 lg:top-auto lg:translate-x-0 lg:translate-y-0 
         `}
         >
           <Link href="/" className="block">
@@ -85,8 +83,8 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Menú de escritorio */}
-        <div className="hidden lg:flex items-center justify-end flex-1 ml-[240px]">
+        {/* Menú de escritorio - Lado derecho */}
+        <div className="hidden lg:flex items-center justify-end flex-1">
           <ul className="flex items-center space-x-10">
             {menuItems.map(([id, label]) => (
               <li key={id}>

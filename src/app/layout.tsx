@@ -42,6 +42,10 @@ export default function RootLayout({
       </head>
       <body>
         <main>{children}</main>
+        <WhatsAppButton 
+          phoneNumber="+573001234567" 
+          message="¡Hola! Me gustaría obtener más información sobre las clases en Cuantica Studio." 
+        />
       </body>
     </html>
   );
