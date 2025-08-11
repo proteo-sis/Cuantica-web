@@ -3,72 +3,45 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { getDisciplineSlug } from "@/utils/disciplineUtils";
-import { disciplinasApi } from "@/services/api";
+import localDisciplinesJson from "./disciplines22.json";
 
-interface DisciplineImage {
-  data: {
-    attributes: {
-      url: string;
-      width: number;
-      height: number;
-      alternativeText: string | null;
-      formats: {
-        thumbnail?: { url: string };
-        small?: { url: string };
-        medium?: { url: string };
-        large?: { url: string };
-      };
-    };
-  };
-}
-
-interface DisciplineAttributes {
-  Nombre: string;
-  Descripcion: string;
-  image: DisciplineImage;
-}
-
-interface DisciplineData {
+interface LocalDiscipline {
   id: number;
-  attributes: DisciplineAttributes;
+  name: string;
+  description: string;
+  image: string;
 }
-
-interface ApiResponse {
-  data: DisciplineData[];
-}
-
-const STRAPI_URL = "http://localhost:1337"; // URL fija de Strapi
 
 export default function DisciplineCarousel() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [disciplines, setDisciplines] = useState<DisciplineData[]>([]);
+  const [disciplines, setDisciplines] = useState<LocalDiscipline[]>([]);
   const router = useRouter();
 
-  const getImageUrl = (url: string) => {
-    if (url.startsWith("http")) {
-      return url;
-    }
-    return `${STRAPI_URL}${url}`;
-  };
+  const getImageUrl = (url: string) => url;
 
   useEffect(() => {
-    const fetchDisciplines = async () => {
+    const loadLocalDisciplines = async () => {
       try {
-        const response = (await disciplinasApi.getAll({
-          populate: "image",
-        })) as ApiResponse;
-        setDisciplines(response.data);
+        const mapped: LocalDiscipline[] = (localDisciplinesJson as unknown as Array<{
+          name: string;
+          image: string;
+          description: string;
+        }>).map((d, idx) => ({
+          id: idx + 1,
+          name: d.name,
+          image: d.image,
+          description: d.description,
+        }));
+        setDisciplines(mapped);
 
         // Precargar imágenes
-        const imagePromises = response.data.map((discipline) => {
+        const imagePromises = mapped.map((discipline) => {
           return new Promise((resolve) => {
             const img = new window.Image();
-            const imageUrl = getImageUrl(
-              discipline.attributes.image.data.attributes.url
-            );
+            const imageUrl = getImageUrl(discipline.image);
             img.src = imageUrl;
-            img.onload = resolve;
+            img.onload = resolve as () => void;
           });
         });
 
@@ -76,15 +49,15 @@ export default function DisciplineCarousel() {
           setIsLoaded(true);
         });
       } catch (error) {
-        console.error("Error al cargar las disciplinas:", error);
+        console.error("Error al cargar las disciplinas locales:", error);
       }
     };
 
-    fetchDisciplines();
+    loadLocalDisciplines();
   }, []);
 
-  const handleDisciplineClick = (discipline: DisciplineData) => {
-    const slug = getDisciplineSlug(discipline.attributes.Nombre);
+  const handleDisciplineClick = (discipline: LocalDiscipline) => {
+    const slug = getDisciplineSlug(discipline.name);
     router.push(`/disciplinas/${slug}`);
   };
 
@@ -103,7 +76,7 @@ export default function DisciplineCarousel() {
           className="absolute inset-0 z-0 transition-opacity duration-700"
           style={{
             backgroundImage: `url(${getImageUrl(
-              disciplines[expandedIndex].attributes.image.data.attributes.url
+              disciplines[expandedIndex].image
             )})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -135,16 +108,7 @@ export default function DisciplineCarousel() {
 
         <div className="flex w-screen h-[60vh] items-center overflow-hidden">
           {disciplines.map((discipline, index) => {
-            const imageUrl = getImageUrl(
-              discipline.attributes.image.data.attributes.url
-            );
-            const { width, height } =
-              discipline.attributes.image.data.attributes;
-
-            // Calcular el aspect ratio para mantener las proporciones
-            const aspectRatio = width / height;
-            const calculatedHeight = 600; // altura fija
-            const calculatedWidth = calculatedHeight * aspectRatio;
+            const imageUrl = getImageUrl(discipline.image);
 
             return (
               <div
@@ -168,9 +132,8 @@ export default function DisciplineCarousel() {
                 <div className="absolute inset-0 w-full h-full">
                   <Image
                     src={imageUrl}
-                    alt={discipline.attributes.Nombre}
-                    width={calculatedWidth}
-                    height={calculatedHeight}
+                    alt={discipline.name}
+                    fill
                     className={`
                       object-cover w-full h-full transition-transform duration-700
                       ${
@@ -199,13 +162,13 @@ export default function DisciplineCarousel() {
                     `}
                     style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.9)" }}
                   >
-                    {discipline.attributes.Nombre}
+                    {discipline.name}
                   </h3>
 
                   {expandedIndex === index && (
                     <div className="animate-fade-in mt-4 w-full max-w-md mx-auto space-y-4">
                       <p className="text-white/90 leading-relaxed text-center backdrop-blur-md bg-black/40 p-4 rounded-xl border border-white/10">
-                        {discipline.attributes.Descripcion}
+                        {discipline.description}
                       </p>
                       <button
                         className="w-full inline-flex items-center justify-center px-4 py-2 rounded-lg

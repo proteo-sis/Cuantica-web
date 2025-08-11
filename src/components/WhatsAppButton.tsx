@@ -23,10 +23,10 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
 
   const salesAdvisors: SalesAdvisor[] = [
     {
-      name: "Lic. Sofía Mendoza",
-      phoneNumber: "722 445 6482",
+      name: "Cuántica Studio",
+      phoneNumber: "722 670 9287",
       message: "¡Hola! Me gustaría obtener más información sobre las clases y precios en Cuantica Studio.",
-      image: "/Sofia.jpeg" // Usando imagen existente como placeholder
+      image: "/logo.jpeg" // Usando imagen existente como placeholder
     }
   ];
 

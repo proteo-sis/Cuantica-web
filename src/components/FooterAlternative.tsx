@@ -237,15 +237,7 @@ export default function FooterAlternative() {
                   Nosotros
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
-                  Reserva
-                </a>
-              </li>
+             
               <li>
                 <a
                   href="#"

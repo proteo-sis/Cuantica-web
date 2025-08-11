@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="flex space-x-6">
             {/* Facebook */}
             <motion.a
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61575709835566"
               className="group relative"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -68,7 +68,7 @@ export default function Footer() {
 
             {/* TikTok */}
             <motion.a
-              href="#"
+              href="https://www.tiktok.com/@cuantica_studio11?_t=ZS-8yiOzyGJEJE&_r=1"
               className="group relative"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -86,7 +86,7 @@ export default function Footer() {
 
             {/* Instagram */}
             <motion.a
-              href="#"
+              href="https://www.instagram.com/cuantica_studio11?utm_source=ig_web_button_share_sheet&igsh=MXExazBnaXM3MTc5ZA=="
               className="group relative"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -130,7 +130,7 @@ export default function Footer() {
                   href="#"
                   className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
                 >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
+                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
                   Yoga
                 </a>
               </li>
@@ -139,7 +139,7 @@ export default function Footer() {
                   href="#"
                   className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
                 >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
+                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
                   Box
                 </a>
               </li>
@@ -148,7 +148,7 @@ export default function Footer() {
                   href="#"
                   className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
                 >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
+                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
                   Heels Dance
                 </a>
               </li>
@@ -157,7 +157,7 @@ export default function Footer() {
                   href="#"
                   className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
                 >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
+                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
                   Danzas Polinesias
                 </a>
               </li>
@@ -166,7 +166,7 @@ export default function Footer() {
                   href="#"
                   className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
                 >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
+                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
                   Meditación y Atención Plena
                 </a>
               </li>
@@ -175,82 +175,68 @@ export default function Footer() {
                   href="#"
                   className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
                 >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
+                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
                   Flexibilidad
                 </a>
               </li>
             </ul>
           </motion.div>
 
-          {/* Enlaces rápidos */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center">
-              <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
-              Enlaces Rápidos
-            </h4>
-            <ul className="space-y-3 text-[var(--color-lavender-light)]">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
-                  Disciplinas
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
-                  Eventos
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
-                  Nosotros
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
-                  Reserva
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
-                  Contacto
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full mr-3 group-hover:scale-150 transition-transform"></span>
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </motion.div>
+{/* Enlaces rápidos */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.5 }}
+  viewport={{ once: true }}
+  className="flex flex-col items-center text-center"
+>
+  <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center">
+    <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
+    Enlaces Rápidos
+    <div className="w-8 h-1 ml-3 opacity-0"></div>
+  </h4>
+
+  <ul className="space-y-3 text-[var(--color-lavender-light)] flex flex-col items-start">
+    <li>
+      <a
+        href="#"
+        className="hover:text-white transition-colors duration-300 flex items-center group"
+      >
+        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+        Disciplinas
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+        className="hover:text-white transition-colors duration-300 flex items-center group"
+      >
+        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+        Eventos
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+        className="hover:text-white transition-colors duration-300 flex items-center group"
+      >
+        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+        Nosotros
+      </a>
+    </li>
+    <li>
+      <a
+        href="#"
+        className="hover:text-white transition-colors duration-300 flex items-center group"
+      >
+        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+        Contacto
+      </a>
+    </li>
+  </ul>
+</motion.div>
+
+
 
           {/* Información de contacto */}
           <motion.div
@@ -265,9 +251,9 @@ export default function Footer() {
               Contacto
             </h4>
             <div className="space-y-3 text-[var(--color-lavender-light)]">
-              <div className="flex items-center justify-center md:justify-end">
+              <div className="flex items-start justify-center md:justify-end">
                 <svg
-                  className="w-5 h-5 text-[var(--color-pink-vibrant)] mr-3"
+                  className="w-5 h-5 text-[var(--color-pink-vibrant)] mr-3 shrink-0 mt-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -285,27 +271,11 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>Toluca de Lerdo, Méx.</span>
+                <span className="text-left md:text-right">Toluca de Lerdo, Estado de México, México</span>
               </div>
-              <div className="flex items-center justify-center md:justify-end">
+              <div className="flex items-start justify-center md:justify-end">
                 <svg
-                  className="w-5 h-5 text-[var(--color-pink-vibrant)] mr-3"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <span>722 670 9287</span>
-              </div>
-              <div className="flex items-center justify-center md:justify-end">
-                <svg
-                  className="w-5 h-5 text-[var(--color-pink-vibrant)] mr-3"
+                  className="w-5 h-5 text-[var(--color-pink-vibrant)] mr-3 shrink-0 mt-0.5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -317,7 +287,23 @@ export default function Footer() {
                     d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span>ventas1@cuantica-studio.mx</span>
+                <span className="text-left md:text-right">ventas1@cuantica-studio.mx</span>
+              </div>
+              <div className="flex items-start justify-center md:justify-end">
+                <svg
+                  className="w-5 h-5 text-[var(--color-pink-vibrant)] mr-3 shrink-0 mt-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+                <span className="text-left md:text-right">722 670 9287</span>
               </div>
             </div>
           </motion.div>

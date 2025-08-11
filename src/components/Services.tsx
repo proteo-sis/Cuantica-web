@@ -140,28 +140,6 @@ export default function Services() {
             </div>
           ))}
         </div>
-
-        <div className="text-center mt-16">
-          <button
-            className="px-8 py-4 rounded-full text-lg font-semibold shadow-lg btn-hover"
-            style={{
-              background: "var(--color-pink-vibrant)",
-              color: "#fff",
-              border: "none",
-              transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.background = "var(--color-pink-pastel)";
-              e.currentTarget.style.color = "#fff";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.background = "var(--color-pink-vibrant)";
-              e.currentTarget.style.color = "#fff";
-            }}
-          >
-            Ver horarios de clases
-          </button>
-        </div>
       </div>
     </section>
   );
