@@ -35,8 +35,21 @@ export default function DisciplineCarouselMinimal() {
 
   const handleClick = (index: number) => {
     if (activeIndex === index && isExpanded) {
-      const slug = getDisciplineSlug(data[index].name);
-      router.push(`/disciplinas/${slug}`);
+      // Redirigir a la página de contacto
+      const element = document.getElementById("contacto");
+      if (element) {
+        const headerHeight = 80; // Altura del header en móvil
+        const additionalOffset = 32;
+        const headerOffset = headerHeight + additionalOffset;
+
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     } else {
       setActiveIndex(index);
       setIsExpanded(activeIndex === index ? !isExpanded : true);
@@ -167,7 +180,7 @@ export default function DisciplineCarouselMinimal() {
                         }}
                         whileTap={{ scale: 0.98 }}
                       >
-                        Descubre más
+                        Contactar
                         <svg
                           className="w-4 h-4 ml-2"
                           fill="none"

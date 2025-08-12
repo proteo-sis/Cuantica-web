@@ -1,89 +1,40 @@
 "use client";
 
+import { 
+  FaWalking,
+  FaWind,
+  FaShieldAlt, 
+  FaUserFriends 
+} from "react-icons/fa";
+
 const services = [
   {
-    title: "Yoga",
+    title: "Movilidad Consciente",
     description:
-      "Prácticas de yoga que integran cuerpo, mente y espíritu para promover el equilibrio y la vitalidad.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    ),
-    gradient: "from-purple-600 to-pink-600",
+      "Ejercicios diseñados para restaurar el movimiento natural del cuerpo.",
+    icon: <FaWalking className="w-8 h-8" />,
+    gradient: "from-blue-600 to-cyan-600",
   },
   {
-    title: "Meditación Guiada",
+    title: "Respiración Guiada",
     description:
-      "Sesiones de meditación que te ayudan a encontrar paz interior y claridad mental.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-        />
-      </svg>
-    ),
+      "Técnicas respiratorias para reducir el estrés y conectar con el presente.",
+    icon: <FaWind className="w-8 h-8" />,
+    gradient: "from-green-600 to-teal-600",
+  },
+  {
+    title: "Espacio Seguro",
+    description:
+      "Un lugar libre de juicio para practicar y crecer.",
+    icon: <FaShieldAlt className="w-8 h-8" />,
+    gradient: "from-purple-600 to-indigo-600",
+  },
+  {
+    title: "Acompañamiento Personalizado",
+    description:
+      "Apoyo profesional para adaptarse a cada nivel.",
+    icon: <FaUserFriends className="w-8 h-8" />,
     gradient: "from-pink-600 to-rose-600",
-  },
-  {
-    title: "Sanación con Sonido",
-    description:
-      "Terapia de sonido que utiliza vibraciones para restaurar el equilibrio energético del cuerpo.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"
-        />
-      </svg>
-    ),
-    gradient: "from-indigo-600 to-purple-600",
-  },
-  {
-    title: "Artes de Movimiento",
-    description:
-      "Danza y movimiento expresivo para liberar emociones y conectar con tu cuerpo de manera creativa.",
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
-    gradient: "from-rose-600 to-pink-600",
   },
 ];
 

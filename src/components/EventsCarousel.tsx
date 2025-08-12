@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
@@ -40,29 +40,68 @@ export default function EventsCarousel() {
   const [direction, setDirection] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-rotación cada 5 segundos
+  // Auto-rotación cada 5 segundos solo si no se está interactuando
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || isInteracting) return;
     
     const interval = setInterval(() => {
       setDirection(1);
       setCurrentEventIndex((prevIndex) => (prevIndex + 1) % events.length);
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, isInteracting]);
+
+  // Limpiar timeout al desmontar
+  useEffect(() => {
+    return () => {
+      if (autoPlayTimeoutRef.current) {
+        clearTimeout(autoPlayTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Pausar auto-rotación cuando el usuario interactúa
   const handleManualNavigation = (newDirection: number) => {
     setIsAutoPlaying(false);
+    setIsInteracting(true);
     setDirection(newDirection);
     setCurrentEventIndex(
       (prevIndex) => (prevIndex + newDirection + events.length) % events.length
     );
     
-    // Reanudar auto-rotación después de 10 segundos de inactividad
-    setTimeout(() => setIsAutoPlaying(true), 15000);
+    // Limpiar timeout anterior si existe
+    if (autoPlayTimeoutRef.current) {
+      clearTimeout(autoPlayTimeoutRef.current);
+    }
+    
+    // Reanudar auto-rotación después de 15 segundos de inactividad
+    autoPlayTimeoutRef.current = setTimeout(() => {
+      setIsAutoPlaying(true);
+      setIsInteracting(false);
+    }, 10000);
+  };
+
+  // Pausar auto-rotación cuando se interactúa con la tarjeta
+  const handleCardInteraction = () => {
+    if (isAutoPlaying) {
+      setIsAutoPlaying(false);
+      setIsInteracting(true);
+      
+      // Limpiar timeout anterior si existe
+      if (autoPlayTimeoutRef.current) {
+        clearTimeout(autoPlayTimeoutRef.current);
+      }
+      
+      // Reanudar auto-rotación después de 20 segundos de inactividad
+      autoPlayTimeoutRef.current = setTimeout(() => {
+        setIsAutoPlaying(true);
+        setIsInteracting(false);
+      }, 10000);
+    }
   };
 
   const paginate = (newDirection: number) => {
@@ -123,7 +162,7 @@ export default function EventsCarousel() {
             <span className="relative inline-block text-[var(--color-black-soft)] pb-2 md:pb-0">
               Próximos
               <motion.div
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 transform w-[85%] md:left-0 md:translate-x-0 md:w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-pink-vibrant)] to-transparent z-10"
+                className="absolute bottom-0.2 left-1/2 -translate-x-1/2 transform w-[85%] md:left-0 md:translate-x-0 md:w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-pink-vibrant)] to-transparent z-10"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -176,6 +215,7 @@ export default function EventsCarousel() {
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={1}
+              onDragStart={() => handleCardInteraction()}
               onDragEnd={(e, { offset, velocity }) => {
                 const swipe = swipePower(offset.x, velocity.x);
 
@@ -188,7 +228,11 @@ export default function EventsCarousel() {
               className="w-full relative"
             >
               {/* Tarjeta principal con altura automática */}
-              <div className="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/20 relative group">
+              <div 
+                className="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-white/20 relative group"
+                onMouseEnter={handleCardInteraction}
+                onTouchStart={handleCardInteraction}
+              >
                 {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -350,7 +394,10 @@ export default function EventsCarousel() {
                       {/* Botón para expandir/contraer información - solo para eventos reales */}
                       {!currentEvent.isComingSoon && (
                         <motion.button
-                          onClick={() => setIsExpanded(!isExpanded)}
+                          onClick={() => {
+                            setIsExpanded(!isExpanded);
+                            handleCardInteraction();
+                          }}
                           className="w-full mb-6 md:mb-8 p-3 bg-gradient-to-r from-[var(--color-lavender)]/10 to-[var(--color-pink-vibrant)]/10 border border-[var(--color-lavender)]/30 rounded-xl hover:from-[var(--color-lavender)]/20 hover:to-[var(--color-pink-vibrant)]/20 transition-all duration-300 group"
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -569,6 +616,7 @@ export default function EventsCarousel() {
                           </div>
                           <motion.button
                             onClick={() => {
+                              handleCardInteraction();
                               const element = document.getElementById("contacto");
                               if (element) {
                                 const isMobile = window.innerWidth < 1024;
@@ -602,79 +650,80 @@ export default function EventsCarousel() {
           </AnimatePresence>
 
           {/* Controles de navegación mejorados y responsivos */}
-          <div className="absolute -bottom-16 md:bottom-2 left-1/2 transform -translate-x-1/2 flex items-center gap-4 md:gap-6">
-            {/* Flechas - visibles en desktop, ocultas en móvil */}
-            <motion.button
-              onClick={() => paginate(-1)}
-              className="hidden md:flex w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-sm items-center justify-center text-[var(--color-pink-vibrant)] hover:bg-[var(--color-pink-vibrant)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <svg
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </motion.button>
-
-            {/* Indicadores de puntos - siempre visibles */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 mt-8 md:mt-12 pb-2">
+            {/* Indicadores de puntos - centrados en móvil, a la izquierda en desktop */}
             <div className="flex items-center gap-2 md:gap-3">
               {events.map((_, index) => (
                 <motion.button
                   key={index}
                   onClick={() => {
                     setIsAutoPlaying(false);
+                    setIsInteracting(true);
                     setDirection(index > currentEventIndex ? 1 : -1);
                     setCurrentEventIndex(index);
                     
-                    // Reanudar auto-rotación después de 10 segundos de inactividad
-                    setTimeout(() => setIsAutoPlaying(true), 10000);
+                    // Limpiar timeout anterior si existe
+                    if (autoPlayTimeoutRef.current) {
+                      clearTimeout(autoPlayTimeoutRef.current);
+                    }
+                    
+                    // Reanudar auto-rotación después de 15 segundos de inactividad
+                    autoPlayTimeoutRef.current = setTimeout(() => {
+                      setIsAutoPlaying(true);
+                      setIsInteracting(false);
+                    }, 10000);
                   }}
-                  className={`rounded-full transition-all duration-300 cursor-pointer ${
-                    index === currentEventIndex
-                      ? "w-8 h-2 md:w-10 md:h-3 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)]"
-                      : "w-2 h-2 md:w-3 md:h-3 bg-[var(--color-pink-vibrant)]/30 hover:bg-[var(--color-pink-vibrant)]/60"
-                  }`}
+
                   whileHover={{ scale: 1.2 }}
                 />
               ))}
             </div>
-            
-            {/* Indicador de auto-rotación solo en móvil */}
-            <div className="md:hidden flex items-center gap-2 ml-2">
-              <div className="w-2 h-2 bg-[var(--color-pink-vibrant)]/40 rounded-full animate-pulse"></div>
-              <span className="text-xs text-[var(--color-pink-vibrant)]/60 font-medium">Auto</span>
-            </div>
 
-            {/* Flechas - visibles en desktop, ocultas en móvil */}
-            <motion.button
-              onClick={() => paginate(1)}
-              className="hidden md:flex w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-sm items-center justify-center text-[var(--color-pink-vibrant)] hover:bg-[var(--color-pink-vibrant)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <svg
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+
+
+            <div className="flex items-center gap-3 md:gap-4">
+              <motion.button
+                onClick={() => paginate(-1)}
+                className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-sm items-center justify-center text-[var(--color-pink-vibrant)] hover:bg-[var(--color-pink-vibrant)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl flex"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </motion.button>
+                <svg
+                  className="w-6 h-6 md:w-7 md:h-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </motion.button>
+
+              <motion.button
+                onClick={() => paginate(1)}
+                className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 backdrop-blur-sm items-center justify-center text-[var(--color-pink-vibrant)] hover:bg-[var(--color-pink-vibrant)] hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl flex"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <svg
+                  className="w-6 h-16 md:w-7 md:h-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </motion.button>
+            </div>
           </div>
         </div>
       </div>

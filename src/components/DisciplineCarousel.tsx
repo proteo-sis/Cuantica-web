@@ -164,6 +164,23 @@ export default function DisciplineCarousel() {
                         {discipline.description}
                       </p>
                       <button
+                        onClick={() => {
+                          // Redirigir a la página de contacto
+                          const element = document.getElementById("contacto");
+                          if (element) {
+                            const headerHeight = 100; // Altura del header en desktop
+                            const additionalOffset = 32;
+                            const headerOffset = headerHeight + additionalOffset;
+
+                            const elementPosition = element.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: "smooth",
+                            });
+                          }
+                        }}
                         className="w-full inline-flex items-center justify-center px-4 py-2 rounded-lg
                                  text-white font-medium text-sm
                                  bg-white/10 backdrop-blur-sm
@@ -171,7 +188,7 @@ export default function DisciplineCarousel() {
                                  transition-all duration-300
                                  hover:bg-white/20 hover:scale-[1.02] active:scale-[0.98]"
                       >
-                        Descubre más
+                        Contactar
                         <svg
                           className="w-4 h-4 ml-2"
                           fill="none"
