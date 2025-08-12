@@ -43,9 +43,9 @@ export default function EventsCarousel() {
   const [isInteracting, setIsInteracting] = useState(false);
   const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-rotación cada 5 segundos solo si no se está interactuando
+  // Auto-rotación cada 7 segundos solo si no se está interactuando y no está expandida
   useEffect(() => {
-    if (!isAutoPlaying || isInteracting) return;
+    if (!isAutoPlaying || isInteracting || isExpanded) return;
     
     const interval = setInterval(() => {
       setDirection(1);
@@ -53,7 +53,7 @@ export default function EventsCarousel() {
     }, 7000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, isInteracting]);
+  }, [isAutoPlaying, isInteracting, isExpanded]);
 
   // Limpiar timeout al desmontar
   useEffect(() => {
@@ -671,7 +671,7 @@ export default function EventsCarousel() {
                     autoPlayTimeoutRef.current = setTimeout(() => {
                       setIsAutoPlaying(true);
                       setIsInteracting(false);
-                    }, 10000);
+                    }, 20000);
                   }}
 
                   whileHover={{ scale: 1.2 }}
