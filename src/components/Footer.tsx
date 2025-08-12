@@ -64,8 +64,6 @@ export default function Footer() {
               </div>
             </motion.a>
 
-            
-
             {/* TikTok */}
             <motion.a
               href="https://www.tiktok.com/@cuantica_studio11?_t=ZS-8yiOzyGJEJE&_r=1"
@@ -112,131 +110,131 @@ export default function Footer() {
           viewport={{ once: true, amount: 0.3 }}
           className="grid md:grid-cols-3 gap-12 mb-12"
         >
-          {/* Servicios */}
+          {/* Disciplinas */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="text-center md:text-left"
+            className="flex flex-col items-center text-center md:text-left"
           >
-            <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center md:justify-start">
+            <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center">
               <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
               Disciplinas
+              <div className="w-8 h-1 ml-3 opacity-0"></div>
             </h4>
-            <ul className="space-y-3 text-[var(--color-lavender-light)]">
+
+            <ul className="space-y-4 text-[var(--color-lavender-light)] flex flex-col items-start mx-auto w-fit">
               <li>
                 <a
                   href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Yoga
+                  <span className="text-center">Yoga</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Box
+                  <span className="text-center">Box</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Heels Dance
+                  <span className="text-center">Heels Dance</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Danzas Polinesias
+                  <span className="text-center">Danzas<br/>Polinesias</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Meditación y Atención Plena
+                  <span className="text-center">Meditación y<br/>Atención Plena</span>
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center justify-center md:justify-start group"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Flexibilidad
+                  <span className="text-center">Flexibilidad</span>
                 </a>
               </li>
             </ul>
           </motion.div>
 
-{/* Enlaces rápidos */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.5 }}
-  viewport={{ once: true }}
-  className="flex flex-col items-center text-center"
->
-  <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center">
-    <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
-    Enlaces Rápidos
-    <div className="w-8 h-1 ml-3 opacity-0"></div>
-  </h4>
+          {/* Enlaces rápidos */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center text-center"
+          >
+            <h4 className="text-xl font-bold mb-6 text-white flex items-center justify-center">
+              <div className="w-8 h-1 bg-gradient-to-r from-[var(--color-pink-vibrant)] to-[var(--color-lavender)] rounded-full mr-3"></div>
+              Enlaces Rápidos
+              <div className="w-8 h-1 ml-3 opacity-0"></div>
+            </h4>
 
-  <ul className="space-y-3 text-[var(--color-lavender-light)] flex flex-col items-start">
-    <li>
-      <a
-        href="#"
-        className="hover:text-white transition-colors duration-300 flex items-center group"
-      >
-        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-        Disciplinas
-      </a>
-    </li>
-    <li>
-      <a
-        href="#"
-        className="hover:text-white transition-colors duration-300 flex items-center group"
-      >
-        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-        Eventos
-      </a>
-    </li>
-    <li>
-      <a
-        href="#"
-        className="hover:text-white transition-colors duration-300 flex items-center group"
-      >
-        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-        Nosotros
-      </a>
-    </li>
-    <li>
-      <a
-        href="#"
-        className="hover:text-white transition-colors duration-300 flex items-center group"
-      >
-        <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-        Contacto
-      </a>
-    </li>
-  </ul>
-</motion.div>
-
-
+            <ul className="space-y-3 text-[var(--color-lavender-light)] flex flex-col items-start">
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
+                >
+                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+                  Disciplinas
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
+                >
+                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+                  Eventos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
+                >
+                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+                  Nosotros
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="hover:text-white transition-colors duration-300 flex items-center group"
+                >
+                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </motion.div>
 
           {/* Información de contacto */}
           <motion.div

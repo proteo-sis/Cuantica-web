@@ -1,35 +1,86 @@
 [
   {
     "id": "1",
-    "title": "Taller de Meditación Mindfulness",
-    "date": "2024-03-15",
-    "time": "18:00",
-    "instructor": "Ana García",
-    "description": "Aprende técnicas de meditación mindfulness para reducir el estrés y mejorar tu bienestar emocional.",
-    "image": "/disciplines/meditacion.jpg",
-    "category": "Meditación",
-    "spots": 15
+    "title": "Hiking yoga cacao Acroyoga",
+    "date": "2025-08-24",
+    "time": "6:30 AM - 4:00 PM",
+    "instructor": "Equipo Cuántica Studio",
+    "description": "Disfruta de una ruta de 5km en la naturaleza, seguida de un delicioso cacao. Relájate con una clase de yoga y diviértete con el acroyoga. Todo esto mientras un dron captura fotografías espectaculares para que tengas recuerdos inolvidables.",
+    "image": "/acroyogas.jpeg",
+    "category": "Experiencia Única",
+    "spots": 20,
+    "price": 1111,
+    "currency": "MXN",
+    "departureLocation": "Cuántica Studio, Toluca",
+    "destination": "Presa Iturbide, Tlazala de Fabela, Estado de México",
+    "duration": "9.5 horas",
+    "departureTime": "6:30 AM",
+    "returnTime": "4:00 PM",
+    "included": [
+      "Transporte incluido desde Toluca \"Cuántica Studio\"",
+      "Snacks",
+      "Constancia de participación",
+      "Fotos con dron desde las alturas"
+    ],
+    "highlights": [
+      "Ruta de 5km en la naturaleza",
+      "Ceremonia de cacao",
+      "Clase de yoga al aire libre",
+      "Sesión de acroyoga",
+      "Fotografía con dron profesional"
+    ],
+    "difficulty": "Intermedio",
+    "minAge": 16,
+    "maxAge": 65,
+    "groupSize": "Máximo 20 personas",
+    "whatToBring": [
+      "Ropa cómoda para ejercicio",
+      "Zapatos deportivos",
+      "Protector solar",
+      "Gorra o sombrero",
+      "Botella de agua reutilizable"
+    ]
   },
   {
     "id": "2",
-    "title": "Master Class de Yoga Flow",
-    "date": "2024-03-20",
-    "time": "09:00",
-    "instructor": "Carlos Rodríguez",
-    "description": "Una clase especial de yoga dinámico que combina respiración y movimiento fluido.",
-    "image": "/disciplines/yoga_meditacion.jpg",
-    "category": "Yoga",
-    "spots": 12
-  },
-  {
-    "id": "3",
-    "title": "Workshop de Danza Polinesia",
-    "date": "2024-03-25",
-    "time": "17:30",
-    "instructor": "María Sánchez",
-    "description": "Sumérgete en la cultura polinesia a través de sus danzas tradicionales. Una experiencia única que combina ejercicio, expresión corporal y conexión espiritual.",
-    "image": "/disciplines/danza-polinesia.webp",
-    "category": "Danza",
-    "spots": 10
+    "title": "Más Eventos Próximamente",
+    "date": "2025-01-01",
+    "time": "TBA",
+    "instructor": "Cuántica Studio",
+    "description": "Estamos preparando experiencias únicas y transformadoras para ti. Pronto anunciaremos nuevos eventos que incluirán retiros de bienestar, talleres especializados, aventuras en la naturaleza y mucho más.",
+    "image": "/proximamente.png",
+    "category": "Próximamente",
+    "spots": 0,
+    "price": 0,
+    "currency": "MXN",
+    "departureLocation": "Por anunciar",
+    "destination": "Por anunciar",
+    "duration": "Por definir",
+    "departureTime": "TBA",
+    "returnTime": "TBA",
+    "included": [
+      "Experiencias únicas",
+      "Talleres especializados",
+      "Retiros de bienestar",
+      "Aventuras en la naturaleza"
+    ],
+    "highlights": [
+      "Nuevas disciplinas",
+      "Eventos especiales",
+      "Colaboraciones únicas",
+      "Experiencias personalizadas",
+      "Sorpresas emocionantes"
+    ],
+    "difficulty": "Todos los niveles",
+    "minAge": 0,
+    "maxAge": 100,
+    "groupSize": "Por definir",
+    "whatToBring": [
+      "Mantente atento a nuestras redes",
+      "Suscríbete a nuestro newsletter",
+      "Sigue nuestras actualizaciones",
+      "Prepara tu espíritu aventurero"
+    ],
+    "isComingSoon": true
   }
 ] 

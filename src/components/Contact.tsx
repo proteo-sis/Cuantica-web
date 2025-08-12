@@ -387,7 +387,7 @@ export default function Contact() {
                         Sábados
                       </h4>
                       <p className="opacity-90 text-[var(--color-black-soft)]">
-                        7:00 AM - 8:00 PM
+                      7:00 AM - 11:00 AM
                       </p>
                     </div>
                   </div>
@@ -413,7 +413,7 @@ export default function Contact() {
                         Domingos
                       </h4>
                       <p className="opacity-90 text-[var(--color-black-soft)]">
-                        8:00 AM - 6:00 PM
+                        7:00 AM - 11:00 AM
                       </p>
                     </div>
                   </div>
