@@ -139,7 +139,8 @@ export default function EventsCarousel() {
   };
 
   const currentEvent = events[currentEventIndex];
-  const eventDate = new Date(currentEvent.date);
+  // Crear la fecha correctamente para evitar problemas de zona horaria
+  const eventDate = new Date(currentEvent.date + 'T00:00:00');
 
   return (
     <section className="w-full bg-gradient-to-br from-[var(--color-lavender-light)] via-[var(--color-white-pure)] to-[var(--color-lavender-light)] py-12 md:py-20 overflow-hidden relative">
