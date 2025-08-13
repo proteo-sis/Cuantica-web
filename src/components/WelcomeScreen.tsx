@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import ClientOnly from "./ClientOnly";
 
 // Función para verificar si ya se mostró la pantalla de bienvenida
 const hasBeenShown = () => {
@@ -12,7 +13,7 @@ interface WelcomeScreenProps {
   forceHide?: boolean;
 }
 
-export default function WelcomeScreen({
+function WelcomeScreenContent({
   onHide,
   forceHide,
 }: WelcomeScreenProps) {
@@ -270,5 +271,14 @@ export default function WelcomeScreen({
         }
       `}</style>
     </div>
+  );
+}
+
+// Componente principal que envuelve con ClientOnly
+export default function WelcomeScreen(props: WelcomeScreenProps) {
+  return (
+    <ClientOnly fallback={null}>
+      <WelcomeScreenContent {...props} />
+    </ClientOnly>
   );
 }

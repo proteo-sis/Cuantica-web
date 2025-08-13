@@ -1,50 +1,21 @@
 "use client";
-import { motion, useAnimation, TargetAndTransition } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
-interface AnimatedSectionProps {
+interface ClientOnlyProps {
   children: React.ReactNode;
-  className?: string;
-  initial?: TargetAndTransition;
-  animateProps?: TargetAndTransition;
+  fallback?: React.ReactNode;
 }
 
-export default function AnimatedSection({
-  children,
-  className = "",
-  initial = { opacity: 0, y: 60 },
-  animateProps = {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-}: AnimatedSectionProps) {
-  const controls = useAnimation();
-  const ref = useRef<HTMLDivElement>(null);
+export default function ClientOnly({ children, fallback = null }: ClientOnlyProps) {
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          controls.start(animateProps);
-        }
-      },
-      { threshold: 0.15 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, [controls, animateProps]);
+    setHasMounted(true);
+  }, []);
 
-  return (
-    <motion.div
-      ref={ref}
-      initial={initial}
-      animate={controls}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+  if (!hasMounted) {
+    return <>{fallback}</>;
+  }
+
+  return <>{children}</>;
 }
