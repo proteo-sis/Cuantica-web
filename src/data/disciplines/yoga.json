@@ -6,7 +6,7 @@
     "title": "Yoga",
     "subtitle": "Encuentra tu equilibrio interior",
     "description": "Encuentra tu equilibrio y paz interior con nuestras clases de yoga. ¡Únete para relajarte y reconectar contigo mismo!",
-    "mainImage": "/disciplines/yoga_meditacion.jpg",
+    "mainImage": "/disciplines/yoga_meditacion.webp",
     "ctaText": "¡Comienza tu viaje hoy!",
     "ctaLink": "/contacto"
   },
@@ -49,17 +49,17 @@
     "title": "Explora Nuestra Práctica",
     "images": [
       {
-        "url": "/disciplines/yoga_meditacion.jpg",
+        "url": "/disciplines/yoga_meditacion.webp",
         "alt": "Práctica de yoga en grupo",
         "caption": "Clases grupales para todos los niveles"
       },
       {
-        "url": "/disciplines/yoga_meditacion.jpg",
+        "url": "/disciplines/yoga_meditacion.webp",
         "alt": "Meditación guiada",
         "caption": "Sesiones de meditación para encontrar la paz interior"
       },
       {
-        "url": "/disciplines/yoga_meditacion.jpg",
+        "url": "/disciplines/yoga_meditacion.webp",
         "alt": "Meditación guiada",
         "caption": "Sesiones de meditación para encontrar la paz interior"
       }

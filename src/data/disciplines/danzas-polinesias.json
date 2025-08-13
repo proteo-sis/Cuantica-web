@@ -6,7 +6,7 @@
       "title": "Danzas Polinesias",
       "subtitle": "Conecta con la alegría del movimiento",
       "description": "Vive la cultura y la alegría a través del ritmo y la danza polinesia. ¡Deja que tu cuerpo exprese felicidad!",
-      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "mainImage": "/disciplines/danza-polinesia.webp",
       "ctaText": "¡Descúbrelo ahora!",
       "ctaLink": "/contacto"
     },
@@ -34,7 +34,7 @@
       "title": "Vibra con el Ritmo",
       "images": [
         {
-          "url": "/disciplines/yoga_meditacion.jpg",
+          "url": "/disciplines/danza-polinesia.webp",
           "alt": "Danza Polinesia en grupo",
           "caption": "Tradición y energía en cada movimiento"
         }

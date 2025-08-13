@@ -6,7 +6,7 @@
       "title": "Heels Dance",
       "subtitle": "Empodérate a través del movimiento",
       "description": "Empodérate a través del movimiento y la danza moderna. ¡Pisa con confianza y únete a nuestra clase de baile con tacones!",
-      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "mainImage": "/disciplines/Heels-Dance.webp",
       "ctaText": "¡Baila con nosotras!",
       "ctaLink": "/contacto"
     },
@@ -34,7 +34,7 @@
       "title": "Explora el Ritmo",
       "images": [
         {
-          "url": "/disciplines/yoga_meditacion.jpg",
+          "url": "/disciplines/Heels-Dance.webp",
           "alt": "Clases de Heels Dance",
           "caption": "Empoderamiento en movimiento"
         }

@@ -6,7 +6,7 @@
       "title": "Meditación y Atención Plena",
       "subtitle": "Conecta con el presente",
       "description": "Reduce el estrés y mejora tu bienestar emocional con meditaciones guiadas. ¡Descubre la atención plena con nosotros!",
-      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "mainImage": "/disciplines/meditacion.webp",
       "ctaText": "Comienza tu viaje interior",
       "ctaLink": "/contacto"
     },
@@ -34,7 +34,7 @@
       "title": "Espacios de Paz",
       "images": [
         {
-          "url": "/disciplines/yoga_meditacion.jpg",
+          "url": "/disciplines/meditacion.webp",
           "alt": "Meditación en grupo",
           "caption": "Momentos de conexión interior"
         }

@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",
+    "cssnano": "^7.1.0",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.23.9",
     "next": "15.4.1",

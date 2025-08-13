@@ -1,7 +1,7 @@
 [
     {
       "name": "Yoga",
-      "image": "/disciplines/yoga_meditacion.jpg",
+      "image": "/disciplines/yoga_meditacion.webp",
       "description": "Encuentra tu equilibrio y paz interior con nuestras clases de yoga. ¡Únete para relajarte y reconectar contigo mismo!"
     },
     {
@@ -11,7 +11,7 @@
     },
     {
       "name": "Heels Dance",
-      "image": "/disciplines/Heels-Dance.jpeg",
+      "image": "/disciplines/Heels-Dance.webp",
       "description": "Empodérate a través del movimiento y la danza moderna. ¡Pisa con confianza y únete a nuestra clase de baile con tacones!"
     },
     {
@@ -21,12 +21,12 @@
     },
     {
       "name": "Meditación y Atención Plena",
-      "image": "/disciplines/meditacion.jpg",
+      "image": "/disciplines/meditacion.webp",
       "description": "Reduce el estrés y mejora tu bienestar emocional con meditaciones guiadas. ¡Descubre la atención plena con nosotros!"
     },
     {
       "name": "Flexibilidad",
-      "image": "/disciplines/flex.jpg",
+      "image": "/disciplines/flex.webp",
       "description": "Mejora tu rango de movimiento y movilidad. ¡Únete a nuestras clases de flexibilidad y siente la diferencia!"
     }
   ]

@@ -49,12 +49,12 @@
     "title": "Explora Nuestro Entrenamiento",
     "images": [
       {
-        "url": "/gallery/box/training1.jpg",
+        "url": "/disciplines/box.webp",
         "alt": "Entrenamiento de box",
         "caption": "Sesiones de entrenamiento para todos los niveles"
       },
       {
-        "url": "/gallery/box/training2.jpg",
+        "url": "/disciplines/box.webp",
         "alt": "Técnicas de box",
         "caption": "Aprende técnicas profesionales con instructores certificados"
       }

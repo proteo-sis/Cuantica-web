@@ -6,7 +6,7 @@
       "title": "Flexibilidad",
       "subtitle": "Ábrete al movimiento libre",
       "description": "Mejora tu rango de movimiento y movilidad. ¡Únete a nuestras clases de flexibilidad y siente la diferencia!",
-      "mainImage": "/disciplines/yoga_meditacion.jpg",
+      "mainImage": "/disciplines/flexibilidad.webp",
       "ctaText": "Empieza hoy",
       "ctaLink": "/contacto"
     },
@@ -34,7 +34,7 @@
       "title": "Descubre tu Potencial",
       "images": [
         {
-          "url": "/disciplines/yoga_meditacion.jpg",
+          "url": "/disciplines/flexibilidad.webp",
           "alt": "Clase de flexibilidad",
           "caption": "Movimiento consciente y controlado"
         }
