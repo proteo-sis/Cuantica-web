@@ -60,7 +60,7 @@ export default function WelcomeScreen({
   // Agregamos una clase para ocultar inicialmente y luego mostrar suavemente
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[var(--color-white-pure)] transition-transform duration-700 ease-in-out opacity-0
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[var(--color-white-pure)] transition-transform duration-700 ease-in-out opacity-0 px-4
         ${show ? "opacity-100" : ""}
         ${
           hide
@@ -72,24 +72,25 @@ export default function WelcomeScreen({
       style={{ cursor: "pointer" }}
     >
       {/* Contenedor principal con logo y texto */}
-      <div className="flex flex-col items-center">
-        {/* Logo y título alineados */}
-        <div className="flex flex-row items-center gap-0 mb-8">
-          {/* Logo placeholder */}
+      <div className="flex flex-col items-center w-full max-w-4xl">
+        {/* Layout responsive: horizontal en desktop, vertical en móvil */}
+        <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-0 mb-6 lg:mb-8 w-full">
+          {/* Logo responsive */}
           <div
-            className="w-64 h-64 flex items-center justify-center animate-fade-in -ml-32"
+            className="w-32 h-32 lg:w-64 lg:h-64 flex items-center justify-center animate-fade-in lg:-ml-32 order-1 lg:order-1"
             style={{ animationDelay: "0.1s", animationFillMode: "both" }}
           >
             <img
               src="/isologo_cuantica.svg"
               alt="Cuántica Studio"
-              className="w-56 h-56 object-contain"
+              className="w-28 h-28 lg:w-56 lg:h-56 object-contain"
             />
           </div>
-          {/* Títulos */}
-          <div className="flex flex-col justify-center items-start -ml-8">
+          
+          {/* Títulos responsive */}
+          <div className="flex flex-col justify-center items-center lg:items-start lg:-ml-8 order-2 lg:order-2 text-center lg:text-left">
             <span
-              className="text-5xl sm:text-8xl font-spartan tracking-wide text-[var(--color-black-soft)] drop-shadow-[0_2px_2px_rgba(30,30,30,0.10)] animate-slide-up"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-spartan tracking-wide text-[var(--color-black-soft)] drop-shadow-[0_2px_2px_rgba(30,30,30,0.10)] animate-slide-up"
               style={{
                 fontFamily: "'Times', sans-serif",
                 textShadow: "0 2px 6px #ededed",
@@ -100,7 +101,7 @@ export default function WelcomeScreen({
               CUÁNTICA
             </span>
             <span
-              className="text-3xl sm:text-5xl font-spartan text-[var(--color-black-soft)] -mt-2 ml-86 drop-shadow-[0_2px_2px_rgba(30,30,30,0.10)] animate-slide-up"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-spartan text-[var(--color-black-soft)] -mt-1 lg:-mt-2 lg:ml-86 drop-shadow-[0_2px_2px_rgba(30,30,30,0.10)] animate-slide-up"
               style={{
                 fontFamily: "'Cormorant', serif",
                 fontWeight: 500,
@@ -115,12 +116,12 @@ export default function WelcomeScreen({
           </div>
         </div>
 
-        {/* Frase animada letra por letra separada y centrada */}
-        <div className="flex justify-center">
+        {/* Frase animada responsive */}
+        <div className="flex flex-wrap justify-center px-2">
           {"Hoy vas a dar un salto cuántico".split("").map((char, i) => (
             <span
               key={i}
-              className="text-2xl md:text-5xl text-center font-alex-brush animate-bounce-letter"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-5xl text-center font-alex-brush animate-bounce-letter"
               style={{
                 color: "#1d1d1b",
                 textShadow: "0 2px 6px #ededed",
@@ -136,11 +137,11 @@ export default function WelcomeScreen({
           ))}
         </div>
 
-        {/* Indicador de interacción UX/UI */}
-        <div className="mt-16 flex flex-col items-center animate-pulse">
-          <span className="text-lg text-[var(--color-black-soft)]/70 font-medium mb-4 flex items-center gap-2">
+        {/* Indicador de interacción UX/UI responsive */}
+        <div className="mt-8 lg:mt-16 flex flex-col items-center animate-pulse">
+          <span className="text-sm sm:text-base lg:text-lg text-[var(--color-black-soft)]/70 font-medium mb-3 lg:mb-4 flex items-center gap-2 text-center">
             <svg
-              className="w-6 h-6 animate-bounce"
+              className="w-4 h-4 lg:w-6 lg:h-6 animate-bounce"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -152,21 +153,23 @@ export default function WelcomeScreen({
                 d="M19 14l-7 7m0 0l-7-7m7 7V3"
               />
             </svg>
-            Haz click o desliza para continuar
+            <span className="hidden sm:inline">Haz click o desliza para continuar</span>
+            <span className="sm:hidden">Toca para continuar</span>
           </span>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full animate-ping"></div>
+            <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[var(--color-pink-vibrant)] rounded-full animate-ping"></div>
             <div
-              className="w-2 h-2 bg-[var(--color-lavender)] rounded-full animate-ping"
+              className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[var(--color-lavender)] rounded-full animate-ping"
               style={{ animationDelay: "0.2s" }}
             ></div>
             <div
-              className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full animate-ping"
+              className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[var(--color-pink-vibrant)] rounded-full animate-ping"
               style={{ animationDelay: "0.4s" }}
             ></div>
           </div>
         </div>
       </div>
+      
       {/* Animaciones personalizadas */}
       <style jsx>{`
         @keyframes bounce-letter {
@@ -257,6 +260,13 @@ export default function WelcomeScreen({
         }
         .animate-hide-welcome {
           animation: hide-welcome 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+        
+        /* Media queries para mejor control responsive */
+        @media (max-width: 640px) {
+          .animate-bounce-letter {
+            animation-duration: 2.5s;
+          }
         }
       `}</style>
     </div>
