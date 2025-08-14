@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://cuantica-studio.com'
+  const baseUrl = 'https://cuantica-studio.mx'
   
   return [
     {

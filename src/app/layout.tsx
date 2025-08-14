@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Cuántica Studio" }],
   creator: "Cuántica Studio",
   publisher: "Cuántica Studio",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/logo.jpeg',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -101,7 +106,11 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning={true}>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://cuantica-studio.com" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo.jpeg" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="canonical" href="https://cuantica-studio.mx" />
         
         {/* Metadatos para SEO local */}
         <meta name="geo.region" content="MX-MEX" />
@@ -121,7 +130,7 @@ export default function RootLayout({
         <meta name="business:contact_data:postal_code" content="50000" />
         <meta name="business:contact_data:phone_number" content="+52-722-XXX-XXXX" />
         <meta name="business:contact_data:email" content="info@cuantica-studio.com" />
-        <meta name="business:contact_data:website" content="https://cuantica-studio.com" />
+        <meta name="business:contact_data:website" content="https://cuantica-studio.mx" />
         
         {/* Marcado estructurado principal */}
         <StructuredData type="organization" city="Toluca" />

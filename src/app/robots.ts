@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/private/'],
       },
     ],
-    sitemap: 'https://cuantica-studio.com/sitemap.xml',
-    host: 'https://cuantica-studio.com',
+    sitemap: 'https://cuantica-studio.mx/sitemap.xml',
+    host: 'https://cuantica-studio.mx',
   }
 }
