@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Permitir acceso a favicons y recursos importantes
+Allow: /favicon.ico
+Allow: /logo.jpeg
+Allow: /manifest.json
+
+# Sitemap
+Sitemap: https://cuantica-studio.mx/sitemap.xml
+
+# Crawl-delay para ser respetuoso con el servidor
+Crawl-delay: 1

@@ -33,9 +33,13 @@ export const metadata: Metadata = {
   creator: "Cuántica Studio",
   publisher: "Cuántica Studio",
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/logo.jpeg',
+    apple: [
+      { url: '/logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
+    ],
   },
   formatDetection: {
     email: false,
@@ -65,7 +69,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Cuántica Studio – Yoga, Bienestar y Flexibilidad en Toluca y Metepec",
-    description: "En Cuántica Studio, tu santuario de bienestar integral en Toluca, Metepec, Zinacantepec y Lerma. Clases de yoga, meditación, danza y flexibilidad.",
+    description: "En Cuántica Studio, tu santuario de bienestar integral en Toluca, Metepec, Zinacantepec y Lerma. Clases de yoga, Clases de meditación, Clases de danza y Clases de flexibilidad.",
     images: ['https://www.cuantica-studio.mx/logo.jpeg'],
   },
   robots: {
@@ -105,12 +109,16 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning={true}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* Favicons usando solo archivos existentes */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo.jpeg" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="canonical" href="https://cuantica-studio.mx" />
+        
+        {/* Meta tags específicos para favicon */}
+        <meta name="msapplication-TileColor" content="#4f46e5" />
+        <meta name="theme-color" content="#4f46e5" />
         
         {/* Metadatos para SEO local */}
         <meta name="geo.region" content="MX-MEX" />
