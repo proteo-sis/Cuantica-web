@@ -28,8 +28,8 @@ export default function Header() {
     const element = document.getElementById(sectionId);
     if (element) {
       const isMobile = window.innerWidth < 1024;
-      const headerHeight = isMobile ? 80 : 100;
-      const additionalOffset = 32;
+      const headerHeight = isMobile ? 70 : 85;
+      const additionalOffset = 20;
       const headerOffset = headerHeight + additionalOffset;
 
       setIsMenuOpen(false);
@@ -61,7 +61,7 @@ export default function Header() {
       bg-[var(--color-white-pure)]/80 backdrop-blur-md border-b border-[var(--color-beige-rose)]
       ${scrolled ? "shadow-lg" : ""}`}
     >
-      <nav className="relative w-full flex items-center justify-between px-4 md:px-8 py-4 lg:py-6 max-w-7xl mx-auto">
+      <nav className="relative w-full flex items-center justify-between px-4 md:px-8 py-3 lg:py-4 max-w-7xl mx-auto">
         <div
           className={`
           transition-all duration-300 z-20
@@ -75,10 +75,10 @@ export default function Header() {
         >
           <Link href="/" className="block">
             <img
-              src="/imagotipo_cuantica.svg"
+              src="/logo-vec.svg"
               alt="Isologo Cuántica"
-              className="h-12 md:h-16 lg:h-24 w-auto transition-transform duration-300 hover:scale-105
-                max-w-[180px] md:max-w-[240px] lg:max-w-[320px]"
+              className="h-32 sm:h-64 md:h-24 lg:h-32 xl:h-32 w-auto transition-transform duration-300 hover:scale-105
+                max-w-[120px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] xl:max-w-[280px]"
             />
           </Link>
         </div>

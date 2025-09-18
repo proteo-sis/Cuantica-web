@@ -13,10 +13,7 @@ export const metadata: Metadata = {
   creator: "Cuántica Studio",
   publisher: "Cuántica Studio",
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/isologo_cuantica.svg', type: 'image/svg+xml' },
-    ],
+    icon: '/icono-rosa.svg',
     shortcut: '/favicon.svg',
     apple: '/logo.jpeg',
   },
@@ -88,9 +85,8 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning={true}>
       <head>
-        {/* Favicon real de Cuántica Studio */}
+        {/* Favicon de Cuántica Studio */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="alternate icon" href="/isologo_cuantica.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo.jpeg" />
         
         {/* Meta tags específicos para favicon */}

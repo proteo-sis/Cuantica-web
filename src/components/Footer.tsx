@@ -23,9 +23,9 @@ export default function Footer() {
         >
           <div className="flex items-center mb-6 md:mb-0">
             <img
-              src="/imagotipo_cuantica.svg"
+              src="/logo-vec.svg"
               alt="Cuántica Studio"
-              className="h-24 w-auto brightness-0 invert"
+              className="h-36 w-auto brightness-0 invert"
             />
           </div>
 
