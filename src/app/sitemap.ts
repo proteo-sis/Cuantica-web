@@ -65,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/disciplinas/box`,
+      url: `${baseUrl}/disciplinas/terapia-fisica-ocupacional`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
