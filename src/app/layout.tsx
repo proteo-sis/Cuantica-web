@@ -1,29 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { League_Spartan } from "next/font/google";
-import { Alex_Brush } from "next/font/google";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 import StructuredData from "@/components/StructuredData";
-
-const leagueSpartan = League_Spartan({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-league-spartan",
-});
-
-const alexBrush = Alex_Brush({
-  weight: "400", // solo tiene 400
-  subsets: ["latin"],
-  variable: "--font-alex-brush",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Cuántica Studio – Yoga, Bienestar y Flexibilidad en Toluca y Metepec",
@@ -34,12 +14,11 @@ export const metadata: Metadata = {
   publisher: "Cuántica Studio",
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/isologo_cuantica.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/favicon.ico',
-    apple: [
-      { url: '/logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
-    ],
+    shortcut: '/favicon.svg',
+    apple: '/logo.jpeg',
   },
   formatDetection: {
     email: false,
@@ -109,22 +88,16 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning={true}>
       <head>
-        {/* Favicons usando solo archivos existentes */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        {/* Favicon real de Cuántica Studio */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/isologo_cuantica.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo.jpeg" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="canonical" href="https://cuantica-studio.mx" />
         
         {/* Meta tags específicos para favicon */}
         <meta name="msapplication-TileColor" content="#4f46e5" />
         <meta name="theme-color" content="#4f46e5" />
         
         {/* Metadatos para SEO local */}
-        <meta name="geo.region" content="MX-MEX" />
-        <meta name="geo.placename" content="Estado de México" />
-        <meta name="geo.position" content="19.4326;-99.1332" />
-        <meta name="ICBM" content="19.4326, -99.1332" />
         <meta name="geo.region" content="MX-MEX" />
         <meta name="geo.placename" content="Toluca, Metepec, Zinacantepec, Lerma" />
         <meta name="geo.position" content="19.4326;-99.1332" />

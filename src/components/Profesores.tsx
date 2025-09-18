@@ -11,9 +11,9 @@ const profesores = [
   },
   {
     nombre: "Carlos Pérez",
-    especialidad: "Box & Flexibilidad",
+    especialidad: "Terapia Física & Ocupacional",
     descripcion:
-      "Entrenador certificado en box y movilidad, apasionado por el bienestar físico y la superación personal.",
+      "Terapeuta especializado en adultos mayores, apasionado por mejorar la calidad de vida y mantener la independencia.",
     imagen: "/professors/profesor2.jpg",
   },
   {

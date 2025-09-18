@@ -2,32 +2,32 @@
     {
       "name": "Yoga",
       "image": "/disciplines/yoga_meditacion.webp",
-      "description": "Encuentra tu equilibrio y paz interior con nuestras clases de yoga. ¡Únete para relajarte y reconectar contigo mismo!"
+      "description": "Clases de yoga y meditación en Toluca, Metepec y Zinacantepec. Encuentra tu equilibrio mental y físico con instructores certificados. ¡Únete para relajarte y reconectar contigo mismo!"
     },
     {
-      "name": "Box",
-      "image": "/disciplines/box.webp",
-      "description": "Aumenta tu fuerza con sesiones dinámicas de box. ¡Ven y desafíate a ti mismo!"
+      "name": "Terapia Física y Ocupacional",
+      "image": "/disciplines/terapia-fisica.webp",
+      "description": "Mejora tu calidad de vida con terapias especializadas para adultos mayores. ¡Cuídate con nosotros!"
     },
     {
       "name": "Heels Dance",
       "image": "/disciplines/Heels-Dance.webp",
-      "description": "Empodérate a través del movimiento y la danza moderna. ¡Pisa con confianza y únete a nuestra clase de baile con tacones!"
+      "description": "Clases de Heels Dance en Toluca, Metepec y Zinacantepec. Empodérate a través del movimiento y la danza moderna. ¡Pisa con confianza y únete a nuestra clase de baile con tacones!"
     },
     {
       "name": "Danzas Polinesias",
       "image": "/disciplines/danza-polinesia.webp",
-      "description": "Vive la cultura y la alegría a través del ritmo y la danza polinesia. ¡Deja que tu cuerpo exprese felicidad!"
+      "description": "Clases de danzas polinesias en Toluca, Metepec y Zinacantepec. Vive la cultura y la alegría a través del ritmo y la danza polinesia. ¡Deja que tu cuerpo exprese felicidad!"
     },
     {
       "name": "Meditación y Atención Plena",
       "image": "/disciplines/meditacion.webp",
-      "description": "Reduce el estrés y mejora tu bienestar emocional con meditaciones guiadas. ¡Descubre la atención plena con nosotros!"
+      "description": "Clases de meditación y mindfulness en Toluca, Metepec y Zinacantepec. Reduce el estrés y mejora tu bienestar emocional con meditaciones guiadas. ¡Descubre la atención plena con nosotros!"
     },
     {
       "name": "Flexibilidad",
       "image": "/disciplines/flex.webp",
-      "description": "Mejora tu rango de movimiento y movilidad. ¡Únete a nuestras clases de flexibilidad y siente la diferencia!"
+      "description": "Clases de flexibilidad y movilidad en Toluca, Metepec y Zinacantepec. Mejora tu rango de movimiento y movilidad. ¡Únete a nuestras clases de flexibilidad y siente la diferencia!"
     }
   ]
       

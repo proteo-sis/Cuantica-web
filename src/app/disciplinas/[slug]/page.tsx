@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { promises as fs } from "fs";
 import path from "path";
+import { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BenefitsSection from "@/components/discipline/BenefitsSection";
@@ -164,6 +165,174 @@ export default async function DisciplinePage(props: {
       <Footer />
     </>
   );
+}
+
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await props.params;
+  const discipline = await getDisciplineData(slug);
+
+  if (!discipline) {
+    return {
+      title: "Disciplina no encontrada | Cuántica Studio",
+      description: "La disciplina que buscas no está disponible en nuestro centro de bienestar.",
+    };
+  }
+
+  // Palabras clave específicas según la disciplina
+  const getKeywords = (disciplineName: string) => {
+    const baseKeywords = [
+      "bienestar",
+      "salud",
+      "fitness",
+      "Toluca",
+      "Metepec",
+      "Zinacantepec",
+      "Lerma",
+      "Estado de México",
+      "centro de bienestar",
+      "clases",
+      "instructores certificados"
+    ];
+
+    switch (disciplineName.toLowerCase()) {
+      case "terapia física y ocupacional":
+        return [
+          ...baseKeywords,
+          "terapia física",
+          "terapia ocupacional",
+          "adultos mayores",
+          "rehabilitación geriátrica",
+          "fisioterapia",
+          "prevención de caídas",
+          "independencia funcional",
+          "tercera edad",
+          "rehabilitación",
+          "terapeutas especializados",
+          "actividades de la vida diaria",
+          "equilibrio",
+          "fortalecimiento muscular"
+        ];
+      case "yoga":
+        return [
+          ...baseKeywords,
+          "yoga",
+          "meditación",
+          "mindfulness",
+          "relajación",
+          "flexibilidad",
+          "equilibrio mental",
+          "bienestar integral",
+          "clases de yoga",
+          "instructor de yoga"
+        ];
+      case "heels dance":
+        return [
+          ...baseKeywords,
+          "heels dance",
+          "baile con tacones",
+          "danza moderna",
+          "empoderamiento",
+          "coreografía",
+          "bailarina",
+          "clases de baile",
+          "danza femenina"
+        ];
+      case "danzas polinesias":
+        return [
+          ...baseKeywords,
+          "danzas polinesias",
+          "danza polinesia",
+          "cultura polinesia",
+          "ritmo",
+          "expresión corporal",
+          "baile tradicional",
+          "clases de danza"
+        ];
+      case "meditación y atención plena":
+        return [
+          ...baseKeywords,
+          "meditación",
+          "atención plena",
+          "mindfulness",
+          "reducción de estrés",
+          "bienestar emocional",
+          "relajación",
+          "técnicas de meditación"
+        ];
+      case "flexibilidad":
+        return [
+          ...baseKeywords,
+          "flexibilidad",
+          "movilidad",
+          "estiramiento",
+          "rango de movimiento",
+          "elasticidad",
+          "clases de flexibilidad"
+        ];
+      default:
+        return baseKeywords;
+    }
+  };
+
+  const keywords = getKeywords(discipline.name);
+  const title = `${discipline.name} en Toluca, Metepec y Zinacantepec | Cuántica Studio`;
+  const description = `${discipline.heroSection.description} Servicios especializados de ${discipline.name.toLowerCase()} en Toluca, Metepec, Zinacantepec y Lerma. Instructores certificados y horarios flexibles.`;
+
+  return {
+    title,
+    description,
+    keywords: keywords.join(", "),
+    authors: [{ name: "Cuántica Studio" }],
+    creator: "Cuántica Studio",
+    publisher: "Cuántica Studio",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL("https://cuantica-studio.mx"),
+    alternates: {
+      canonical: `/disciplinas/${discipline.slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/disciplinas/${discipline.slug}`,
+      siteName: "Cuántica Studio",
+      images: [
+        {
+          url: discipline.heroSection.mainImage,
+          width: 1200,
+          height: 630,
+          alt: `${discipline.name} en Cuántica Studio`,
+        },
+      ],
+      locale: "es_MX",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [discipline.heroSection.mainImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: "your-google-verification-code", // Reemplazar con el código real
+    },
+  };
 }
 
 export async function generateStaticParams() {

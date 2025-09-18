@@ -2,7 +2,7 @@
 export function getDisciplineSlug(name: string): string {
   const slugMap: { [key: string]: string } = {
     "Yoga": "yoga",
-    "Box": "box",
+    "Terapia Física y Ocupacional": "terapia-fisica-ocupacional",
     "Heels Dance": "heels-dance",
     "Danzas Polinesias": "danzas-polinesias",
     "Meditación y Atención Plena": "meditacion-atencion-plena",
