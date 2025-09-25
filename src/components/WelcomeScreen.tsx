@@ -82,7 +82,7 @@ function WelcomeScreenContent({
             style={{ animationDelay: "0.1s", animationFillMode: "both" }}
           >
             <img
-              src="/icono-rosa.svg"
+              src="/isologo_cuantica.svg"
               alt="Cuántica Studio"
               className="w-28 h-28 lg:w-56 lg:h-56 object-contain"
             />

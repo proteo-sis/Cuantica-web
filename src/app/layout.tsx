@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   publisher: "Cuántica Studio",
   icons: {
     icon: '/icono-rosa.svg',
-    shortcut: '/favicon.svg',
-    apple: '/logo.jpeg',
+    shortcut: '/icono-rosa.svg',
+    apple: '/icono-rosa.svg',
   },
   formatDetection: {
     email: false,
@@ -86,8 +86,8 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning={true}>
       <head>
         {/* Favicon de Cuántica Studio */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/logo.jpeg" />
+        <link rel="icon" href="/icono-rosa.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icono-rosa.svg" />
         
         {/* Meta tags específicos para favicon */}
         <meta name="msapplication-TileColor" content="#4f46e5" />
