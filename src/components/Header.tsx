@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -23,6 +23,7 @@ export default function Header() {
       document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
+  const router = useRouter();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -47,11 +48,22 @@ export default function Header() {
     }
   };
 
+  const handleMenuItemClick = (sectionId: string) => {
+    if (sectionId === "reservar") {
+      setIsMenuOpen(false);
+      router.push("/reservar");
+      return;
+    }
+
+    scrollToSection(sectionId);
+  };
+
   const menuItems = [
     ["disciplinas", "Disciplinas"],
     ["eventos", "Eventos"],
     ["profesores", "Nosotros"],
     ["contacto", "Contacto"],
+    ["reservar", "Reservar"],
     //["blog", "Blog"],
   ];
 
@@ -89,7 +101,7 @@ export default function Header() {
             {menuItems.map(([id, label]) => (
               <li key={id}>
                 <button
-                  onClick={() => scrollToSection(id)}
+                  onClick={() => handleMenuItemClick(id)}
                   className="text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
                     transition-all duration-300 font-league text-lg relative
                     after:content-[''] after:absolute after:bottom-0 after:left-0 
@@ -135,7 +147,6 @@ export default function Header() {
             )}
           </button>
 
-          {/* Menú desplegable móvil */}
           <div
             className={`absolute top-full right-0 mt-4 w-64 bg-[var(--color-white-pure)]/80 backdrop-blur-md rounded-2xl shadow-xl
             transform transition-all duration-300 origin-top
@@ -155,7 +166,7 @@ export default function Header() {
                 {menuItems.map(([id, label]) => (
                   <div key={id} className="w-full px-2">
                     <button
-                      onClick={() => scrollToSection(id)}
+                      onClick={() => handleMenuItemClick(id)}
                       className="w-full text-left py-2.5 px-4 text-base font-league
                         text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
                         transition-all duration-300 relative rounded-xl group"

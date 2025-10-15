@@ -2,8 +2,10 @@
 
 import Header from "./Header";
 import { FaArrowRight } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
   return (
     <>
       <Header />
@@ -41,6 +43,7 @@ export default function Hero() {
           >
             Contacto
           </a>
+         
         </nav>
         {/* Contenido principal - Mejorado para responsividad */}
         <div className="relative z-10 flex flex-col items-center justify-center w-full min-h-screen text-center px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 pb-20 sm:pb-24 lg:pb-32">
@@ -92,22 +95,8 @@ export default function Hero() {
           <div className="animate-fade-in px-4" style={{ animationDelay: "0.3s" }}>
             <button
               onClick={() => {
-                const element = document.getElementById("contacto");
-                if (element) {
-                  const isMobile = window.innerWidth < 1024;
-                  const headerHeight = isMobile ? 80 : 100;
-                  const additionalOffset = 32;
-                  const headerOffset = headerHeight + additionalOffset;
-
-                  const elementPosition = element.getBoundingClientRect().top;
-                  const offsetPosition =
-                    elementPosition + window.pageYOffset - headerOffset;
-
-                  window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth",
-                  });
-                }
+                // Navigate to a dedicated reservation page instead of scrolling to contact
+                router.push("/reservar");
               }}
               className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold shadow-xl focus:outline-none transition-all duration-300"
               style={{

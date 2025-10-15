@@ -113,7 +113,7 @@ export default function RootLayout({
         <StructuredData type="organization" city="Toluca" />
       </head>
       <body>
-        <main>{children}</main>
+        <main style={{ paddingTop: "var(--header-offset)" }}>{children}</main>
         <SpeedInsights />
         <Analytics />
         <WhatsAppButton 

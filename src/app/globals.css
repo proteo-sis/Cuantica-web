@@ -13,6 +13,15 @@
   --color-lavender-light: #d1c4e9;
   --color-lavender-dark: #6c3483;
   --color-sand-dark: #ebe0d5cb;
+  /* Header offset to prevent fixed header from covering main content
+     Adjust values if your header height changes. */
+  --header-offset: 100px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-offset: 120px;
+  }
 }
 
 /* Scrollbar personalizado */
