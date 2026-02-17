@@ -66,7 +66,8 @@ const components: PortableTextComponents = {
 };
 
 interface Props {
-  value: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value: any;
 }
 
 export default function PortableTextContent({ value }: Props) {

@@ -83,7 +83,7 @@ export default async function BlogPostPage({
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[var(--color-white-pure)] pt-24 lg:pt-28 pb-16">
+      <main className="min-h-screen bg-[var(--color-white-pure)] pt-36 lg:pt-44 pb-16">
         <article className="max-w-3xl mx-auto px-4 md:px-8">
           <header className="mb-8">
             <time
@@ -131,7 +131,7 @@ export default async function BlogPostPage({
           {post.author && (
             <footer className="mt-12 pt-8 border-t border-[var(--color-beige-rose)]">
               <div className="flex items-start gap-4">
-                {post.author.image && (
+                {!!post.author.image && (
                   <div className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
                     <Image
                       src={urlFor(post.author.image).width(56).height(56).url()}

@@ -1,5 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import { BLUR_DATA_URL } from "@/utils/imageOptimization";
 
 const profesores = [
   {
@@ -156,8 +158,16 @@ function ProfesorCard({
         principal ? "ring-4 ring-pink-400 scale-105 z-10" : "opacity-80"
       }`}
     >
-      <div className="w-40 h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
-        <img src={imagen} alt={nombre} className="object-cover w-full h-full" />
+      <div className="relative w-40 h-40 bg-gray-200 rounded-lg mb-4 overflow-hidden">
+        <Image
+          src={imagen}
+          alt={nombre}
+          fill
+          className="object-cover"
+          sizes="160px"
+          placeholder="blur"
+          blurDataURL={BLUR_DATA_URL}
+        />
       </div>
       <span className="text-xl font-bold text-white mb-1">{nombre}</span>
       <span className="text-base text-purple-100 mb-2">{especialidad}</span>

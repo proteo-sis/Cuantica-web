@@ -1,10 +1,32 @@
 "use client";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const smoothScrollTo = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const isMobile = window.innerWidth < 1024;
+      const headerHeight = isMobile ? 70 : 85;
+      const additionalOffset = 20;
+      const headerOffset = headerHeight + additionalOffset;
+
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,36 +46,36 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (pathname === "/" && window.location.hash) {
+      const sectionId = window.location.hash.replace("#", "");
+      setTimeout(() => smoothScrollTo(sectionId), 400);
+    }
+  }, [pathname]);
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const isMobile = window.innerWidth < 1024;
-      const headerHeight = isMobile ? 70 : 85;
-      const additionalOffset = 20;
-      const headerOffset = headerHeight + additionalOffset;
+    setIsMenuOpen(false);
 
-      setIsMenuOpen(false);
-
-      setTimeout(() => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }, 300);
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`);
+    } else {
+      setTimeout(() => smoothScrollTo(sectionId), 300);
     }
   };
 
   const menuItems = [
+    ["inicio", "Inicio"],
     ["disciplinas", "Disciplinas"],
     ["eventos", "Eventos"],
     ["profesores", "Nosotros"],
     ["blog", "Blog"],
     ["contacto", "Contacto"],
   ];
+
+  const linkItems: Record<string, string> = {
+    inicio: "/",
+    blog: "/blog",
+  };
 
   return (
     <header
@@ -88,9 +110,9 @@ export default function Header() {
           <ul className="flex items-center space-x-10">
             {menuItems.map(([id, label]) => (
               <li key={id}>
-                {id === "blog" ? (
+                {linkItems[id] ? (
                   <Link
-                    href="/blog"
+                    href={linkItems[id]}
                     className="text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
                       transition-all duration-300 font-league text-lg relative
                       after:content-[''] after:absolute after:bottom-0 after:left-0 
@@ -168,9 +190,9 @@ export default function Header() {
               <div className="flex flex-col space-y-1">
                 {menuItems.map(([id, label]) => (
                   <div key={id} className="w-full px-2">
-                    {id === "blog" ? (
+                    {linkItems[id] ? (
                       <Link
-                        href="/blog"
+                        href={linkItems[id]}
                         onClick={() => setIsMenuOpen(false)}
                         className="block w-full text-left py-2.5 px-4 text-base font-league
                           text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]

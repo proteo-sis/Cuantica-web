@@ -1,9 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { getDisciplineSlug } from "@/utils/disciplineUtils";
+import { BLUR_DATA_URL } from "@/utils/imageOptimization";
 import disciplines from "./disciplines22.json";
 
 interface Discipline {
@@ -14,31 +13,14 @@ interface Discipline {
 
 export default function DisciplineCarouselMinimal() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const router = useRouter();
   const data: Discipline[] = disciplines as Discipline[];
-
-  useEffect(() => {
-    const imagePromises = data.map((discipline) => {
-      return new Promise((resolve) => {
-        const img = new window.Image();
-        img.src = discipline.image;
-        img.onload = resolve;
-      });
-    });
-
-    Promise.all(imagePromises).then(() => {
-      setIsLoaded(true);
-    });
-  }, [data]);
 
   const handleClick = (index: number) => {
     if (activeIndex === index && isExpanded) {
-      // Redirigir a la página de contacto
       const element = document.getElementById("contacto");
       if (element) {
-        const headerHeight = 80; // Altura del header en móvil
+        const headerHeight = 80;
         const additionalOffset = 32;
         const headerOffset = headerHeight + additionalOffset;
 
@@ -55,14 +37,6 @@ export default function DisciplineCarouselMinimal() {
       setIsExpanded(activeIndex === index ? !isExpanded : true);
     }
   };
-
-  if (!isLoaded) {
-    return (
-      <div className="w-full min-h-[80vh] bg-black/95 flex items-center justify-center">
-        <div className="animate-pulse bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-xl w-full h-[60vh] max-w-7xl mx-4" />
-      </div>
-    );
-  }
 
   return (
     <section className="w-full min-h-[80vh] bg-black/95 relative py-16 px-4 overflow-hidden">
@@ -137,8 +111,10 @@ export default function DisciplineCarouselMinimal() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={index < 3}
-                  quality={90}
+                  priority={index < 2}
+                  quality={85}
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
                 />
 
                 {/* Overlay gradual */}

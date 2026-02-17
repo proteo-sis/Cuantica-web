@@ -1,5 +1,4 @@
-import { NextStudio } from "next-sanity/studio";
-import config from "../../../../sanity.config";
+import StudioClientWrapper from "./StudioClient";
 
 export const metadata = {
   title: "Blog – Cuántica Studio",
@@ -13,5 +12,9 @@ export const viewport = {
 };
 
 export default function StudioPage() {
-  return <NextStudio config={config} />;
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "";
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";
+  return (
+    <StudioClientWrapper projectId={projectId} dataset={dataset} />
+  );
 }

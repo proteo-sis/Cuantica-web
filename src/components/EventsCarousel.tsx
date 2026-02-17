@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/utils/imageOptimization";
 import rawEvents from "../data/events.json";
 
 interface Event {
@@ -46,8 +47,6 @@ export default function EventsCarousel() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isInteracting, setIsInteracting] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-  const [isInView, setIsInView] = useState(false);
   const autoPlayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -62,42 +61,6 @@ export default function EventsCarousel() {
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, isInteracting, isExpanded]);
-
-  // Hook para detectar cuando el carrusel está en el viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    if (carouselRef.current) {
-      observer.observe(carouselRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Cargar imágenes cuando el carrusel esté en el viewport
-  useEffect(() => {
-    if (isInView) {
-      // Precargar la imagen actual y las adyacentes
-      const currentEvent = events[currentEventIndex];
-      const nextEvent = events[(currentEventIndex + 1) % events.length];
-      const prevEvent = events[(currentEventIndex - 1 + events.length) % events.length];
-      
-      [currentEvent, nextEvent, prevEvent].forEach(event => {
-        if (event && !loadedImages.has(event.image)) {
-          const img = new window.Image();
-          img.onload = () => {
-            setLoadedImages(prev => new Set([...prev, event.image]));
-          };
-          img.src = event.image;
-        }
-      });
-    }
-  }, [isInView, currentEventIndex, loadedImages]);
 
   // Limpiar timeout al desmontar
   useEffect(() => {
@@ -288,34 +251,23 @@ export default function EventsCarousel() {
                 <div className="flex flex-col lg:grid lg:grid-cols-2 relative z-10">
                   {/* Imagen del evento - altura adaptativa */}
                   <div className="relative h-48 sm:h-64 md:h-80 lg:h-full min-h-[300px] overflow-hidden">
-                    {loadedImages.has(currentEvent.image) ? (
-                      <motion.div
-                        className="absolute inset-0"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                      >
-                        <Image
-                          src={currentEvent.image}
-                          alt={currentEvent.alt || currentEvent.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          priority={currentEventIndex === 0}
-                          quality={85}
-                        />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                      >
-                        <div className="text-center">
-                          <div className="w-16 h-16 border-4 border-gray-400 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                          <p className="text-gray-600 text-sm">Cargando imagen...</p>
-                        </div>
-                      </motion.div>
-                    )}
+                    <motion.div
+                      className="absolute inset-0"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                      <Image
+                        src={currentEvent.image}
+                        alt={currentEvent.alt || currentEvent.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={currentEventIndex === 0}
+                        quality={85}
+                        placeholder="blur"
+                        blurDataURL={BLUR_DATA_URL}
+                      />
+                    </motion.div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                     {/* Efecto de partículas flotantes - solo en desktop */}
