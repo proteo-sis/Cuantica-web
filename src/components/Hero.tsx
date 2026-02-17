@@ -16,7 +16,13 @@ export default function Hero() {
           loop
           muted
           playsInline
+          preload="metadata"
           style={{ filter: "brightness(0.7) blur(1px)" }}
+        />
+        {/* Fondo de respaldo mientras el video carga */}
+        <div
+          className="absolute inset-0 z-0 bg-gradient-to-br from-purple-950 via-black to-pink-950"
+          style={{ zIndex: -1 }}
         />
         {/* Overlay lavanda oscuro */}
         <div

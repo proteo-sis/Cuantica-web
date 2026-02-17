@@ -1,10 +1,32 @@
 "use client";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const smoothScrollTo = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const isMobile = window.innerWidth < 1024;
+      const headerHeight = isMobile ? 70 : 85;
+      const additionalOffset = 20;
+      const headerOffset = headerHeight + additionalOffset;
+
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,36 +46,36 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (pathname === "/" && window.location.hash) {
+      const sectionId = window.location.hash.replace("#", "");
+      setTimeout(() => smoothScrollTo(sectionId), 400);
+    }
+  }, [pathname]);
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const isMobile = window.innerWidth < 1024;
-      const headerHeight = isMobile ? 70 : 85;
-      const additionalOffset = 20;
-      const headerOffset = headerHeight + additionalOffset;
+    setIsMenuOpen(false);
 
-      setIsMenuOpen(false);
-
-      setTimeout(() => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }, 300);
+    if (pathname !== "/") {
+      router.push(`/#${sectionId}`);
+    } else {
+      setTimeout(() => smoothScrollTo(sectionId), 300);
     }
   };
 
   const menuItems = [
+    ["inicio", "Inicio"],
     ["disciplinas", "Disciplinas"],
     ["eventos", "Eventos"],
     ["profesores", "Nosotros"],
+    ["blog", "Blog"],
     ["contacto", "Contacto"],
-    //["blog", "Blog"],
   ];
+
+  const linkItems: Record<string, string> = {
+    inicio: "/",
+    blog: "/blog",
+  };
 
   return (
     <header
@@ -88,17 +110,31 @@ export default function Header() {
           <ul className="flex items-center space-x-10">
             {menuItems.map(([id, label]) => (
               <li key={id}>
-                <button
-                  onClick={() => scrollToSection(id)}
-                  className="text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
-                    transition-all duration-300 font-league text-lg relative
-                    after:content-[''] after:absolute after:bottom-0 after:left-0 
-                    after:w-0 after:h-0.5 after:bg-[var(--color-pink-vibrant)]
-                    after:transition-all after:duration-300 hover:after:w-full
-                    whitespace-nowrap"
-                >
-                  {label}
-                </button>
+                {linkItems[id] ? (
+                  <Link
+                    href={linkItems[id]}
+                    className="text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
+                      transition-all duration-300 font-league text-lg relative
+                      after:content-[''] after:absolute after:bottom-0 after:left-0 
+                      after:w-0 after:h-0.5 after:bg-[var(--color-pink-vibrant)]
+                      after:transition-all after:duration-300 hover:after:w-full
+                      whitespace-nowrap"
+                  >
+                    {label}
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => scrollToSection(id)}
+                    className="text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
+                      transition-all duration-300 font-league text-lg relative
+                      after:content-[''] after:absolute after:bottom-0 after:left-0 
+                      after:w-0 after:h-0.5 after:bg-[var(--color-pink-vibrant)]
+                      after:transition-all after:duration-300 hover:after:w-full
+                      whitespace-nowrap"
+                  >
+                    {label}
+                  </button>
+                )}
               </li>
             ))}
           </ul>
@@ -154,19 +190,36 @@ export default function Header() {
               <div className="flex flex-col space-y-1">
                 {menuItems.map(([id, label]) => (
                   <div key={id} className="w-full px-2">
-                    <button
-                      onClick={() => scrollToSection(id)}
-                      className="w-full text-left py-2.5 px-4 text-base font-league
-                        text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
-                        transition-all duration-300 relative rounded-xl group"
-                    >
-                      <span className="relative z-10">{label}</span>
-                      <span
-                        className="absolute inset-0 bg-[var(--color-pink-vibrant)]/5 
-                        scale-x-0 group-hover:scale-x-100 transition-transform duration-300 
-                        origin-left rounded-xl"
-                      ></span>
-                    </button>
+                    {linkItems[id] ? (
+                      <Link
+                        href={linkItems[id]}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="block w-full text-left py-2.5 px-4 text-base font-league
+                          text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
+                          transition-all duration-300 relative rounded-xl group"
+                      >
+                        <span className="relative z-10">{label}</span>
+                        <span
+                          className="absolute inset-0 bg-[var(--color-pink-vibrant)]/5 
+                          scale-x-0 group-hover:scale-x-100 transition-transform duration-300 
+                          origin-left rounded-xl"
+                        ></span>
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => scrollToSection(id)}
+                        className="w-full text-left py-2.5 px-4 text-base font-league
+                          text-[var(--color-black-soft)] hover:text-[var(--color-pink-vibrant)]
+                          transition-all duration-300 relative rounded-xl group"
+                      >
+                        <span className="relative z-10">{label}</span>
+                        <span
+                          className="absolute inset-0 bg-[var(--color-pink-vibrant)]/5 
+                          scale-x-0 group-hover:scale-x-100 transition-transform duration-300 
+                          origin-left rounded-xl"
+                        ></span>
+                      </button>
+                    )}
                   </div>
                 ))}
               </div>
