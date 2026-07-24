@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import Image from "next/image";
+import Link from "next/link";
 import { BLUR_DATA_URL } from "@/utils/imageOptimization";
+import { getUpcomingEvents, isEventPast } from "@/utils/events";
 import rawEvents from "../data/events.json";
 
 interface Event {
@@ -29,8 +31,8 @@ interface Event {
   included: string[];
   highlights: string[];
   difficulty: string;
-  minAge: number;
-  maxAge: number;
+  minAge?: number;
+  maxAge?: number;
   groupSize: string;
   whatToBring: string[];
   isComingSoon?: boolean;
@@ -39,7 +41,12 @@ interface Event {
   schedule?: string;
 }
 
-const events = rawEvents as Event[];
+const events = getUpcomingEvents(
+  (rawEvents as Event[]).map((event) => ({
+    ...event,
+    isPastEvent: Boolean(event.isPastEvent) || isEventPast(event.date),
+  }))
+);
 
 export default function EventsCarousel() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
@@ -52,7 +59,7 @@ export default function EventsCarousel() {
 
   // Auto-rotación cada 7 segundos solo si no se está interactuando y no está expandida
   useEffect(() => {
-    if (!isAutoPlaying || isInteracting || isExpanded) return;
+    if (!isAutoPlaying || isInteracting || isExpanded || events.length <= 1) return;
     
     const interval = setInterval(() => {
       setDirection(1);
@@ -144,6 +151,42 @@ export default function EventsCarousel() {
   const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
   };
+
+  if (events.length === 0) {
+    return (
+      <section
+        ref={carouselRef}
+        className="w-full bg-gradient-to-br from-[var(--color-lavender-light)] via-[var(--color-white-pure)] to-[var(--color-lavender-light)] py-12 md:py-20 overflow-hidden relative"
+      >
+        <div className="max-w-3xl mx-auto px-4 relative z-10 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[var(--color-black-soft)]">
+            Próximos{" "}
+            <span style={{ color: "var(--color-pink-vibrant)" }}>Eventos</span>
+          </h2>
+          <p className="text-base md:text-lg text-[var(--color-black-soft)]/70 mb-8">
+            Estamos preparando nuevas experiencias en Toluca y alrededores. ¡Pronto anunciaremos fechas!
+          </p>
+          <div className="relative mx-auto w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="/proximamente.png"
+              alt="Próximamente nuevos eventos en Cuántica Studio Toluca"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 448px"
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
+            />
+          </div>
+          <Link
+            href="/#contacto"
+            className="inline-flex mt-8 px-8 py-3 rounded-full bg-[var(--color-pink-vibrant)] text-white font-semibold hover:opacity-90 transition-opacity"
+          >
+            Quiero que me avisen
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   const currentEvent = events[currentEventIndex];
   // Crear la fecha correctamente para evitar problemas de zona horaria

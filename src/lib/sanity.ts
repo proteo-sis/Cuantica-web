@@ -1,10 +1,11 @@
-import { createClient } from "next-sanity";
+import { createClient, type SanityClient } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "placeholder";
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";
+const hasSanityConfig = Boolean(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
 
-export const client = createClient({
+export const client: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion: "2024-01-01",
@@ -15,6 +16,10 @@ const builder = imageUrlBuilder(client);
 
 export function urlFor(source: Parameters<typeof builder.image>[0]) {
   return builder.image(source);
+}
+
+export function isSanityConfigured() {
+  return hasSanityConfig;
 }
 
 // GROQ: listado de entradas publicadas

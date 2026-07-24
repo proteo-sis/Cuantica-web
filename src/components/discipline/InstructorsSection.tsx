@@ -50,7 +50,7 @@ export default function InstructorsSection({ instructors }: InstructorsSectionPr
               <div className="bg-gradient-to-br from-[var(--color-white-pure)] to-[var(--color-lavender-light)] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-[var(--color-lavender)] group hover:-translate-y-1">
                 <div className="h-64 overflow-hidden">
                   <img
-                    src={instructor.image || "/professors/profesor1.jpg"}
+                    src={instructor.image || "/professors/profesor1.webp"}
                     alt={instructor.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />

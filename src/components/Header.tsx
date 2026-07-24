@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -8,6 +9,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  const homePaths = ["/", "/toluca", "/metepec", "/lerma", "/zinacantepec"];
+  const isLandingPath = homePaths.includes(pathname);
 
   const smoothScrollTo = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -47,16 +51,16 @@ export default function Header() {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    if (pathname === "/" && window.location.hash) {
+    if (isLandingPath && window.location.hash) {
       const sectionId = window.location.hash.replace("#", "");
       setTimeout(() => smoothScrollTo(sectionId), 400);
     }
-  }, [pathname]);
+  }, [pathname, isLandingPath]);
 
   const scrollToSection = (sectionId: string) => {
     setIsMenuOpen(false);
 
-    if (pathname !== "/") {
+    if (!isLandingPath) {
       router.push(`/#${sectionId}`);
     } else {
       setTimeout(() => smoothScrollTo(sectionId), 300);
@@ -96,16 +100,18 @@ export default function Header() {
         `}
         >
           <Link href="/" className="block">
-            <img
+            <Image
               src="/logo-vec.svg"
-              alt="Isologo Cuántica"
+              alt="Cuántica Studio - Yoga y bienestar en Toluca"
+              width={280}
+              height={128}
+              priority
               className="h-32 sm:h-64 md:h-24 lg:h-32 xl:h-32 w-auto transition-transform duration-300 hover:scale-105
                 max-w-[120px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] xl:max-w-[280px]"
             />
           </Link>
         </div>
 
-        {/* Menú de escritorio - Lado derecho */}
         <div className="hidden lg:flex items-center justify-end flex-1">
           <ul className="flex items-center space-x-10">
             {menuItems.map(([id, label]) => (
@@ -140,7 +146,6 @@ export default function Header() {
           </ul>
         </div>
 
-        {/* Botón de menú hamburguesa (solo móvil) */}
         <div className="lg:hidden ml-auto z-50 relative">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -150,7 +155,6 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              // Icono de cerrar (X)
               <div className="relative w-5 h-5">
                 <span
                   className="absolute top-1/2 left-0 w-5 h-0.5 bg-[var(--color-black-soft)] 
@@ -162,7 +166,6 @@ export default function Header() {
                 />
               </div>
             ) : (
-              // Icono de menú hamburguesa
               <>
                 <span className="w-5 h-0.5 bg-[var(--color-black-soft)] transition-all duration-300" />
                 <span className="w-5 h-0.5 bg-[var(--color-black-soft)] transition-all duration-300 mt-1.5" />
@@ -171,7 +174,6 @@ export default function Header() {
             )}
           </button>
 
-          {/* Menú desplegable móvil */}
           <div
             className={`absolute top-full right-0 mt-4 w-64 bg-[var(--color-white-pure)]/80 backdrop-blur-md rounded-2xl shadow-xl
             transform transition-all duration-300 origin-top
@@ -182,10 +184,8 @@ export default function Header() {
             }
           `}
           >
-            {/* Flecha decorativa */}
             <div className="absolute -top-2 right-5 w-4 h-4 bg-[var(--color-white-pure)]/80 backdrop-blur-md transform rotate-45" />
 
-            {/* Contenedor del menú */}
             <div className="relative bg-[var(--color-white-pure)]/80 backdrop-blur-md rounded-2xl py-3 z-10">
               <div className="flex flex-col space-y-1">
                 {menuItems.map(([id, label]) => (
@@ -227,7 +227,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Overlay para cerrar el menú (solo móvil) */}
         {isMenuOpen && (
           <div
             className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300"

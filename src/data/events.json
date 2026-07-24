@@ -7,7 +7,7 @@
     "instructor": "Equipo Cuántica Studio",
     "description": "Disfruta de una ruta de 5km en la naturaleza, seguida de un delicioso cacao. Relájate con una clase de yoga y diviértete con el acroyoga. Todo esto mientras un dron captura fotografías espectaculares para que tengas recuerdos inolvidables.",
     "image": "/events/acroyogas.webp",
-  "alt": "Evento de Hiking, Yoga, Cacao y Acroyoga en la naturaleza - Cuántica Studio Toluca",
+    "alt": "Evento de Hiking, Yoga, Cacao y Acroyoga en la naturaleza - Cuántica Studio Toluca",
     "category": "Evento Pasado",
     "spots": 0,
     "price": 1111,
@@ -51,7 +51,7 @@
     "instructor": "Angel's Pole Fitness & Cuántica Studio",
     "description": "Primer Curso Intensivo de Pole & Flex dirigido a principiantes. No necesitas experiencia previa. Una colaboración especial entre Angel's Pole Fitness y Cuántica Studio para traerte una experiencia única de fitness y flexibilidad.",
     "image": "/events/pole.webp",
-  "alt": "Curso intensivo de Pole Dance y Flexibilidad en Cuántica Studio - Clases para principiantes",
+    "alt": "Curso intensivo de Pole Dance y Flexibilidad en Cuántica Studio - Clases para principiantes",
     "category": "Curso Intensivo",
     "spots": 11,
     "price": 1800,
@@ -88,7 +88,8 @@
       "Toalla",
       "Disposición para aprender"
     ],
-    "schedule": "Del 4 al 26 de Octubre 2024 - Sábados y Domingos"
+    "schedule": "Del 4 al 26 de Octubre 2024 - Sábados y Domingos",
+    "isPastEvent": true
   },
   {
     "id": "2",
@@ -98,7 +99,7 @@
     "instructor": "Florecer Salud & Cuántica Studio",
     "description": "Un encuentro para recordar, agradecer y dar vida a lo nuevo que está por comenzar. Aprende a crear velas aromáticas y naturales paso a paso con aromas de otoño, llenas de intención y propósito. Cada llama encendida será un canto de amor a quienes ya trascendieron.",
     "image": "/events/velas.webp",
-  "alt": "Taller de velas aromáticas en Cuántica Studio Toluca - Creación de velas naturales con aromas de otoño",
+    "alt": "Taller de velas aromáticas en Cuántica Studio Toluca - Creación de velas naturales con aromas de otoño",
     "category": "Taller Especial",
     "spots": 15,
     "price": 1000,
@@ -136,7 +137,8 @@
       "Cuaderno para notas",
       "Disposición para crear y meditar"
     ],
-    "promo": "2 personas por $1,800.00"
+    "promo": "2 personas por $1,800.00",
+    "isPastEvent": true
   },
   {
     "id": "5",
@@ -191,7 +193,8 @@
     "studentPriceNote": "Alumnos inscritos: $333.00 p/p",
     "promo": "Descuento para alumnos inscritos: $333.00 p/p",
     "specialActivity": "Creación de tu propio sigilo para activar tu magia personal desde el primer momento y potenciar tu energía e intenciones",
-    "materialsAvailable": "En Cuántica Studio tendremos péndulos disponibles, ¡así que podrás adquirir el tuyo!"
+    "materialsAvailable": "En Cuántica Studio tendremos péndulos disponibles, ¡así que podrás adquirir el tuyo!",
+    "isPastEvent": true
   },
   {
     "id": "4",
@@ -239,6 +242,7 @@
     "contactPhone": "722 793 5344",
     "studentPrice": 350,
     "studentPriceNote": "Estudiantes inscritos: $350.00 p/p",
-    "promo": "Descuento para alumnos inscritos: $350.00 p/p"
+    "promo": "Descuento para alumnos inscritos: $350.00 p/p",
+    "isPastEvent": true
   }
 ]

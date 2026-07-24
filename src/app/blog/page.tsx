@@ -8,13 +8,20 @@ import { format } from "date-fns";
 import { es } from "date-fns/locale";
 
 export const metadata: Metadata = {
-  title: "Blog | Cuántica Studio – Yoga, Bienestar y Flexibilidad",
+  title: "Blog | Cuántica Studio – Yoga, Bienestar y Flexibilidad en Toluca",
   description:
-    "Artículos sobre yoga, meditación, bienestar y vida consciente en Toluca y Metepec.",
+    "Artículos sobre yoga, meditación, bienestar y vida consciente en Toluca, Metepec, Lerma y Zinacantepec.",
+  alternates: {
+    canonical: "https://cuantica-studio.mx/blog",
+  },
   openGraph: {
-    title: "Blog | Cuántica Studio",
-    description: "Artículos sobre yoga, meditación y bienestar.",
+    title: "Blog | Cuántica Studio – Yoga y Bienestar en Toluca",
+    description:
+      "Artículos sobre yoga, meditación y bienestar en Toluca y alrededores.",
     url: "https://cuantica-studio.mx/blog",
+    siteName: "Cuántica Studio",
+    locale: "es_MX",
+    type: "website",
   },
 };
 
