@@ -1,121 +1,125 @@
 import Script from "next/script";
 
 interface StructuredDataProps {
-  type?: 'organization' | 'localBusiness' | 'place';
+  type?: "organization" | "localBusiness" | "place";
   city?: string;
 }
 
-export default function StructuredData({ type = 'localBusiness', city = 'Toluca' }: StructuredDataProps) {
+const NAP = {
+  streetAddress: "Calle Horacio Zúñiga, P.º Colón 155-interior 7, Colonia Ciprés",
+  postalCode: "50120",
+  telephone: "+52-722-670-9287",
+  email: "ventas1@cuantica-studio.mx",
+  url: "https://cuantica-studio.mx",
+  logo: "https://cuantica-studio.mx/logo.jpeg",
+  latitude: 19.2811291,
+  longitude: -99.6625421,
+  sameAs: [
+    "https://www.facebook.com/profile.php?id=61575709835566",
+    "https://www.instagram.com/cuantica_studio11",
+    "https://www.tiktok.com/@cuantica_studio11",
+  ],
+};
+
+export default function StructuredData({
+  type = "localBusiness",
+  city = "Toluca",
+}: StructuredDataProps) {
   const baseData = {
     "@context": "https://schema.org",
-    "@type": type === 'organization' ? "Organization" : "LocalBusiness",
-    "name": "Cuántica Studio",
-    "description": `Estudio de yoga, bienestar y flexibilidad en ${city}, Estado de México. Clases de yoga, meditación, danza y entrenamiento de flexibilidad.`,
-    "url": "https://cuantica-studio.com",
-    "logo": "https://www.cuantica-studio.mx/logo.png",
-    "image": "https://www.cuantica-studio.mx/logo.png",
-    "telephone": "+52-722 670 9287",
-    "email": "ventas@cuantica-studio.com",
-    "address": {
+    "@type": type === "organization" ? "Organization" : "LocalBusiness",
+    name: "Cuántica Studio",
+    description: `Estudio de yoga, bienestar y flexibilidad en ${city}, Estado de México. Clases de yoga, meditación, danza y entrenamiento de flexibilidad.`,
+    url: NAP.url,
+    logo: NAP.logo,
+    image: NAP.logo,
+    telephone: NAP.telephone,
+    email: NAP.email,
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": city,
-      "addressRegion": "Estado de México",
-      "addressCountry": "MX"
+      streetAddress: NAP.streetAddress,
+      addressLocality: city === "Toluca" ? "Toluca de Lerdo" : city,
+      addressRegion: "Estado de México",
+      postalCode: NAP.postalCode,
+      addressCountry: "MX",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 19.4326,
-      "longitude": -99.1332
+      latitude: NAP.latitude,
+      longitude: NAP.longitude,
     },
-    "openingHours": "Mo-Su 06:00-22:00",
-    "priceRange": "$$",
-    "currenciesAccepted": "MXN",
-    "paymentAccepted": "Cash, Credit Card, Debit Card",
-    "sameAs": [
-      "https://www.facebook.com/cuanticastudio",
-      "https://www.instagram.com/cuanticastudio",
-      "https://www.youtube.com/cuanticastudio"
-    ],
-    "hasOfferCatalog": {
+    openingHours: "Mo-Su 06:00-22:00",
+    priceRange: "$$",
+    currenciesAccepted: "MXN",
+    paymentAccepted: "Cash, Credit Card, Debit Card",
+    sameAs: NAP.sameAs,
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "Servicios de Bienestar",
-      "itemListElement": [
+      name: "Servicios de Bienestar",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Clases de Yoga",
-            "description": "Yoga integral, acroyoga y yoga terapéutico"
-          }
+            name: "Clases de Yoga",
+            description: "Yoga integral, acroyoga y yoga terapéutico",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Meditación Guiada",
-            "description": "Sesiones de meditación y mindfulness"
-          }
+            name: "Meditación Guiada",
+            description: "Sesiones de meditación y mindfulness",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Entrenamiento de Flexibilidad",
-            "description": "Clases para mejorar la flexibilidad y movilidad"
-          }
+            name: "Entrenamiento de Flexibilidad",
+            description: "Clases para mejorar la flexibilidad y movilidad",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Danza y Movimiento",
-            "description": "Heels dance y danza polinesia"
-          }
+            name: "Danza y Movimiento",
+            description: "Heels dance y danza polinesia",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Terapia con Cuencos del Himalaya",
-            "description": "Sesiones de sanación con cuencos tibetanos"
-          }
-        }
-      ]
+            name: "Terapia con Cuencos del Himalaya",
+            description: "Sesiones de sanación con cuencos tibetanos",
+          },
+        },
+      ],
     },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Toluca"
-      },
-      {
-        "@type": "City",
-        "name": "Metepec"
-      },
-      {
-        "@type": "City",
-        "name": "Zinacantepec"
-      },
-      {
-        "@type": "City",
-        "name": "Lerma"
-      }
-    ]
+    areaServed: [
+      { "@type": "City", name: "Toluca" },
+      { "@type": "City", name: "Metepec" },
+      { "@type": "City", name: "Zinacantepec" },
+      { "@type": "City", name: "Lerma" },
+    ],
   };
 
-  // Agregar información específica de la organización si es necesario
-  if (type === 'organization') {
+  if (type === "organization") {
     Object.assign(baseData, {
-      "foundingDate": "2020",
-      "numberOfEmployees": "10-50",
-      "slogan": "Vive el equilibrio, la armonía y la transformación personal",
-      "knowsAbout": [
+      foundingDate: "2020",
+      numberOfEmployees: "10-50",
+      slogan: "Vive el equilibrio, la armonía y la transformación personal",
+      knowsAbout: [
         "Yoga",
         "Meditación",
         "Bienestar integral",
         "Flexibilidad",
         "Danza",
-        "Terapias alternativas"
-      ]
+        "Terapias alternativas",
+      ],
     });
   }
 
@@ -124,7 +128,7 @@ export default function StructuredData({ type = 'localBusiness', city = 'Toluca'
       id={`structured-data-${city.toLowerCase()}`}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(baseData)
+        __html: JSON.stringify(baseData),
       }}
     />
   );

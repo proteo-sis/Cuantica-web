@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { BLUR_DATA_URL } from "@/utils/imageOptimization";
 import disciplines from "./disciplines22.json";
+import { getDisciplineSlug } from "@/utils/disciplineUtils";
 
 interface Discipline {
   name: string;
@@ -144,33 +146,46 @@ export default function DisciplineCarouselMinimal() {
                       <p className="text-white/90 leading-relaxed">
                         {discipline.description}
                       </p>
-                      <motion.button
-                        className="inline-flex items-center px-4 py-2 rounded-lg
+                      <div className="flex flex-wrap gap-2">
+                        <Link
+                          href={`/disciplinas/${getDisciplineSlug(discipline.name)}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center px-4 py-2 rounded-lg
+                                   text-white font-medium text-sm
+                                   bg-white/10 backdrop-blur-sm
+                                   border border-white/20
+                                   transition-all duration-300"
+                        >
+                          Ver disciplina
+                        </Link>
+                        <motion.button
+                          className="inline-flex items-center px-4 py-2 rounded-lg
                                  text-white font-medium text-sm
                                  bg-white/10 backdrop-blur-sm
                                  border border-white/20
                                  transition-all duration-300"
-                        whileHover={{
-                          backgroundColor: "rgba(255,255,255,0.2)",
-                          scale: 1.02,
-                        }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        Contactar
-                        <svg
-                          className="w-4 h-4 ml-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                          whileHover={{
+                            backgroundColor: "rgba(255,255,255,0.2)",
+                            scale: 1.02,
+                          }}
+                          whileTap={{ scale: 0.98 }}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                          />
-                        </svg>
-                      </motion.button>
+                          Contactar
+                          <svg
+                            className="w-4 h-4 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"
+                            />
+                          </svg>
+                        </motion.button>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

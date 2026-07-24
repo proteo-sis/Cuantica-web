@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Footer() {
@@ -22,9 +24,11 @@ export default function Footer() {
           className="flex flex-col md:flex-row items-center justify-between mb-12"
         >
           <div className="flex items-center mb-6 md:mb-0">
-            <img
+            <Image
               src="/logo-vec.svg"
               alt="Cuántica Studio"
+              width={280}
+              height={144}
               className="h-36 w-auto brightness-0 invert"
             />
           </div>
@@ -125,60 +129,24 @@ export default function Footer() {
             </h4>
 
             <ul className="space-y-4 text-[var(--color-lavender-light)] flex flex-col items-start mx-auto w-fit">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  <span className="text-center">Yoga</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  <span className="text-center">Box</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  <span className="text-center">Heels Dance</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  <span className="text-center">Danzas<br/>Polinesias</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  <span className="text-center">Meditación y<br/>Atención Plena</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  <span className="text-center">Flexibilidad</span>
-                </a>
-              </li>
+              {[
+                ["Yoga", "/disciplinas/yoga"],
+                ["Heels Dance", "/disciplinas/heels-dance"],
+                ["Danzas Polinesias", "/disciplinas/danzas-polinesias"],
+                ["Meditación y Atención Plena", "/disciplinas/meditacion-atencion-plena"],
+                ["Flexibilidad", "/disciplinas/flexibilidad"],
+                ["Terapia Física y Ocupacional", "/disciplinas/terapia-fisica-ocupacional"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="hover:text-white transition-colors duration-300 flex items-center group"
+                  >
+                    <span className="w-2 h-2 bg-[var(--color-pink-vibrant)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform" />
+                    <span className="text-center">{label}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -197,42 +165,27 @@ export default function Footer() {
             </h4>
 
             <ul className="space-y-3 text-[var(--color-lavender-light)] flex flex-col items-start">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Disciplinas
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Eventos
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Nosotros
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform"></span>
-                  Contacto
-                </a>
-              </li>
+              {[
+                ["Disciplinas", "/#disciplinas"],
+                ["Eventos", "/#eventos"],
+                ["Nosotros", "/#profesores"],
+                ["Contacto", "/#contacto"],
+                ["Blog", "/blog"],
+                ["Toluca", "/toluca"],
+                ["Metepec", "/metepec"],
+                ["Lerma", "/lerma"],
+                ["Zinacantepec", "/zinacantepec"],
+              ].map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="hover:text-white transition-colors duration-300 flex items-center group"
+                  >
+                    <span className="w-2 h-2 bg-[var(--color-lavender)] rounded-full shrink-0 mr-3 group-hover:scale-150 transition-transform" />
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -269,7 +222,9 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-left md:text-right">Toluca de Lerdo, Estado de México, México</span>
+                <span className="text-left md:text-right">
+                  Calle Horacio Zúñiga, P.º Colón 155-int. 7, Toluca de Lerdo, Méx.
+                </span>
               </div>
               <div className="flex items-start justify-center md:justify-end">
                 <svg
@@ -285,7 +240,12 @@ export default function Footer() {
                     d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span className="text-left md:text-right">ventas1@cuantica-studio.mx</span>
+                <a
+                  href="mailto:ventas1@cuantica-studio.mx"
+                  className="text-left md:text-right hover:text-white transition-colors"
+                >
+                  ventas1@cuantica-studio.mx
+                </a>
               </div>
               <div className="flex items-start justify-center md:justify-end">
                 <svg
@@ -301,7 +261,12 @@ export default function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                <span className="text-left md:text-right">722 670 9287</span>
+                <a
+                  href="tel:+527226709287"
+                  className="text-left md:text-right hover:text-white transition-colors"
+                >
+                  +52 722 670 9287
+                </a>
               </div>
             </div>
           </motion.div>
@@ -323,7 +288,7 @@ export default function Footer() {
           className="text-center"
         >
           <p className="text-[var(--color-lavender-light)] text-sm">
-            &copy; 2025 Cuántica Studio. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Cuántica Studio. Todos los derechos reservados.
             <span className="text-[var(--color-pink-vibrant)] ml-2">
               ✨ Transformando vidas, un momento a la vez
             </span>

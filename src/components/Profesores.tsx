@@ -9,42 +9,42 @@ const profesores = [
     especialidad: "Yoga & Meditación",
     descripcion:
       "Especialista en yoga integral y mindfulness con más de 10 años de experiencia ayudando a personas a encontrar su equilibrio.",
-    imagen: "/professors/profesor1.jpg",
+    imagen: "/professors/profesor1.webp",
   },
   {
     nombre: "Carlos Pérez",
     especialidad: "Terapia Física & Ocupacional",
     descripcion:
       "Terapeuta especializado en adultos mayores, apasionado por mejorar la calidad de vida y mantener la independencia.",
-    imagen: "/professors/profesor2.jpg",
+    imagen: "/professors/profesor2.webp",
   },
   {
     nombre: "Ana Torres",
     especialidad: "Heels Dance",
     descripcion:
       "Bailarina profesional y coreógrafa, experta en empoderar a través del movimiento y la danza moderna.",
-    imagen: "/professors/profesor3.jpg",
+    imagen: "/professors/profesor3.webp",
   },
   {
     nombre: "Luis Gómez",
     especialidad: "Danzas Polinesias",
     descripcion:
       "Instructor de danzas polinesias, transmitiendo cultura y alegría a través del ritmo y la expresión corporal.",
-    imagen: "/professors/profesor4.jpg",
+    imagen: "/professors/profesor4.webp",
   },
   {
     nombre: "Sofía Ramírez",
     especialidad: "Meditación & Mindfulness",
     descripcion:
       "Guía de meditación con enfoque en reducción de estrés y bienestar emocional.",
-    imagen: "/professors/profesor1.jpg",
+    imagen: "/professors/profesor1.webp",
   },
   {
     nombre: "Pedro Sánchez",
     especialidad: "Flexibilidad",
     descripcion:
       "Especialista en movilidad y flexibilidad, ayudando a mejorar el rango de movimiento de sus alumnos.",
-    imagen: "/professors/profesor2.jpg",
+    imagen: "/professors/profesor2.webp",
   },
 ];
 

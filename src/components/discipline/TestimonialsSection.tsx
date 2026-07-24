@@ -43,7 +43,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                 <div className="flex items-center mb-4">
                   <div className="relative">
                     <img
-                      src={testimonial.image || "/professors/profesor1.jpg"}
+                      src={testimonial.image || "/professors/profesor1.webp"}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-[var(--color-pink-vibrant)] group-hover:scale-110 transition-transform duration-300"
                     />

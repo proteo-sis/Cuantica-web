@@ -16,30 +16,31 @@ interface SalesAdvisor {
 }
 
 const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
-  phoneNumber,
-  message,
+  phoneNumber: _phoneNumber,
+  message: _message,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  void _phoneNumber;
+  void _message;
 
   const salesAdvisors: SalesAdvisor[] = [
     {
       name: "Cuántica Studio",
-      phoneNumber: "722 670 9287",
-      message: "¡Hola! Me gustaría obtener más información sobre las clases y precios en Cuantica Studio.",
-      image: "/logo.jpeg" // Usando imagen existente como placeholder
+      phoneNumber: "527226709287",
+      message: "¡Hola! Me gustaría obtener más información sobre las clases y precios en Cuántica Studio.",
+      image: "/logo.jpeg"
     }
   ];
 
   const handleAdvisorClick = (advisor: SalesAdvisor) => {
-    // Eliminar cualquier carácter no numérico del número de teléfono
     const cleanNumber = advisor.phoneNumber.replace(/\D/g, "");
-    // Codificar el mensaje para la URL
+    const withCountry = cleanNumber.startsWith("52")
+      ? cleanNumber
+      : `52${cleanNumber}`;
     const encodedMessage = encodeURIComponent(advisor.message);
-    // Crear el enlace de WhatsApp
-    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
-    // Abrir en una nueva pestaña
+    const whatsappUrl = `https://wa.me/${withCountry}?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
-    // Cerrar el panel
     setIsOpen(false);
   };
 
@@ -84,7 +85,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
                       {advisor.name}
                     </div>
                     <div className="text-green-600 text-sm font-medium">
-                      {advisor.phoneNumber}
+                      +52 722 670 9287
                     </div>
                   </div>
                 </button>

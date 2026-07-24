@@ -8,7 +8,7 @@
     "description": "Mejora tu calidad de vida con terapias físicas y ocupacionales especializadas para adultos mayores. Servicios de rehabilitación geriátrica, prevención de caídas y mantenimiento de independencia. ¡Cuídate con nosotros!",
     "mainImage": "/disciplines/terapia-fisica.webp",
     "ctaText": "¡Comienza tu rehabilitación!",
-    "ctaLink": "/contacto"
+    "ctaLink": "/#contacto"
   },
   "benefits": {
     "title": "Beneficios de la Terapia Física y Ocupacional para Adultos Mayores",
@@ -66,19 +66,37 @@
     "days": [
       {
         "name": "Lunes",
-        "times": ["09:00", "11:00", "15:00", "17:00"]
+        "times": [
+          "09:00",
+          "11:00",
+          "15:00",
+          "17:00"
+        ]
       },
       {
         "name": "Miércoles",
-        "times": ["09:00", "11:00", "15:00", "17:00"]
+        "times": [
+          "09:00",
+          "11:00",
+          "15:00",
+          "17:00"
+        ]
       },
       {
         "name": "Viernes",
-        "times": ["09:00", "11:00", "15:00", "17:00"]
+        "times": [
+          "09:00",
+          "11:00",
+          "15:00",
+          "17:00"
+        ]
       },
       {
         "name": "Sábado",
-        "times": ["10:00", "12:00"]
+        "times": [
+          "10:00",
+          "12:00"
+        ]
       }
     ]
   },
@@ -87,10 +105,20 @@
       "id": "maria-gonzalez",
       "name": "María González",
       "title": "Terapeuta Física Especializada en Rehabilitación Geriátrica",
-      "specialties": ["Terapia Física Geriátrica", "Rehabilitación Funcional", "Prevención de Caídas", "Fisioterapia para Adultos Mayores"],
+      "specialties": [
+        "Terapia Física Geriátrica",
+        "Rehabilitación Funcional",
+        "Prevención de Caídas",
+        "Fisioterapia para Adultos Mayores"
+      ],
       "description": "Especialista en terapia física y rehabilitación geriátrica con más de 12 años de experiencia en centros de rehabilitación para adultos mayores en Toluca y Metepec.",
       "image": "/instructors/maria-gonzalez.jpg",
-      "certifications": ["Licenciada en Terapia Física", "Especialista en Geriatría", "Certificación en Prevención de Caídas", "Rehabilitación Vestibular"],
+      "certifications": [
+        "Licenciada en Terapia Física",
+        "Especialista en Geriatría",
+        "Certificación en Prevención de Caídas",
+        "Rehabilitación Vestibular"
+      ],
       "socialMedia": {
         "instagram": "@maria.terapia",
         "facebook": "maria.gonzalez.terapia"
@@ -100,10 +128,20 @@
       "id": "carlos-rodriguez",
       "name": "Carlos Rodríguez",
       "title": "Terapeuta Ocupacional Especialista en Geriatría",
-      "specialties": ["Terapia Ocupacional Geriátrica", "Adaptación de Actividades de la Vida Diaria", "Evaluación Funcional", "Ayudas Técnicas"],
+      "specialties": [
+        "Terapia Ocupacional Geriátrica",
+        "Adaptación de Actividades de la Vida Diaria",
+        "Evaluación Funcional",
+        "Ayudas Técnicas"
+      ],
       "description": "Terapeuta ocupacional especializado en adultos mayores y tercera edad, enfocado en mantener la independencia funcional y mejorar la calidad de vida en Zinacantepec y Lerma.",
       "image": "/instructors/carlos-rodriguez.jpg",
-      "certifications": ["Licenciado en Terapia Ocupacional", "Especialista en Geriatría", "Certificación en Adaptación de Hogar", "Evaluación Funcional Geriátrica"],
+      "certifications": [
+        "Licenciado en Terapia Ocupacional",
+        "Especialista en Geriatría",
+        "Certificación en Adaptación de Hogar",
+        "Evaluación Funcional Geriátrica"
+      ],
       "socialMedia": {
         "instagram": "@carlos.terapia.ocupacional",
         "facebook": "carlos.rodriguez.terapia"
@@ -148,4 +186,4 @@
       "rating": 5
     }
   ]
-} 
+}

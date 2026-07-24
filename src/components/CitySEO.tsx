@@ -8,15 +8,23 @@ interface CitySEOProps {
   image?: string;
 }
 
+const GEO = {
+  position: "19.2811291;-99.6625421",
+  icbm: "19.2811291, -99.6625421",
+};
+
 export function generateCityMetadata({
   city,
   citySlug,
   description,
-  image = "https://www.cuantica-studio.mx/logo.png"
+  image = "https://cuantica-studio.mx/logo.jpeg",
 }: CitySEOProps): Metadata {
   const baseTitle = `Cuántica Studio – Yoga y Bienestar en ${city}, Estado de México`;
-  const baseDescription = description || `Descubre el mejor estudio de yoga y bienestar en ${city}. Clases de yoga, meditación, danza y flexibilidad en Cuántica Studio. Profesores certificados, horarios flexibles. ¡Reserva tu clase hoy en ${city}!`;
-  
+  const baseDescription =
+    description ||
+    `Descubre el mejor estudio de yoga y bienestar en ${city}. Clases de yoga, meditación, danza y flexibilidad en Cuántica Studio. Profesores certificados, horarios flexibles. ¡Reserva tu clase hoy en ${city}!`;
+  const canonical = `https://cuantica-studio.mx/${citySlug}`;
+
   return {
     title: baseTitle,
     description: baseDescription,
@@ -33,15 +41,15 @@ export function generateCityMetadata({
       `transformación personal ${city}`,
       "yoga Estado de México",
       "meditación Estado de México",
-      "bienestar Estado de México"
+      "bienestar Estado de México",
     ].join(", "),
     openGraph: {
       title: baseTitle,
       description: baseDescription,
-      url: `https://cuantica-studio.com/${citySlug}`,
-      siteName: 'Cuántica Studio',
-      locale: 'es_MX',
-      type: 'website',
+      url: canonical,
+      siteName: "Cuántica Studio",
+      locale: "es_MX",
+      type: "website",
       images: [
         {
           url: image,
@@ -52,30 +60,30 @@ export function generateCityMetadata({
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: baseTitle,
       description: baseDescription,
       images: [image],
     },
     alternates: {
-      canonical: `https://cuantica-studio.com/${citySlug}`,
+      canonical,
     },
     other: {
-      'geo.region': 'MX-MEX',
-      'geo.placename': city,
-      'geo.position': '19.4326;-99.1332',
-      'ICBM': '19.4326, -99.1332',
+      "geo.region": "MX-MEX",
+      "geo.placename": city,
+      "geo.position": GEO.position,
+      ICBM: GEO.icbm,
     },
   };
 }
 
-export default function CitySEO({ city, citySlug, description, image }: CitySEOProps) {
+export default function CitySEO({ city, citySlug }: CitySEOProps) {
   return (
     <>
       <StructuredData type="localBusiness" city={city} />
       <meta name="geo.placename" content={city} />
       <meta name="business:contact_data:locality" content={city} />
-      <link rel="canonical" href={`https://cuantica-studio.com/${citySlug}`} />
+      <link rel="canonical" href={`https://cuantica-studio.mx/${citySlug}`} />
     </>
   );
 }

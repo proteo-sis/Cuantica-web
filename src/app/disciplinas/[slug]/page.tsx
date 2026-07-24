@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { promises as fs } from "fs";
 import path from "path";
 import { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BenefitsSection from "@/components/discipline/BenefitsSection";
@@ -108,12 +109,14 @@ export default async function DisciplinePage(props: {
       <main className="min-h-screen bg-gradient-to-b from-[var(--color-lavender)] via-[var(--color-white-pure)] to-[var(--color-lavender-light)]">
         {/* Hero Section con contenido estático */}
         <section className="relative h-[90vh] w-full">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${discipline.heroSection.mainImage})`,
-              filter: "brightness(0.7)",
-            }}
+          <Image
+            src={discipline.heroSection.mainImage}
+            alt={`${discipline.heroSection.title} en Cuántica Studio Toluca`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            style={{ filter: "brightness(0.7)" }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
           <div className="absolute inset-0 flex items-center justify-center text-center">
@@ -277,7 +280,7 @@ export async function generateMetadata(props: {
   };
 
   const keywords = getKeywords(discipline.name);
-  const title = `${discipline.name} en Toluca, Metepec y Zinacantepec | Cuántica Studio`;
+  const title = `${discipline.name} en Toluca, Metepec, Lerma y Zinacantepec | Cuántica Studio`;
   const description = `${discipline.heroSection.description} Servicios especializados de ${discipline.name.toLowerCase()} en Toluca, Metepec, Zinacantepec y Lerma. Instructores certificados y horarios flexibles.`;
 
   return {
@@ -294,19 +297,19 @@ export async function generateMetadata(props: {
     },
     metadataBase: new URL("https://cuantica-studio.mx"),
     alternates: {
-      canonical: `/disciplinas/${discipline.slug}`,
+      canonical: `https://cuantica-studio.mx/disciplinas/${discipline.slug}`,
     },
     openGraph: {
       title,
       description,
-      url: `/disciplinas/${discipline.slug}`,
+      url: `https://cuantica-studio.mx/disciplinas/${discipline.slug}`,
       siteName: "Cuántica Studio",
       images: [
         {
           url: discipline.heroSection.mainImage,
           width: 1200,
           height: 630,
-          alt: `${discipline.name} en Cuántica Studio`,
+          alt: `${discipline.name} en Cuántica Studio Toluca`,
         },
       ],
       locale: "es_MX",
@@ -328,9 +331,6 @@ export async function generateMetadata(props: {
         "max-image-preview": "large",
         "max-snippet": -1,
       },
-    },
-    verification: {
-      google: "your-google-verification-code", // Reemplazar con el código real
     },
   };
 }

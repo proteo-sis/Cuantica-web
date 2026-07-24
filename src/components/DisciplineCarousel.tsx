@@ -1,13 +1,16 @@
 "use client";
 import React, { useState, useCallback, useMemo, useRef } from "react";
+import Link from "next/link";
 import OptimizedImage from "./OptimizedImage";
 import localDisciplinesJson from "./disciplines22.json";
+import { getDisciplineSlug } from "@/utils/disciplineUtils";
 
 interface LocalDiscipline {
   id: number;
   name: string;
   description: string;
   image: string;
+  slug: string;
 }
 
 export default function DisciplineCarousel() {
@@ -25,6 +28,7 @@ export default function DisciplineCarousel() {
       name: d.name,
       image: d.image,
       description: d.description,
+      slug: getDisciplineSlug(d.name),
     }));
   }, []);
 
@@ -202,25 +206,33 @@ export default function DisciplineCarousel() {
                     <p className={staticClasses.description}>
                       {discipline.description}
                     </p>
-                    <button
-                      onClick={handleContactClick}
-                      className={staticClasses.button}
-                    >
-                      Contactar
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      <Link
+                        href={`/disciplinas/${discipline.slug}`}
+                        className={staticClasses.button}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </button>
+                        Ver disciplina
+                      </Link>
+                      <button
+                        onClick={handleContactClick}
+                        className={staticClasses.button}
+                      >
+                        Contactar
+                        <svg
+                          className="w-4 h-4 ml-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 )}
               </div>
