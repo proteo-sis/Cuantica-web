@@ -1,61 +1,73 @@
 {
-    "id": "danzas-polinesias",
-    "name": "Danzas Polinesias",
-    "slug": "danzas-polinesias",
-    "heroSection": {
-      "title": "Danzas Polinesias",
-      "subtitle": "Conecta con la alegría del movimiento",
-      "description": "Vive la cultura y la alegría a través del ritmo y la danza polinesia. ¡Deja que tu cuerpo exprese felicidad!",
-      "mainImage": "/disciplines/danza-polinesia.webp",
-      "ctaText": "¡Descúbrelo ahora!",
-      "ctaLink": "/#contacto"
+  "id": "danzas-polinesias",
+  "name": "Danzas Polinesias",
+  "slug": "danzas-polinesias",
+  "heroSection": {
+    "title": "Danzas Polinesias",
+    "subtitle": "Conecta con la alegría del movimiento",
+    "description": "Las danzas polinesias (como el hula y el tahitiano) combinan movimientos de cadera, brazos y expresión facial para contar una historia con el cuerpo. Es una práctica alegre y de bajo impacto que trabaja coordinación, ritmo y conexión con tu cuerpo, mientras te acerca a una tradición cultural llena de energía. Toma tus clases de danzas polinesias en Toluca con nosotros.",
+    "mainImage": "/disciplines/danza-polinesia.webp",
+    "ctaText": "¡Descúbrelo ahora!",
+    "ctaLink": "/#contacto"
+  },
+  "whyCuantica": {
+    "title": "¿Por qué tomar Danzas Polinesias en Cuántica Studio?",
+    "description": "En Cuántica Studio aprendes danzas polinesias con respeto por su origen cultural, en clases guiadas paso a paso para que domines la técnica de cadera, brazos y expresión sin sentirte perdida entre coreografías rápidas. Es un espacio pensado para disfrutar el proceso, no solo el resultado, dentro de una comunidad que baila junta y se acompaña en cada avance.",
+    "image": {
+      "url": "/disciplines/danza-polinesia.webp",
+      "alt": "Clase de Danzas Polinesias en Cuántica Studio"
+    }
+  },
+  "benefits": {
+    "title": "Resultados que notarás con Danzas Polinesias",
+    "items": [
+      {
+        "title": "Cultura y Tradición",
+        "description": "Sumérgete en una experiencia cultural auténtica, aprendiendo el significado detrás de cada movimiento.",
+        "icon": "culture"
+      },
+      {
+        "title": "Alegría y Vitalidad",
+        "description": "Activa tu energía y libera estrés con música y movimiento, saliendo de cada clase con mejor ánimo.",
+        "icon": "joy"
+      },
+      {
+        "title": "Coordinación y Ritmo",
+        "description": "Desarrolla coordinación, control corporal y sentido del ritmo mientras disfrutas del baile en grupo.",
+        "icon": "rhythm"
+      }
+    ]
+  },
+  "audience": {
+    "title": "¿Para quién son las Danzas Polinesias en Cuántica Studio?",
+    "description": "Las clases de danzas polinesias en Toluca son para cualquier persona que quiera moverse con alegría, sin importar su experiencia previa en baile.",
+    "items": [
+      "Si te interesa una práctica cultural auténtica y quieres aprender su significado",
+      "Si buscas una actividad divertida de bajo impacto para liberar estrés",
+      "Si quieres mejorar tu coordinación, ritmo y control corporal",
+      "Si prefieres aprender en grupo, a tu ritmo y sin presión"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Necesito experiencia previa en danza?",
+      "answer": "No, las clases están diseñadas para principiantes y se avanza de forma progresiva en técnica de cadera, brazos y coreografía."
     },
-    "benefits": {
-      "title": "Beneficios de las Danzas Polinesias",
-      "items": [
-        {
-          "title": "Cultura y Tradición",
-          "description": "Sumérgete en una experiencia cultural auténtica a través del baile.",
-          "icon": "culture"
-        },
-        {
-          "title": "Alegría y Vitalidad",
-          "description": "Activa tu energía y contagia alegría con cada paso.",
-          "icon": "joy"
-        },
-        {
-          "title": "Coordinación y Ritmo",
-          "description": "Desarrolla habilidades motoras mientras disfrutas del ritmo.",
-          "icon": "rhythm"
-        }
-      ]
+    {
+      "question": "¿Qué debo llevar a clase?",
+      "answer": "Ropa cómoda que te permita mover libremente la cadera, calcetines o zapatos ligeros y agua para hidratarte durante la sesión."
     },
-    "gallery": {
-      "title": "Vibra con el Ritmo",
-      "images": [
-        {
-          "url": "/disciplines/danza-polinesia.webp",
-          "alt": "Danza Polinesia en grupo",
-          "caption": "Tradición y energía en cada movimiento"
-        }
-      ]
+    {
+      "question": "¿Es una actividad de alto impacto?",
+      "answer": "No, es una práctica de bajo impacto en articulaciones, apta para distintas edades y niveles de condición física."
     },
-    "schedule": {
-      "title": "Horarios de Clase",
-      "description": "Únete al ritmo en el momento ideal",
-      "days": [
-        {
-          "name": "Miércoles",
-          "times": ["17:00"]
-        },
-        {
-          "name": "Sábado",
-          "times": ["11:00"]
-        }
-      ]
+    {
+      "question": "¿Qué edad se recomienda para tomar la clase?",
+      "answer": "La clase está abierta a jóvenes y adultos; si tienes dudas sobre si es adecuada para tu edad o condición física, contáctanos antes de inscribirte."
     },
-    "instructors": [],
-    "faqs": [],
-    "testimonials": []
-  }
-  
+    {
+      "question": "¿Dónde se imparten las clases de danzas polinesias?",
+      "answer": "Nuestro estudio está en Toluca y recibimos alumnos de Metepec, Zinacantepec y Lerma."
+    }
+  ]
+}

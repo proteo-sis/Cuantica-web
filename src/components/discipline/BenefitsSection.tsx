@@ -64,9 +64,9 @@ export default function BenefitsSection({
             animation="scale"
             delay={index * 0.2}
           >
-            <div className="group bg-gradient-to-br from-[var(--color-white-pure)] to-[var(--color-lavender-light)] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-[var(--color-lavender)]">
+            <div className="group bg-[var(--color-white-pure)] rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-[var(--color-lavender)]">
               <div className="mb-6 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[var(--color-lavender)] to-[var(--color-pink-vibrant)] flex items-center justify-center text-white transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-16 h-16 rounded-full bg-[var(--color-pink-vibrant)] flex items-center justify-center text-white transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   {getIconComponent(benefit.title)}
                 </div>
               </div>

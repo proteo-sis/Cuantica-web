@@ -14,7 +14,7 @@ interface FAQSectionProps {
 
 export default function FAQSection({ faqs }: FAQSectionProps) {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[var(--color-lavender)] via-[var(--color-pink-vibrant)]/10 to-[var(--color-beige-rose)]">
+    <section className="py-20 px-4 bg-[var(--color-lavender-light)]/40">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal animation="slideUp">
           <div className="flex items-center gap-4 justify-center mb-16">
@@ -32,7 +32,7 @@ export default function FAQSection({ faqs }: FAQSectionProps) {
               animation="slideRight"
               delay={index * 0.1}
             >
-              <div className="bg-gradient-to-br from-[var(--color-white-pure)] to-[var(--color-lavender-light)] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-[var(--color-lavender)] hover:-translate-y-1">
+              <div className="bg-[var(--color-white-pure)] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-[var(--color-lavender)] hover:-translate-y-1">
                 <h3 className="text-xl font-semibold mb-3 text-[var(--color-black-soft)]">
                   {faq.question}
                 </h3>

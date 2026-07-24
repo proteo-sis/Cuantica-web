@@ -6,12 +6,11 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BenefitsSection from "@/components/discipline/BenefitsSection";
-import GallerySection from "@/components/discipline/GallerySection";
-import InstructorsSection from "@/components/discipline/InstructorsSection";
-import ScheduleSection from "@/components/discipline/ScheduleSection";
+import WhyCuanticaSection from "@/components/discipline/WhyCuanticaSection";
+import AudienceSection from "@/components/discipline/AudienceSection";
 import FAQSection from "@/components/discipline/FAQSection";
-import TestimonialsSection from "@/components/discipline/TestimonialsSection";
 import CTASection from "@/components/discipline/CTASection";
+import DisciplineSEO from "@/components/discipline/DisciplineSEO";
 
 // Marcar la página como renderizada en el servidor
 export const dynamic = "force-static";
@@ -37,45 +36,22 @@ interface Discipline {
       icon: string;
     }>;
   };
-  gallery: {
+  whyCuantica: {
     title: string;
-    images: Array<{
+    description: string;
+    image: {
       url: string;
       alt: string;
-      caption: string;
-    }>;
-  };
-  schedule: {
-    title: string;
-    description: string;
-    days: Array<{
-      name: string;
-      times: string[];
-    }>;
-  };
-  instructors: Array<{
-    id: string;
-    name: string;
-    title: string;
-    specialties: string[];
-    description: string;
-    image: string;
-    certifications?: string[];
-    socialMedia?: {
-      instagram?: string;
-      facebook?: string;
     };
-  }>;
+  };
+  audience: {
+    title: string;
+    description: string;
+    items: string[];
+  };
   faqs: Array<{
     question: string;
     answer: string;
-  }>;
-  testimonials: Array<{
-    id: string;
-    name: string;
-    image: string;
-    text: string;
-    rating: number;
   }>;
 }
 
@@ -105,8 +81,15 @@ export default async function DisciplinePage(props: {
 
   return (
     <>
+      <DisciplineSEO
+        name={discipline.name}
+        slug={discipline.slug}
+        description={discipline.heroSection.description}
+        image={discipline.heroSection.mainImage}
+        faqs={discipline.faqs}
+      />
       <Header />
-      <main className="min-h-screen bg-gradient-to-b from-[var(--color-lavender)] via-[var(--color-white-pure)] to-[var(--color-lavender-light)]">
+      <main className="min-h-screen bg-[var(--color-white-pure)]">
         {/* Hero Section con contenido estático */}
         <section className="relative h-[90vh] w-full">
           <Image
@@ -118,7 +101,7 @@ export default async function DisciplinePage(props: {
             className="object-cover"
             style={{ filter: "brightness(0.7)" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-black/45" />
           <div className="absolute inset-0 flex items-center justify-center text-center">
             <div className="max-w-4xl px-4">
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
@@ -140,27 +123,21 @@ export default async function DisciplinePage(props: {
           </div>
         </section>
 
-        {/* Beneficios */}
-        <section className="py-20 px-4 bg-gradient-to-br from-[var(--color-lavender)] via-[var(--color-pink-vibrant)]/10 to-[var(--color-white-pure)]">
+        {/* ¿Por qué en Cuántica Studio? */}
+        <section className="bg-[var(--color-lavender-light)]/30">
+          <WhyCuanticaSection {...discipline.whyCuantica} />
+        </section>
+
+        {/* Beneficios / Resultados */}
+        <section className="py-20 px-4 bg-[var(--color-white-pure)]">
           <BenefitsSection {...discipline.benefits} />
         </section>
 
-        {/* Galería */}
-        <section className="bg-gradient-to-br from-[var(--color-white-pure)] via-[var(--color-beige-rose)] to-[var(--color-lavender)]">
-          <GallerySection {...discipline.gallery} />
-        </section>
-
-        {/* Instructores */}
-        <InstructorsSection instructors={discipline.instructors} />
-
-        {/* Horarios */}
-        <ScheduleSection {...discipline.schedule} />
+        {/* ¿Para quién es? */}
+        <AudienceSection {...discipline.audience} />
 
         {/* FAQs */}
         <FAQSection faqs={discipline.faqs} />
-
-        {/* Testimonios */}
-        <TestimonialsSection testimonials={discipline.testimonials} />
 
         {/* CTA */}
         <CTASection disciplineName={discipline.name} />
@@ -281,7 +258,7 @@ export async function generateMetadata(props: {
 
   const keywords = getKeywords(discipline.name);
   const title = `${discipline.name} en Toluca, Metepec, Lerma y Zinacantepec | Cuántica Studio`;
-  const description = `${discipline.heroSection.description} Servicios especializados de ${discipline.name.toLowerCase()} en Toluca, Metepec, Zinacantepec y Lerma. Instructores certificados y horarios flexibles.`;
+  const description = `${discipline.heroSection.description} Servicios especializados de ${discipline.name.toLowerCase()} en Toluca, Metepec, Zinacantepec y Lerma. Instructores certificados y resultados reales desde tus primeras clases.`;
 
   return {
     title,

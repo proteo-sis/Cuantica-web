@@ -5,124 +5,84 @@
   "heroSection": {
     "title": "Yoga",
     "subtitle": "Encuentra tu equilibrio interior",
-    "description": "Encuentra tu equilibrio y paz interior con nuestras clases de yoga. ¡Únete para relajarte y reconectar contigo mismo!",
+    "description": "El yoga combina posturas físicas, respiración consciente y meditación para fortalecer tu cuerpo y calmar tu mente. Es una práctica ancestral que, con guía adecuada, se adapta a cualquier nivel y edad, ayudándote a soltar tensión, ganar movilidad y recuperar la calma en tu día a día. Impartimos yoga en Toluca dentro de un espacio pensado para tu bienestar integral.",
     "mainImage": "/disciplines/yoga_meditacion.webp",
     "ctaText": "¡Comienza tu viaje hoy!",
     "ctaLink": "/#contacto"
   },
+  "whyCuantica": {
+    "title": "¿Por qué practicar Yoga en Cuántica Studio?",
+    "description": "En Cuántica Studio, en Toluca, fusionamos la sabiduría ancestral del yoga con metodologías modernas de bienestar, en clases pequeñas donde cada instructor da seguimiento cercano a tu respiración, postura y progreso. No son clases genéricas: se ajustan a tu cuerpo y a tu momento de vida, dentro de un espacio seguro y una comunidad consciente que te acompaña a sostener la práctica en el tiempo, no solo en la clase.",
+    "image": {
+      "url": "/disciplines/yoga_meditacion.webp",
+      "alt": "Práctica de yoga guiada en Cuántica Studio"
+    }
+  },
   "benefits": {
-    "title": "Beneficios de la Práctica del Yoga",
+    "title": "Resultados que notarás practicando Yoga con nosotros",
     "items": [
       {
         "title": "Bienestar Físico",
-        "description": "Mejora tu fuerza, flexibilidad y postura corporal. Desarrolla un cuerpo más saludable y energético con nuestra práctica guiada.",
+        "description": "Mejora tu fuerza, flexibilidad y postura corporal semana tras semana, con secuencias guiadas que respetan tu ritmo y previenen lesiones.",
         "icon": "body"
       },
       {
         "title": "Equilibrio Mental",
-        "description": "Reduce el estrés y la ansiedad mientras aumentas tu concentración y claridad mental a través de la respiración consciente.",
+        "description": "Reduce el estrés y la ansiedad mientras ganas concentración y claridad mental a través de la respiración consciente.",
         "icon": "mind"
       },
       {
         "title": "Desarrollo Personal",
-        "description": "Crece personal y espiritualmente en un ambiente acogedor. Descubre tu verdadero potencial y fortaleza interior.",
+        "description": "Crece personal y espiritualmente en un ambiente acogedor, descubriendo tu verdadero potencial y fortaleza interior.",
         "icon": "growth"
       },
       {
         "title": "Meditación Guiada",
-        "description": "Aprende técnicas de meditación que te ayudarán a encontrar paz y tranquilidad en tu vida diaria.",
+        "description": "Aprende técnicas de meditación que te ayudarán a encontrar paz y tranquilidad en tu vida diaria, dentro y fuera del tapete.",
         "icon": "meditation"
       },
       {
         "title": "Comunidad Consciente",
-        "description": "Únete a una comunidad de personas que comparten tu interés por el bienestar integral y el crecimiento personal.",
+        "description": "Practica junto a personas que comparten tu interés por el bienestar integral, en un espacio que te motiva a ser constante.",
         "icon": "community"
       },
       {
         "title": "Equilibrio Vital",
-        "description": "Integra cuerpo, mente y espíritu para lograr una vida más equilibrada y plena.",
+        "description": "Integra cuerpo, mente y espíritu para lograr una vida más equilibrada, con beneficios que se notan clase tras clase.",
         "icon": "balance"
       }
     ]
   },
-  "gallery": {
-    "title": "Explora Nuestra Práctica",
-    "images": [
-      {
-        "url": "/disciplines/yoga_meditacion.webp",
-        "alt": "Práctica de yoga en grupo",
-        "caption": "Clases grupales para todos los niveles"
-      },
-      {
-        "url": "/disciplines/yoga_meditacion.webp",
-        "alt": "Meditación guiada",
-        "caption": "Sesiones de meditación para encontrar la paz interior"
-      },
-      {
-        "url": "/disciplines/yoga_meditacion.webp",
-        "alt": "Meditación guiada",
-        "caption": "Sesiones de meditación para encontrar la paz interior"
-      }
+  "audience": {
+    "title": "¿Para quién es el Yoga en Cuántica Studio?",
+    "description": "Nuestras clases de yoga en Toluca están pensadas para adaptarse a distintos cuerpos, edades y objetivos, no solo para quienes ya tienen experiencia.",
+    "items": [
+      "Si sientes tensión acumulada por el estrés diario y buscas relajarte",
+      "Si quieres mejorar tu postura, flexibilidad y fuerza de forma progresiva",
+      "Si buscas herramientas de respiración y meditación para tu día a día",
+      "Si eres principiante y prefieres aprender con seguimiento cercano del instructor"
     ]
   },
-  "schedule": {
-    "title": "Horarios de Clase",
-    "description": "Encuentra el horario perfecto para tu práctica",
-    "days": [
-      {
-        "name": "Lunes",
-        "times": ["09:00", "17:00", "19:00"]
-      },
-      {
-        "name": "Miércoles",
-        "times": ["10:00", "16:00", "18:00"]
-      },
-      {
-        "name": "Viernes",
-        "times": ["08:00", "15:00", "20:00"]
-      },
-      {
-        "name": "Sábado",
-        "times": ["10:00", "12:00"]
-      }
-    ]
-  },
-  "instructors": [
-    {
-      "id": "maria-lopez",
-      "name": "María López",
-      "title": "Instructora Senior de Yoga",
-      "specialties": ["Hatha Yoga", "Vinyasa Flow", "Meditación"],
-      "description": "Especialista en yoga integral y mindfulness con más de 10 años de experiencia ayudando a personas a encontrar su equilibrio.",
-      "image": "/professors/profesor1.webp",
-      "certifications": ["RYT 500", "Mindfulness Certified Teacher"],
-      "socialMedia": {
-        "instagram": "@maria.yoga",
-        "facebook": "maria.lopez.yoga"
-      }
-    }
-  ],
   "faqs": [
     {
       "question": "¿Necesito experiencia previa para comenzar yoga?",
-      "answer": "No, nuestras clases están diseñadas para todos los niveles. Los instructores guiarán tu práctica según tu experiencia."
+      "answer": "No, nuestras clases están diseñadas para todos los niveles. El instructor guía tu práctica según tu experiencia y capacidad física."
     },
     {
       "question": "¿Qué debo llevar a clase?",
-      "answer": "Te recomendamos traer ropa cómoda, una esterilla de yoga (aunque tenemos disponibles), agua y una toalla pequeña."
+      "answer": "Te recomendamos ropa cómoda, una esterilla de yoga (aunque tenemos disponibles en el estudio), agua y una toalla pequeña."
     },
     {
-      "question": "¿Con qué frecuencia debo practicar?",
-      "answer": "Recomendamos comenzar con 2-3 clases por semana para ver beneficios consistentes, pero puedes ajustar según tu disponibilidad."
-    }
-  ],
-  "testimonials": [
+      "question": "¿Con qué frecuencia debo practicar para ver resultados?",
+      "answer": "Recomendamos comenzar con 2-3 clases por semana para notar beneficios consistentes en flexibilidad, fuerza y calma mental, ajustando según tu disponibilidad."
+    },
     {
-      "id": "test-1",
-      "name": "Ana García",
-      "image": "/testimonials/ana-garcia.jpg",
-      "text": "El yoga ha transformado mi vida. Las clases son increíbles y los instructores son muy profesionales.",
-      "rating": 5
+      "question": "¿El yoga es seguro si tengo alguna lesión o condición física?",
+      "answer": "El yoga puede adaptarse a distintas condiciones físicas, pero si tienes una lesión o condición de salud particular, te recomendamos comentarlo con el instructor antes de clase y consultar previamente a tu médico."
+    },
+    {
+      "question": "¿Dónde están ubicadas las clases de yoga en Toluca?",
+      "answer": "Nuestro estudio se encuentra en Toluca y recibimos alumnos de zonas cercanas como Metepec, Zinacantepec y Lerma."
     }
   ]
-} 
+}
