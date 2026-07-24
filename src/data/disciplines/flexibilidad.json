@@ -1,61 +1,73 @@
 {
-    "id": "flexibilidad",
-    "name": "Flexibilidad",
-    "slug": "flexibilidad",
-    "heroSection": {
-      "title": "Flexibilidad",
-      "subtitle": "Ábrete al movimiento libre",
-      "description": "Mejora tu rango de movimiento y movilidad. ¡Únete a nuestras clases de flexibilidad y siente la diferencia!",
-      "mainImage": "/disciplines/flexibilidad.webp",
-      "ctaText": "Empieza hoy",
-      "ctaLink": "/#contacto"
+  "id": "flexibilidad",
+  "name": "Flexibilidad",
+  "slug": "flexibilidad",
+  "heroSection": {
+    "title": "Flexibilidad",
+    "subtitle": "Ábrete al movimiento libre",
+    "description": "La clase de Flexibilidad trabaja el estiramiento progresivo de músculos y articulaciones mediante técnicas guiadas de movilidad, respiración y control corporal. Es ideal si sientes el cuerpo rígido, buscas mejorar tu rango de movimiento o quieres complementar otra disciplina física con una recuperación más consciente. Disponible en nuestro estudio de Toluca.",
+    "mainImage": "/disciplines/flexibilidad.webp",
+    "ctaText": "Empieza hoy",
+    "ctaLink": "/#contacto"
+  },
+  "whyCuantica": {
+    "title": "¿Por qué entrenar tu Flexibilidad en Cuántica Studio?",
+    "description": "En Cuántica Studio trabajamos la flexibilidad con progresiones seguras y supervisadas, evitando forzar el cuerpo antes de tiempo. El instructor ajusta cada estiramiento a tu nivel actual de movilidad, para que avances de forma constante y sin lesiones, dentro de un ambiente tranquilo pensado para escuchar tu cuerpo.",
+    "image": {
+      "url": "/disciplines/flexibilidad.webp",
+      "alt": "Clase de Flexibilidad en Cuántica Studio"
+    }
+  },
+  "benefits": {
+    "title": "Resultados que notarás practicando Flexibilidad con nosotros",
+    "items": [
+      {
+        "title": "Mayor Rango de Movimiento",
+        "description": "Gana movilidad articular real, con técnicas específicas según tu nivel de flexibilidad actual.",
+        "icon": "mobility"
+      },
+      {
+        "title": "Prevención de Lesiones",
+        "description": "Fortalece músculos y articulaciones alrededor del estiramiento, reduciendo el riesgo de lesiones en tu día a día o en otros deportes.",
+        "icon": "injury-prevention"
+      },
+      {
+        "title": "Relajación Muscular",
+        "description": "Alivia tensiones acumuladas y mejora tu recuperación física entre entrenamientos o después de largas jornadas.",
+        "icon": "relax"
+      }
+    ]
+  },
+  "audience": {
+    "title": "¿Para quién es la clase de Flexibilidad en Cuántica Studio?",
+    "description": "Nuestras clases de Flexibilidad en Toluca están diseñadas para adaptarse a tu punto de partida, sin importar qué tan rígido sientas el cuerpo hoy.",
+    "items": [
+      "Si sientes el cuerpo rígido y quieres ganar movilidad progresivamente",
+      "Si practicas otro deporte o disciplina y buscas complementarlo con estiramiento guiado",
+      "Si quieres prevenir lesiones y mejorar tu recuperación muscular",
+      "Si buscas un espacio tranquilo para escuchar y cuidar tu cuerpo"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Necesito ser flexible para empezar?",
+      "answer": "No, la clase está diseñada precisamente para quienes sienten el cuerpo rígido; se avanza de forma progresiva y segura desde tu punto de partida."
     },
-    "benefits": {
-      "title": "Beneficios de la Flexibilidad",
-      "items": [
-        {
-          "title": "Mayor Rango de Movimiento",
-          "description": "Alcanza una movilidad óptima con técnicas específicas para cada nivel.",
-          "icon": "mobility"
-        },
-        {
-          "title": "Prevención de Lesiones",
-          "description": "Fortalece músculos y articulaciones para evitar lesiones.",
-          "icon": "injury-prevention"
-        },
-        {
-          "title": "Relajación Muscular",
-          "description": "Alivia tensiones y mejora tu recuperación física.",
-          "icon": "relax"
-        }
-      ]
+    {
+      "question": "¿Qué debo llevar a clase?",
+      "answer": "Ropa cómoda que permita el estiramiento, una toalla y agua. Contamos con tapetes y accesorios de apoyo en el estudio."
     },
-    "gallery": {
-      "title": "Descubre tu Potencial",
-      "images": [
-        {
-          "url": "/disciplines/flexibilidad.webp",
-          "alt": "Clase de flexibilidad",
-          "caption": "Movimiento consciente y controlado"
-        }
-      ]
+    {
+      "question": "¿Puedo combinarla con otra disciplina como yoga o danza?",
+      "answer": "Sí, muchas personas la toman como complemento de otras clases para mejorar su movilidad y acelerar su recuperación muscular."
     },
-    "schedule": {
-      "title": "Horarios de Clase",
-      "description": "Adáptate con libertad",
-      "days": [
-        {
-          "name": "Martes",
-          "times": ["09:00"]
-        },
-        {
-          "name": "Viernes",
-          "times": ["18:00"]
-        }
-      ]
+    {
+      "question": "¿Es recomendable si tengo una lesión previa?",
+      "answer": "El estiramiento guiado puede ayudarte, pero si tienes una lesión activa o reciente, te recomendamos consultarlo primero con tu médico o fisioterapeuta antes de empezar."
     },
-    "instructors": [],
-    "faqs": [],
-    "testimonials": []
-  }
-  
+    {
+      "question": "¿En qué ciudad se imparte la clase de Flexibilidad?",
+      "answer": "Nuestro estudio está en Toluca y recibimos alumnos de Metepec, Zinacantepec y Lerma."
+    }
+  ]
+}

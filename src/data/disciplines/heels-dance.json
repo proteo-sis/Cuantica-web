@@ -1,61 +1,73 @@
 {
-    "id": "heels-dance",
-    "name": "Heels Dance",
-    "slug": "heels-dance",
-    "heroSection": {
-      "title": "Heels Dance",
-      "subtitle": "Empodérate a través del movimiento",
-      "description": "Empodérate a través del movimiento y la danza moderna. ¡Pisa con confianza y únete a nuestra clase de baile con tacones!",
-      "mainImage": "/disciplines/Heels-Dance.webp",
-      "ctaText": "¡Baila con nosotras!",
-      "ctaLink": "/#contacto"
+  "id": "heels-dance",
+  "name": "Heels Dance",
+  "slug": "heels-dance",
+  "heroSection": {
+    "title": "Heels Dance",
+    "subtitle": "Empodérate a través del movimiento",
+    "description": "Heels Dance es una danza moderna que combina coreografía urbana, actitud y técnica en tacones, diseñada para que descubras una versión más segura y expresiva de ti misma. No necesitas experiencia previa en baile: aquí se trabaja el movimiento, la postura y la confianza paso a paso, en nuestras clases de Heels Dance en Toluca.",
+    "mainImage": "/disciplines/Heels-Dance.webp",
+    "ctaText": "¡Baila con nosotras!",
+    "ctaLink": "/#contacto"
+  },
+  "whyCuantica": {
+    "title": "¿Por qué bailar Heels Dance en Cuántica Studio?",
+    "description": "En Cuántica Studio aprendes Heels Dance en un espacio seguro y sin juicios, pensado para que avances a tu ritmo sin importar si es tu primera clase de baile. Las coreografías se construyen por niveles, con corrección personalizada de técnica y postura, dentro de una comunidad que celebra cada avance, no solo el resultado final.",
+    "image": {
+      "url": "/disciplines/Heels-Dance.webp",
+      "alt": "Clase de Heels Dance en Cuántica Studio"
+    }
+  },
+  "benefits": {
+    "title": "Resultados que notarás bailando Heels Dance con nosotras",
+    "items": [
+      {
+        "title": "Confianza y Expresión",
+        "description": "Descubre tu poder interior y tu autenticidad a través del baile, ganando seguridad frente al espejo y frente a los demás.",
+        "icon": "confidence"
+      },
+      {
+        "title": "Fuerza y Postura",
+        "description": "Mejora tu postura corporal y fortalece piernas, glúteos y core con coreografías desafiantes y progresivas.",
+        "icon": "posture"
+      },
+      {
+        "title": "Diversión y Comunidad",
+        "description": "Conecta con otras personas que aman moverse y disfrutar juntas, en un ambiente que te motiva a volver cada semana.",
+        "icon": "community"
+      }
+    ]
+  },
+  "audience": {
+    "title": "¿Para quién es Heels Dance en Cuántica Studio?",
+    "description": "Nuestras clases de Heels Dance en Toluca están pensadas para cualquier persona que quiera moverse con confianza, sin importar su nivel previo de baile.",
+    "items": [
+      "Si quieres ganar confianza y soltura frente al espejo y en cualquier pista",
+      "Si buscas una forma divertida de fortalecer piernas, glúteos y postura",
+      "Si nunca has bailado en tacones y quieres aprender desde cero",
+      "Si buscas un grupo que te motive a seguir practicando cada semana"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Necesito experiencia previa en baile o en tacones?",
+      "answer": "No, la mayoría de nuestras alumnas empiezan sin experiencia. Trabajamos desde lo básico: postura, equilibrio y pasos sencillos antes de subir la dificultad."
     },
-    "benefits": {
-      "title": "Beneficios del Heels Dance",
-      "items": [
-        {
-          "title": "Confianza y Expresión",
-          "description": "Descubre tu poder interior y tu autenticidad a través del baile.",
-          "icon": "confidence"
-        },
-        {
-          "title": "Fuerza y Postura",
-          "description": "Mejora tu postura corporal y fortalece tus músculos con coreografías desafiantes.",
-          "icon": "posture"
-        },
-        {
-          "title": "Diversión y Comunidad",
-          "description": "Conecta con otras personas que aman moverse y disfrutar juntas.",
-          "icon": "community"
-        }
-      ]
+    {
+      "question": "¿Qué tacones debo usar en clase?",
+      "answer": "Recomendamos un tacón cómodo de entre 7 y 9 cm con buen agarre; si aún no tienes uno, puedes empezar practicando con tenis y hacer la transición cuando te sientas lista."
     },
-    "gallery": {
-      "title": "Explora el Ritmo",
-      "images": [
-        {
-          "url": "/disciplines/Heels-Dance.webp",
-          "alt": "Clases de Heels Dance",
-          "caption": "Empoderamiento en movimiento"
-        }
-      ]
+    {
+      "question": "¿Con qué frecuencia debo tomar clase para ver avances?",
+      "answer": "Con 1-2 clases por semana notarás mejoras en tu equilibrio, fuerza y confianza en pocas semanas; la constancia es lo que más acelera el progreso."
     },
-    "schedule": {
-      "title": "Horarios de Clase",
-      "description": "Encuentra tu espacio para brillar",
-      "days": [
-        {
-          "name": "Martes",
-          "times": ["17:00"]
-        },
-        {
-          "name": "Jueves",
-          "times": ["18:00"]
-        }
-      ]
+    {
+      "question": "¿Hay un límite de edad para tomar Heels Dance?",
+      "answer": "La clase está pensada principalmente para adultas jóvenes y adultas; si tienes dudas sobre si es adecuada para tu edad o condición física, contáctanos antes de inscribirte."
     },
-    "instructors": [],
-    "faqs": [],
-    "testimonials": []
-  }
-  
+    {
+      "question": "¿En qué ciudad se imparten las clases?",
+      "answer": "Nuestro estudio está en Toluca y recibimos alumnas de Metepec, Zinacantepec y Lerma."
+    }
+  ]
+}

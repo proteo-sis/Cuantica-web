@@ -8,7 +8,7 @@ interface CTASectionProps {
 
 export default function CTASection({ disciplineName }: CTASectionProps) {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-[var(--color-lavender)] via-[var(--color-pink-vibrant)] to-[var(--color-lavender)]">
+    <section className="py-20 px-4 bg-[var(--color-pink-vibrant)]">
       <ScrollReveal animation="scale">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-[var(--color-white-pure)]">

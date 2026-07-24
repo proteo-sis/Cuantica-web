@@ -1,61 +1,73 @@
 {
-    "id": "meditacion",
-    "name": "Meditación y Atención Plena",
-    "slug": "meditacion-atencion-plena",
-    "heroSection": {
-      "title": "Meditación y Atención Plena",
-      "subtitle": "Conecta con el presente",
-      "description": "Reduce el estrés y mejora tu bienestar emocional con meditaciones guiadas. ¡Descubre la atención plena con nosotros!",
-      "mainImage": "/disciplines/meditacion.webp",
-      "ctaText": "Comienza tu viaje interior",
-      "ctaLink": "/#contacto"
+  "id": "meditacion",
+  "name": "Meditación y Atención Plena",
+  "slug": "meditacion-atencion-plena",
+  "heroSection": {
+    "title": "Meditación y Atención Plena",
+    "subtitle": "Conecta con el presente",
+    "description": "La meditación y atención plena (mindfulness) son técnicas guiadas de respiración y observación consciente que entrenan tu mente para reducir el estrés, regular emociones y estar más presente en tu día a día. No se necesita experiencia previa: cada sesión te acompaña paso a paso a calmar el ruido mental, en nuestro estudio en Toluca.",
+    "mainImage": "/disciplines/meditacion.webp",
+    "ctaText": "Comienza tu viaje interior",
+    "ctaLink": "/#contacto"
+  },
+  "whyCuantica": {
+    "title": "¿Por qué meditar en Cuántica Studio?",
+    "description": "En Cuántica Studio guiamos la meditación con un enfoque práctico: técnicas de respiración, visualización y atención plena que puedes llevar contigo fuera del estudio, a tu trabajo o a tu casa. Practicamos en grupo, en un espacio tranquilo diseñado para desconectar del ruido exterior, con instructores que adaptan cada sesión al nivel de ansiedad o estrés con el que llegas ese día.",
+    "image": {
+      "url": "/disciplines/meditacion.webp",
+      "alt": "Sesión de Meditación y Atención Plena en Cuántica Studio"
+    }
+  },
+  "benefits": {
+    "title": "Resultados que notarás practicando Meditación con nosotros",
+    "items": [
+      {
+        "title": "Reducción del Estrés",
+        "description": "Disminuye los niveles de ansiedad y mejora tu bienestar emocional con práctica regular y guiada.",
+        "icon": "stress"
+      },
+      {
+        "title": "Mejora de la Concentración",
+        "description": "Entrena tu mente para enfocarte en el presente, con beneficios que se trasladan a tu trabajo y vida diaria.",
+        "icon": "focus"
+      },
+      {
+        "title": "Bienestar Integral",
+        "description": "Equilibra cuerpo, mente y emociones con prácticas guiadas que puedes sostener a largo plazo.",
+        "icon": "balance"
+      }
+    ]
+  },
+  "audience": {
+    "title": "¿Para quién es la Meditación y Atención Plena en Cuántica Studio?",
+    "description": "Nuestras sesiones de meditación en Toluca están abiertas a cualquier persona, sin experiencia previa ni requisitos especiales.",
+    "items": [
+      "Si te sientes abrumado por el estrés diario y buscas herramientas para calmarte",
+      "Si tienes dificultad para concentrarte o desconectar del ruido mental",
+      "Si buscas técnicas de respiración que puedas usar en tu trabajo o en casa",
+      "Si quieres complementar tu bienestar emocional junto con otras prácticas"
+    ]
+  },
+  "faqs": [
+    {
+      "question": "¿Necesito experiencia previa para meditar?",
+      "answer": "No, las sesiones están diseñadas para principiantes y se guían paso a paso con instrucciones claras de respiración y postura."
     },
-    "benefits": {
-      "title": "Beneficios de la Meditación",
-      "items": [
-        {
-          "title": "Reducción del Estrés",
-          "description": "Disminuye los niveles de ansiedad y mejora tu bienestar emocional.",
-          "icon": "stress"
-        },
-        {
-          "title": "Mejora de la Concentración",
-          "description": "Entrena tu mente para enfocarte en el presente.",
-          "icon": "focus"
-        },
-        {
-          "title": "Bienestar Integral",
-          "description": "Equilibra cuerpo, mente y emociones con prácticas guiadas.",
-          "icon": "balance"
-        }
-      ]
+    {
+      "question": "¿Qué debo llevar a clase?",
+      "answer": "Ropa cómoda y, si lo deseas, tu propio cojín de meditación; contamos con tapetes y cojines disponibles en el estudio."
     },
-    "gallery": {
-      "title": "Espacios de Paz",
-      "images": [
-        {
-          "url": "/disciplines/meditacion.webp",
-          "alt": "Meditación en grupo",
-          "caption": "Momentos de conexión interior"
-        }
-      ]
+    {
+      "question": "¿Cuánto tiempo debo practicar para notar beneficios?",
+      "answer": "Con sesiones de 1-2 veces por semana, la mayoría de las personas notan mejoras en su nivel de estrés y concentración en pocas semanas."
     },
-    "schedule": {
-      "title": "Horarios de Meditación",
-      "description": "Encuentra tu momento de calma",
-      "days": [
-        {
-          "name": "Lunes",
-          "times": ["19:00"]
-        },
-        {
-          "name": "Miércoles",
-          "times": ["19:00"]
-        }
-      ]
+    {
+      "question": "¿La meditación sustituye la terapia psicológica?",
+      "answer": "No, la meditación es una práctica de bienestar que puede complementar un tratamiento psicológico o médico, pero no lo sustituye. Si estás en tratamiento por ansiedad, depresión u otra condición, te recomendamos seguir las indicaciones de tu especialista."
     },
-    "instructors": [],
-    "faqs": [],
-    "testimonials": []
-  }
-  
+    {
+      "question": "¿Dónde se imparten las sesiones?",
+      "answer": "Nuestro estudio está en Toluca y recibimos alumnos de Metepec, Zinacantepec y Lerma."
+    }
+  ]
+}
